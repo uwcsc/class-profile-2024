@@ -1,0 +1,19 @@
+.yellowWord:hover {
+  text-shadow: var(--chart-yellow-light) 0 0 calc(20rem / 16);
+  text-anchor: "middle";
+  cursor: default;
+}
+
+.yellowWord {
+  transition: text-shadow 0.25s ease-out;
+}
+
+.greenWord:hover {
+  text-shadow: var(--chart-green-light) 0 0 calc(20rem / 16);
+  text-anchor: "middle";
+  cursor: default;
+}
+
+.greenWord {
+  transition: text-shadow 0.25s ease-out;
+}

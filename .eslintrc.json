@@ -1,3 +1,24 @@
 {
-  "extends": "next/core-web-vitals"
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended",
+    "next"
+  ],
+  "plugins": ["@typescript-eslint", "react", "react-hooks", "prettier", "unused-imports"],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }

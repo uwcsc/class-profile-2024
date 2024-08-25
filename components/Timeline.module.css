@@ -1,0 +1,92 @@
+.wrapper {
+  position: relative;
+}
+
+.line {
+  position: absolute;
+  height: 100%;
+  border-radius: calc(10rem / 16);
+  background-color: var(--secondary-accent);
+  z-index: -1;
+}
+
+.timelineSections {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: calc(20rem / 16);
+}
+
+.timelineSection {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.time {
+  margin: 0;
+  text-align: right;
+  font-size: calc(30rem / 16);
+  font-weight: 700;
+  color: var(--secondary-accent);
+  word-wrap: break-word;
+}
+
+.outerCircle {
+  background-color: var(--secondary-accent);
+  box-shadow: calc(0rem / 16) calc(0rem / 16) calc(30rem / 16) var(--secondary-accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.innerCircle {
+  background-color: var(--label);
+  display: none;
+}
+
+.text {
+  height: fit-content;
+  margin: 0;
+  padding: calc(15rem / 16);
+  border-radius: calc(10rem / 16);
+  font-size: calc(20rem / 16);
+  font-weight: 700;
+  color: var(--label);
+  border: calc(2rem / 16) solid var(--card-background);
+  background-color: var(--card-background);
+  word-wrap: break-word;
+  box-sizing: border-box;
+}
+
+.timelineSection:hover .time {
+  color: var(--secondary-accent-light);
+}
+
+.timelineSection:hover .innerCircle {
+  display: inline;
+}
+
+.timelineSection:hover .text {
+  border: calc(2rem / 16) solid var(--secondary-accent-light);
+  box-shadow: calc(0rem / 16) calc(0rem / 16) calc(20rem / 16) var(--secondary-accent);
+}
+
+.timelineSection .timeText {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .timelineSection .time {
+    display: none;
+  }
+
+  .timelineSection .timeText {
+    display: block;
+    font-size: calc(26rem / 16);
+    color: var(--secondary-accent);
+    margin-bottom: calc(8rem / 16);
+  }
+}

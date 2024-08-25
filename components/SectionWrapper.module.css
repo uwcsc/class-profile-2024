@@ -1,0 +1,11 @@
+.sectionWrapper h2 {
+  color: var(--primary-heading);
+  padding-left: 4rem;
+}
+
+@media screen and (max-width: 900px) {
+  .sectionWrapper h2 {
+    text-align: center;
+    padding-left: 0;
+  }
+}

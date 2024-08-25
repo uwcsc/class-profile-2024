@@ -1,0 +1,72 @@
+.aboutWrapper {
+  position: relative;
+  width: 90%;
+  scroll-margin-top: 50px;
+}
+
+.about {
+  display: flex;
+  flex-direction: row;
+  padding: calc(45rem / 16);
+}
+
+.about h1 {
+  margin: 0;
+}
+
+.about h4 {
+  margin: 0;
+}
+
+.about aside {
+  flex: 1;
+  justify-content: space-between;
+  margin-right: calc(40rem / 18);
+}
+
+.about aside h1 {
+  color: var(--primary-pink);
+  margin-bottom: calc(40rem / 10);
+}
+
+.about aside h4 {
+  color: var(--primary-text);
+}
+
+.about article {
+  flex: 3;
+}
+
+.about article h4 {
+  color: var(--primary-yellow);
+}
+
+.about article p {
+  color: var(--primary-text);
+}
+
+.angle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(70rem / 16);
+  height: calc(70rem / 16);
+}
+
+.anglePath {
+  stroke: var(--primary-text);
+}
+
+.left.angle {
+  transform: rotate(180deg);
+  top: unset;
+  left: unset;
+  bottom: 0;
+  right: 0;
+}
+
+@media screen and (max-width: 900px) {
+  .about {
+    flex-direction: column;
+  }
+}

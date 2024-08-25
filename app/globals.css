@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(92rem / 16);
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+@-moz-document url-prefix() {
+  /*
+   * Firefox has a bug relating to smooth scrolling
+   * https://github.com/vercel/next.js/issues/22858 
+   */
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  /* Theme colours */
+  --pink: #ef839d;
+  --light-pink: #faa3bd;
+  /* Above is New Header 1 Colour */
+  --lighter-pink: #ffe7e7;
+  --orange: #f5917b;
+  --light-orange: #ffc4a9;
+  --lighter-orange: #ffddcd;
+  --navy: #0b2041;
+  /* Above is New Background Colour */
+  --light-navy: #354265;
+  --dark-navy: #141d34;
+  --side-panel: #141d34;
+  --menu-icon: #e18e89;
+  --menu-icon-hover: #eaa9a6;
+  --menu-close-icon: #603e2f;
+
+  /* Chart colors */
+  --chart-blue-light: #3472a8;
+  --chart-blue-heavy: #559ad6;
+  --chart-yellow-light: #fff0bb;
+  --chart-yellow-heavy: #fbd961;
+  --chart-green-light: #0f9635;
+  --chart-green-heavy: #4bbc6b;
+  --chart-pink-light: #ba4366;
+  --chart-pink-heavy: #dd547d;
+  --chart-label: white;
+
+  /* Default is dark theme */
+  --light--primary-background: #ffffef;
+  --light--secondary-background: #fdf5ed;
+  --light--primary-accent: #ca634d;
+  --light--primary-accent-light: var(--orange);
+  --light--primary-accent-lighter: #ffbc9f;
+  --light--secondary-accent: #e55f98;
+  --light--translucent-accent: rgba(255, 231, 231, 0.75);
+  --light--secondary-accent-light: #fea0c8;
+  --light--primary-heading: #d02b53;
+  --light--primary-text: #483b35;
+  --light--link: var(--orange);
+  --light--link-hover: #ffbc9f;
+  --light--card-background: #ffffff;
+  --light--label: #a98778;
+
+  --dark--primary-background: var(--navy);
+  --dark--secondary-background: var(--dark-navy);
+  --dark--tertiary-background: var(--light-navy);
+  --dark--primary-accent: var(--pink);
+  --dark--primary-accent-light: var(--light-pink);
+  --dark--primary-accent-lighter: var(--lighter-pink);
+  --dark--primary-accent-dark: #dc538e;
+  --dark--primary-accent-darker: #c8417c;
+  --dark--secondary-accent: var(--orange);
+  --dark--secondary-accent-light: var(--light-orange);
+  --dark--secondary-accent-lighter: var(--lighter-orange);
+  --dark--translucent-accent: rgba(239, 131, 157, 0.75);
+  /* --dark--primary-heading: #ffc48d; */
+  --dark--primary-heading: #a1ccf2;
+  /* Above is New H2 */
+  /* --dark--secondary-heading: var(--pink); */
+  --dark--secondary-heading: #ef839d;
+  /* Above is New H3 */
+  --dark--link: var(--pink);
+  --dark--4-heading: #91f1ac;
+  /* Above is New H4 */
+  --dark--link-hover: var(--light-pink);
+  --dark--primary-text: #fdf9ec;
+  /* Above is New Primary Text */
+  --dark--secondary-text: var(--light-pink);
+  --dark--card-background: #2c3651;
+  --dark--label: #ffffff;
+  --dark--overlay: #000000;
+
+  --dark--primary-pink: #fe5f8f;
+  --primary-pink: var(--dark--primary-pink);
+  --dark--primary-yellow: #fbd961;
+  --primary-yellow: var(--dark--primary-yellow);
+
+  --primary-background: var(--dark--primary-background);
+  --secondary-background: var(--dark--secondary-background);
+  --tertiary-background: var(--dark--tertiary-background);
+  --primary-accent: var(--dark--primary-accent);
+  --primary-accent-light: var(--dark--primary-accent-light);
+  --primary-accent-lighter: var(--dark--primary-accent-lighter);
+  --primary-accent-dark: var(--dark--primary-accent-dark);
+  --primary-accent-darker: var(--dark--primary-accent-darker);
+  --secondary-accent: var(--dark--secondary-accent);
+  --secondary-accent-light: var(--dark--secondary-accent-light);
+  --secondary-accent-lighter: var(--dark--secondary-accent-lighter);
+  --translucent-accent: var(--dark--translucent-accent);
+  --primary-heading: var(--dark--primary-heading);
+  --secondary-heading: var(--dark--secondary-heading);
+  --link: var(--dark--link);
+  --link-hover: var(--dark--link-hover);
+  --primary-text: var(--dark--primary-text);
+  --card-background: var(--dark--card-background);
+  --label: var(--dark--label);
+  --label-overlay: var(--dark--overlay);
+
+  --navbar-background-rgb: 25, 27, 33;
+
+  background-color: var(--primary-background);
+  color: var(--primary-text);
+  margin: 0;
+  position: relative;
+  width: 100vw;
+  overflow-x: hidden;
+
+  /* Font styling for body */
+  font-size: calc(18rem / 16);
+  font-weight: 500;
+}
+
+/* Page titles (e.g. Demographics) */
+h1 {
+  font-size: calc(48rem / 16);
+  font-weight: 700;
+  color: var(--primary-accent-light);
+  margin-top: calc(32rem / 16);
+  margin-bottom: calc(16rem / 16);
+  letter-spacing: 0.2rem;
+}
+
+/* Major section headings (e.g. About the Programs) */
+h2 {
+  font-size: calc(36rem / 16);
+  font-weight: 700;
+  color: var(--primary-heading);
+  margin-top: calc(32rem / 16);
+  margin-bottom: calc(16rem / 16);
+  letter-spacing: 0.1rem;
+}
+
+/* Minor section headings & questions (e.g. What Program Are You In?) */
+h3 {
+  font-size: calc(32rem / 16);
+  font-weight: 700;
+  color: var(--secondary-heading);
+  margin-top: calc(24rem / 16);
+  margin-bottom: calc(16rem / 16);
+  letter-spacing: 0.075rem;
+}
+
+/* Titles within paragraphs (e.g. About the Programs -> Computer Science)*/
+h4 {
+  font-size: calc(26rem / 16);
+  font-weight: 700;
+  color: var(--dark--4-heading);
+  margin-top: calc(24rem / 16);
+  margin-bottom: calc(8rem / 16);
+  letter-spacing: 0.05rem;
+}
+
+p {
+  color: var(--primary-text);
+  margin-top: 0.75rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.5rem;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  transition: color 0.5s ease-out;
+}
+
+a:hover {
+  color: var(--link-hover);
+}
+
+/* Custom styles for scroll bars on chromium */
+::-webkit-scrollbar {
+  width: 1em;
+  height: 1em;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-track:horizontal {
+  background: var(--card-background);
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:horizontal {
+  background-color: var(--tertiary-background);
+}
+
+.center-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+table,
+thead,
+tbody,
+tr,
+th,
+td {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.32rem 0.64rem;
+}
+
+thead tr {
+  border-bottom: 1px solid var(--label);
+}
+
+tbody tr:nth-child(2n) {
+  background-color: var(--tertiary-background);
+}

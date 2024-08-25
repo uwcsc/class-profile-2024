@@ -1,0 +1,194 @@
+.carousel {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: calc(8rem / 16);
+  margin: auto;
+}
+
+.circle {
+  position: absolute;
+  top: 30%;
+  right: 52%;
+  z-index: -1;
+
+  background-color: var(--tertiary-background);
+  clip-path: circle();
+}
+
+.right.circle {
+  top: unset;
+  right: unset;
+  bottom: 30%;
+  left: 52%;
+}
+
+.carouselButton {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: calc(16rem / 16);
+  height: min-content;
+
+  background: none;
+  border: none;
+
+  cursor: pointer;
+}
+
+.arrow {
+  position: relative;
+  width: calc(20rem / 16);
+  height: calc(40rem / 16);
+
+  transition: 0.2s;
+}
+
+.previous.arrow {
+  transform: rotate(180deg);
+}
+
+.carouselButton:hover > .arrow {
+  translate: calc(4rem / 16);
+}
+
+.carouselButton:hover > .previous.arrow {
+  translate: calc(-4rem / 16);
+}
+
+.withBackgroundCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: calc(16rem / 16);
+
+  min-height: inherit;
+  height: 100%;
+  width: 100%;
+  padding: calc(30rem / 16);
+
+  background-color: var(--chart-green-heavy);
+  border: calc(2rem / 16) solid var(--primary-text);
+  border-radius: calc(12rem / 16);
+  box-shadow: 0 calc(1rem / 16) calc(10rem / 16) var(--chart-green-light);
+}
+
+.withBackgroundCard ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.withBackgroundCard li {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  visibility: visible;
+  opacity: 1;
+  transition: 0.1s;
+}
+
+.withBackgroundCard li.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.withBackgroundCard p {
+  margin: 0 calc(16rem / 16);
+  font-weight: bold;
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: calc(16rem / 16);
+
+  min-height: inherit;
+  height: 100%;
+  width: 100%;
+  padding: calc(30rem / 16);
+
+  background-color: var(--tertiary-background);
+  border: calc(2rem / 16) solid var(--primary-text);
+  border-radius: calc(12rem / 16);
+  box-shadow: 0 calc(1rem / 16) calc(10rem / 16) var(--primary-accent);
+}
+
+.card ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
+}
+
+.card li {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  visibility: visible;
+  opacity: 1;
+  transition: 0.1s;
+
+  height: 100%;
+  display: flex;
+  overflow-y: scroll;
+}
+
+.card li.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.card p {
+  margin: auto calc(16rem / 16);
+  font-weight: bold;
+  text-align: center;
+
+  height: max-content;
+  width: 100%;
+}
+
+.quotationMark {
+  width: calc(20rem / 16);
+  height: calc(20rem / 16);
+}
+
+.right.quotationMark {
+  transform: rotate(180deg);
+  align-self: end;
+}
+
+.bottomRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}

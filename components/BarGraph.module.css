@@ -1,0 +1,53 @@
+.barBackground {
+  fill: var(--card-background);
+  transition: fill 0.5s ease-out;
+}
+
+.blue {
+  --fill: var(--chart-blue-light);
+  --hover-fill: var(--chart-blue-heavy);
+  --hover-shadow: var(--chart-blue-light);
+}
+
+.yellow {
+  --fill: var(--chart-yellow-light);
+  --hover-fill: var(--chart-yellow-heavy);
+  --hover-shadow: var(--chart-yellow-light);
+}
+
+.green {
+  --fill: var(--chart-green-light);
+  --hover-fill: var(--chart-green-heavy);
+  --hover-shadow: var(--chart-green-light);
+}
+
+.pink {
+  --fill: var(--chart-pink-light);
+  --hover-fill: var(--chart-pink-heavy);
+}
+
+.bar {
+  fill: var(--fill);
+  transition: fill 0.5s ease-out;
+}
+
+.barGroup {
+  transition: fill 0.5s ease-out;
+}
+
+.barGroup:hover .bar {
+  fill: var(--hover-fill);
+  filter: drop-shadow(0 0 calc(4rem / 16) var(--hover-shadow));
+}
+
+.tickLabel {
+  font-family: "Lexend", sans-serif;
+  font-weight: 800;
+  fill: var(--label);
+}
+
+.axisLabel {
+  font-family: "Lexend", sans-serif;
+  font-weight: 800;
+  fill: var(--label);
+}

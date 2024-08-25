@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.barBackground {
+  fill: var(--card-background);
+}
+
+.tickLabel {
+  font-family: "Lexend", sans-serif;
+  font-weight: 800;
+  fill: var(--label);
+}
+
+.axisLabel {
+  font-family: "Lexend", sans-serif;
+  font-weight: 800;
+  fill: var(--label);
+}
+
+.bar {
+  transition: fill 0.5s ease-out;
+}
+
+.legend {
+  display: flex;
+  margin: calc(16rem / 16);
+  justify-content: center;
+}

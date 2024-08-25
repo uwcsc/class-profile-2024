@@ -1,0 +1,23 @@
+.container {
+  position: relative;
+}
+
+.barStack {
+  transition: filter 0.5s ease-out;
+}
+
+.barStack:hover {
+  filter: drop-shadow(0 0 calc(4rem / 16) var(--label));
+  transition: filter 0.5s ease-out;
+}
+
+.legend {
+  display: flex;
+  font-size: calc(16rem / 16);
+  top: 0;
+  justify-content: center;
+}
+
+.key {
+  font-weight: bold;
+}

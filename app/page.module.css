@@ -1,0 +1,221 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main > * {
+  margin-bottom: calc(65rem / 16);
+}
+
+.top {
+  margin: 0 10%;
+  position: relative;
+}
+
+.title {
+  margin-top: 12rem;
+  font-size: 600%;
+  background: linear-gradient(285deg, #fff0bb 34.7%, #faa3bd 79.88%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.space {
+  position: absolute;
+  right: 10%;
+}
+
+.planet {
+  position: absolute;
+  right: 10%;
+}
+
+.planetBody {
+  padding: 50px;
+}
+
+.planet img {
+  position: absolute;
+}
+
+.moon {
+  position: absolute;
+  right: 32px;
+  top: 300px;
+}
+
+.curves {
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+.topCurve {
+  position: absolute;
+}
+
+.bottomCurve {
+  margin-top: 320px;
+  margin-bottom: -400px;
+}
+
+@keyframes oscillate {
+  0% {
+    transform: translateY(10px);
+  }
+
+  80% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.downButton {
+  position: absolute;
+  z-index: 10;
+  top: 80vh;
+  width: 50px;
+  animation: 0.75s ease 0s infinite alternate none running oscillate;
+}
+
+.viewButton {
+  background: none;
+  display: flex;
+  border: none;
+  font-size: calc(30rem / 16);
+  color: var(--primary-accent-light);
+  font-weight: 700;
+  font-family: "Lexend", sans-serif;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.5s ease-out;
+}
+
+.viewButton:hover {
+  color: var(--label);
+}
+
+.viewButton:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: calc(2rem / 16);
+  bottom: 0px;
+  background-color: var(--primary-accent-lighter);
+  cursor: pointer;
+  transition: background-color 0.5s ease-out;
+}
+
+.viewButton:hover:after {
+  background-color: var(--primary-accent-light);
+}
+
+@media screen and (max-width: 1600px) {
+  .title {
+    margin-top: 8rem;
+    font-size: 400%;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .title {
+    margin-top: 6rem;
+    font-size: 320%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .decoratorDots {
+    display: none;
+  }
+
+  .decoratorSolid {
+    display: none;
+  }
+
+  .titleImage {
+    top: 2vh;
+  }
+
+  .blurb {
+    right: 0;
+    top: 30vh;
+    margin: 0.5rem 0;
+  }
+
+  .blurb h1 {
+    font-size: calc(38rem / 16);
+  }
+
+  .blurb h3 {
+    font-size: calc(25rem / 16);
+  }
+
+  .viewButton {
+    font-size: calc(25rem / 16);
+  }
+
+  .top {
+    margin: 0 5%;
+    position: relative;
+  }
+
+  .title {
+    margin-top: 4rem;
+    font-size: 250%;
+  }
+
+  .space {
+    top: 225px;
+    right: 25%;
+  }
+
+  .planetBody {
+    padding: 24px;
+    width: 102px;
+    height: 102px;
+  }
+
+  .planetRing {
+    width: 150px;
+    height: 150px;
+  }
+
+  .moon {
+    position: absolute;
+    right: 12px;
+    top: 140px;
+  }
+
+  .moon img {
+    width: 30px;
+    height: 30px;
+  }
+
+  .topCurve {
+    position: absolute;
+  }
+
+  .bottomCurve {
+    margin-top: 100px;
+    margin-bottom: 175px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .title {
+    margin-top: 2rem;
+    font-size: 200%;
+  }
+}
+
+.homeSectionsStyles {
+  width: 70vw;
+  max-width: 1000px;
+}

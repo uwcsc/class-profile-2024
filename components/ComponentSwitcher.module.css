@@ -1,0 +1,63 @@
+.btn {
+  --button-color: var(--primary-accent-darker);
+  --border-color: var(--link);
+
+  --selected-button-color: var(--primary-accent-dark);
+  --selected-button-border-color: var(--link-hover);
+
+  --hover-button-color: var(--primary-accent-dark);
+  --hover-button-border-color: var(--link-hover);
+
+  display: inline-block;
+  height: calc(60rem / 16);
+  line-height: calc(30rem / 16);
+  background-color: var(--button-color);
+  padding: 0 calc(30rem / 16);
+  border-radius: 99em;
+  text-decoration: none;
+  color: #fff;
+  font-size: calc(18rem / 16);
+  vertical-align: bottom;
+  white-space: nowrap;
+  border: calc(3rem / 16) solid var(--border-color);
+  font-family: "Lexend", sans-serif;
+  transition:
+    0.15s background-color,
+    0.15s border-color,
+    0.15s color,
+    0.15s fill;
+  font-weight: 600;
+  cursor: pointer;
+  margin: calc(8rem / 16) calc(3rem / 16);
+  text-align: center;
+}
+
+.btn:hover {
+  --button-color: var(--hover-button-color);
+  --border-color: var(--hover-button-border-color);
+
+  background-color: var(--button-color);
+  border: calc(3rem / 16) solid var(--border-color);
+}
+
+.btnContainer {
+  display: block;
+  text-align: center;
+  margin: auto;
+}
+
+.selectedBtn {
+  --button-color: var(--selected-button-color);
+  --border-color: var(--selected-button-border-color);
+
+  background-color: var(--button-color);
+  border: calc(3rem / 16) solid var(--border-color);
+}
+
+.selectedBtn:hover {
+  --button-color: var(--hover-button-color);
+  --border-color: var(--hover-button-border-color);
+
+  background-color: var(--button-color);
+  border: calc(3rem / 16) solid var(--border-color);
+}
