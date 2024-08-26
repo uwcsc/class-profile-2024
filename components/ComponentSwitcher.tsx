@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from "react";
-
-import styles from "./ComponentSwitcher.module.css";
+import React, { useEffect, useState } from "react";
 
 type ComponentSwitcherProps = {
   buttonList: string[];
@@ -27,10 +25,13 @@ export function ComponentSwitcher({ buttonList, graphList }: ComponentSwitcherPr
   return (
     <div>
       <div>{currentGraph}</div>
-      <div className={styles.btnContainer}>
+      <div className="flex items-center gap-2">
         {buttonList.map((buttonName, idx) => (
           // we may also apply style if currently selected button === buttonName
-          <button key={idx} className={`${styles.btn} ${selectedButton === buttonName ? styles.selectedBtn : ""}`} onClick={() => handleSwitch(buttonName)}>
+          <button
+            key={idx}
+            className={`h-[calc(60rem/16)] leading-[calc(30rem/16)] px-[calc(30rem/16)] rounded-full font-semibold whitespace-nowrap border-[calc(3rem/16)] transition-colors ${selectedButton === buttonName ? "bg-dark-pink border-light-pink" : "bg-darker-pink border-pink hover:bg-dark-pink hover:border-light-pink"}`}
+            onClick={() => handleSwitch(buttonName)}>
             {buttonName}
           </button>
         ))}

@@ -29,6 +29,9 @@ importers:
       '@visx/mock-data':
         specifier: ^3.3.0
         version: 3.3.0
+      '@visx/point':
+        specifier: ^3.3.0
+        version: 3.3.0
       '@visx/scale':
         specifier: ^3.5.0
         version: 3.5.0

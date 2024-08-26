@@ -1,9 +1,7 @@
+import { lexend } from "@/utils/fonts";
 import { Viewport } from "next";
-import { Lexend } from "next/font/google";
 import { title } from "../utils/title";
 import "./globals.css";
-
-const lexend = Lexend({ subsets: ["latin"] });
 
 export const metadata = title("Home");
 
@@ -14,7 +12,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${lexend.className}`}>
+    <html lang="en" className={`${lexend}`}>
       <body>{children}</body>
     </html>
   );

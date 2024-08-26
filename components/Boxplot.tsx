@@ -13,8 +13,6 @@ import React from "react";
 
 import { getTooltipPosition, TooltipWrapper } from "./TooltipWrapper";
 
-import styles from "./Boxplot.module.css";
-
 const DEFAULT_LABEL_SIZE = 16;
 const TICK_LABEL_FONT_WEIGHT = 800;
 
@@ -252,7 +250,7 @@ export const BoxPlot = withTooltip<StatsPlotProps, TooltipData>(
             {plotData.map((d: Stats, i) => (
               <Group key={i}>
                 <VisxBoxPlot
-                  className={background ? styles.blueboxplot : styles.pinkboxplot}
+                  className={background ? "chart-blue" : "chart-pink"}
                   min={getMin(d)}
                   max={getMax(d)}
                   left={xScale(getX(d))! + boxPlotLeftOffset * constrainedWidth + valueAxisLeftMargin}

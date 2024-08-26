@@ -10,7 +10,7 @@ import { withTooltip } from "@visx/tooltip";
 
 import { getTooltipPosition, TooltipWrapper } from "./TooltipWrapper";
 
-import styles from "./BarGraph.module.css";
+import { lexend } from "@/utils/fonts";
 
 interface BarGraphProps {
   data: BarGraphData[];
@@ -128,7 +128,7 @@ export const BarGraphHorizontal = withTooltip<BarGraphProps, TooltipData>(
                 const backgroundBarWidth = barWidth / (1 - barPadding);
                 return idx % 2 === 0 ? (
                   <Bar
-                    className={styles.barBackground}
+                    className="fill-bar-background"
                     key={`bar-${barName}-background`}
                     x={0}
                     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -146,7 +146,7 @@ export const BarGraphHorizontal = withTooltip<BarGraphProps, TooltipData>(
                 const barLength = valuePoint(d);
                 const barWidth = categoryScale.bandwidth();
                 return (
-                  <Group className={styles.barGroup} key={`bar-${barName}`}>
+                  <Group key={`bar-${barName}`}>
                     <Bar
                       onMouseMove={(e) => {
                         const tooltipPos = getTooltipPosition(e);
@@ -157,7 +157,7 @@ export const BarGraphHorizontal = withTooltip<BarGraphProps, TooltipData>(
                         });
                       }}
                       onMouseOut={hideTooltip}
-                      className={`${styles.bar} ${styles[color]}`}
+                      className={`chart-${color}`}
                       x={0}
                       y={categoryPoint(d)}
                       width={barLength}
@@ -174,12 +174,11 @@ export const BarGraphHorizontal = withTooltip<BarGraphProps, TooltipData>(
               tickLabelProps={() => {
                 return {
                   ...leftTickLabelProps,
-                  className: styles.tickLabel,
+                  className: `fill-primary ${lexend} font-bold`,
                   fontSize: `${categoryTickLabelSize / 16}rem`,
                 };
               }}
               label={categoryAxisLabel}
-              labelClassName={styles.axisLabel}
               labelOffset={categoryAxisLabelOffset}
               labelProps={{
                 fontSize: `${categoryAxisLabelSize / 16}rem`,
@@ -194,13 +193,12 @@ export const BarGraphHorizontal = withTooltip<BarGraphProps, TooltipData>(
               tickLabelProps={() => {
                 return {
                   ...bottomTickLabelProps,
-                  className: styles.tickLabel,
+                  className: `fill-primary ${lexend} font-bold`,
                   dy: defaultLabelDy,
                   fontSize: `${valueTickLabelSize / 16}rem`,
                 };
               }}
               label={valueAxisLabel}
-              labelClassName={styles.axisLabel}
               labelOffset={valueAxisLabelOffset}
               labelProps={{
                 fontSize: `${valueAxisLabelSize / 16}rem`,
@@ -281,7 +279,7 @@ export const BarGraphVertical = withTooltip<BarGraphProps, TooltipData>(
                 const backgroundBarWidth = barWidth / (1 - barPadding);
                 return idx % 2 === 0 ? (
                   <Bar
-                    className={styles.barBackground}
+                    className="fill-bar-background"
                     key={`bar-${barName}-background`}
                     // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                     x={categoryPoint(d)! - (backgroundBarWidth - barWidth) / 2}
@@ -299,7 +297,7 @@ export const BarGraphVertical = withTooltip<BarGraphProps, TooltipData>(
                 const barHeight = valueMax - valuePoint(d);
                 const barWidth = categoryScale.bandwidth();
                 return (
-                  <Group className={styles.barGroup} key={`bar-${barName}`}>
+                  <Group key={`bar-${barName}`}>
                     <Bar
                       onMouseMove={(e) => {
                         const tooltipPos = getTooltipPosition(e);
@@ -310,7 +308,7 @@ export const BarGraphVertical = withTooltip<BarGraphProps, TooltipData>(
                         });
                       }}
                       onMouseOut={hideTooltip}
-                      className={`${styles.bar} ${styles[color]}`}
+                      className={`chart-${color}`}
                       x={categoryPoint(d)}
                       y={valueMax - barHeight}
                       width={barWidth}
@@ -329,7 +327,7 @@ export const BarGraphVertical = withTooltip<BarGraphProps, TooltipData>(
                 const alternatingDy = index % 2 == 0 ? defaultLabelDy : lowerLabelDy;
                 return {
                   ...bottomTickLabelProps,
-                  className: styles.tickLabel,
+                  className: `fill-primary ${lexend} font-bold`,
                   dy: alternatingLabel ? alternatingDy : defaultLabelDy,
                   fontSize: `${categoryTickLabelSize / 16}rem`,
                   width: categoryScale.bandwidth(),
@@ -337,7 +335,6 @@ export const BarGraphVertical = withTooltip<BarGraphProps, TooltipData>(
                 };
               }}
               label={categoryAxisLabel}
-              labelClassName={styles.axisLabel}
               labelOffset={categoryAxisLabelOffset}
               labelProps={{
                 fontSize: `${categoryAxisLabelSize / 16}rem`,
@@ -351,14 +348,13 @@ export const BarGraphVertical = withTooltip<BarGraphProps, TooltipData>(
               tickLabelProps={() => {
                 return {
                   ...leftTickLabelProps,
-                  className: styles.tickLabel,
+                  className: `fill-primary ${lexend} font-bold`,
                   dx: "-0.5rem",
                   dy: "0.25rem",
                   fontSize: `${valueTickLabelSize / 16}rem`,
                 };
               }}
               label={valueAxisLabel}
-              labelClassName={styles.axisLabel}
               labelOffset={valueAxisLabelOffset}
               labelProps={{
                 fontSize: `${valueAxisLabelSize / 16}rem`,

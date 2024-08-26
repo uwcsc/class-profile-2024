@@ -2,6 +2,72 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --pink: #fe5f8f;
+  --dark-pink: #dc538e;
+  --darker-pink: #c8417c;
+  --light-pink: #faa3bd;
+  --primary: #fdf9ec;
+  --yellow: #fbd961;
+  --bar-background: #2c3651;
+  --chart-blue-light: #3472a8;
+  --chart-blue-heavy: #559ad6;
+  --chart-yellow-light: #fff0bb;
+  --chart-yellow-heavy: #fbd961;
+  --chart-green-light: #0f9635;
+  --chart-green-heavy: #4bbc6b;
+  --chart-pink-light: #ba4366;
+  --chart-pink-heavy: #dd547d;
+}
+
+.chart-base {
+  @apply transition-all duration-500;
+  fill: var(--chart-light);
+}
+
+.chart-base:hover {
+  fill: var(--chart-dark);
+  filter: drop-shadow(0 0 0.5rem var(--chart-light));
+}
+
+.chart-blue {
+  @apply chart-base;
+  --chart-light: var(--chart-blue-light);
+  --chart-dark: var(--chart-blue-heavy);
+}
+
+.chart-yellow {
+  @apply chart-base;
+  --chart-light: var(--chart-yellow-light);
+  --chart-dark: var(--chart-yellow-heavy);
+}
+
+.chart-green {
+  @apply chart-base;
+  --chart-light: var(--chart-green-light);
+  --chart-dark: var(--chart-green-heavy);
+}
+
+.chart-pink {
+  @apply chart-base;
+  --chart-light: var(--chart-pink-light);
+  --chart-dark: var(--chart-pink-heavy);
+}
+
+.animated-underline {
+  @apply relative;
+}
+
+.animated-underline::after {
+  content: "";
+  @apply absolute w-full scale-x-0 h-0.5 bottom-0 left-0 bg-pink cursor-pointer origin-bottom-right transition-transform duration-[250ms] ease-out;
+}
+
+.animated-underline:hover::after,
+.animated-underline-box:hover .animated-underline::after {
+  @apply scale-x-100 origin-bottom-left;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: calc(92rem / 16);
