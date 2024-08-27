@@ -1,3 +1,4 @@
+import { Color } from "@/utils/Color";
 import { AxisBottom, AxisLeft } from "@visx/axis";
 import { bottomTickLabelProps } from "@visx/axis/lib/axis/AxisBottom";
 import { leftTickLabelProps } from "@visx/axis/lib/axis/AxisLeft";
@@ -7,12 +8,10 @@ import { LegendOrdinal } from "@visx/legend";
 import { scaleBand, scaleLinear, scaleOrdinal } from "@visx/scale";
 import { LinePath } from "@visx/shape";
 import { withTooltip } from "@visx/tooltip";
-import React from "react";
-import { Color } from "@/utils/Color";
 
 import { getTooltipPosition, TooltipWrapper } from "./TooltipWrapper";
 
-import styles from "./LineGraph.module.css";
+import { lexend } from "@/utils/fonts";
 
 interface LineData {
   label: string;
@@ -132,7 +131,7 @@ export const LineGraph = withTooltip<LineGraphProps, TooltipData>(
 
     return (
       <div>
-        <div className={styles.legend}>
+        <div className="flex m-[calc(16rem/8)] justify-start lg:justify-center">
           <LegendOrdinal scale={colorScale} direction="row" itemMargin={itemMargin} labelAlign="center" />
         </div>
         <svg width={width} height={height}>
@@ -166,7 +165,7 @@ export const LineGraph = withTooltip<LineGraphProps, TooltipData>(
               tickLabelProps={() => {
                 return {
                   ...bottomTickLabelProps,
-                  className: styles.tickLabel,
+                  className: `fill-primary font-bold ${lexend}`,
                   dy: "-0.25rem",
                   fontSize: `${xTickLabelSize / 16}rem`,
                   width: xScale.bandwidth(),
@@ -182,7 +181,7 @@ export const LineGraph = withTooltip<LineGraphProps, TooltipData>(
               tickLabelProps={() => {
                 return {
                   ...leftTickLabelProps,
-                  className: styles.tickLabel,
+                  className: `fill-primary font-bold ${lexend}`,
                   dx: "1.25rem",
                   dy: "0.25rem",
                   fontSize: `${yTickLabelSize / 16}rem`,
@@ -204,7 +203,7 @@ export const LineGraph = withTooltip<LineGraphProps, TooltipData>(
                       }}
                       onMouseOut={hideTooltip}
                       data={lineData}
-                      className={styles.line}
+                      className="hover-shadow"
                       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
                       x={(d) => xScale(getX(d))!}
                       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion

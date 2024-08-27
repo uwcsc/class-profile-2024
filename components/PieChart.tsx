@@ -5,8 +5,6 @@ import { withTooltip } from "@visx/tooltip";
 
 import { getTooltipPosition, TooltipWrapper } from "./TooltipWrapper";
 
-import styles from "./PieChart.module.css";
-
 interface PieChartProps {
   data: PieChartData[];
   /** Width of the entire graph, including labels, in pixels. */
@@ -72,7 +70,6 @@ export const PieChart = withTooltip<PieChartProps>(
     const responsiveLabelTextSize = Math.min(labelTextSize, width / 10);
 
     const sum = data.map((x) => x.value).reduce((x, y) => x + y);
-    const piePathClassName = background ? styles.piePathWithBackground : styles.piePathWithoutBackground;
 
     return (
       <div>
@@ -90,7 +87,7 @@ export const PieChart = withTooltip<PieChartProps>(
                 return arcs.map((arc) => {
                   const pathArc = path(arc) as string;
                   return (
-                    <Group className={styles.group} key={`arc-${arc.data.category}`}>
+                    <Group key={`arc-${arc.data.category}`}>
                       <path
                         onMouseMove={(e) => {
                           const tooltipPos = getTooltipPosition(e);
@@ -101,7 +98,8 @@ export const PieChart = withTooltip<PieChartProps>(
                           });
                         }}
                         onMouseOut={hideTooltip}
-                        className={piePathClassName}
+                        className={`${background ? "chart-blue" : "chart-pink"} stroke-primary stroke-1 transition-colors duration-[500ms]`}
+                        style={{ strokeLinecap: "round" }}
                         d={pathArc}
                       />
                     </Group>
@@ -154,10 +152,10 @@ export function PieSliceLabel({
         const pathArc = path(arc) as string;
 
         return (
-          <Group className={styles.group} key={`arc-${arc.data.category}`}>
-            <path className={styles.labelPath} d={pathArc} />
+          <Group key={`arc-${arc.data.category}`}>
+            <path className="fill-transparent" d={pathArc} />
             <Text
-              className={styles.labelText}
+              className="fill-white"
               x={(labelTextRadialOffset * centroidX) / Math.sqrt(centroidX ** 2 + centroidY ** 2) + centroidX + labelTextXOffset}
               y={(labelTextRadialOffset * centroidY) / Math.sqrt(centroidX ** 2 + centroidY ** 2) + centroidY + labelTextYOffset}
               textAnchor={centroidX > 100 ? "start" : centroidX < -100 ? "end" : "middle"}

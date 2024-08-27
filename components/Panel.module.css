@@ -1,9 +1,0 @@
-.textbox {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  padding: calc(80rem / 16);
-  background-color: var(--side-panel);
-  border-radius: calc(20rem / 16);
-  align-self: center;
-}

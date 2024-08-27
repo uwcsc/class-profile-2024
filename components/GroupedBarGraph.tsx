@@ -13,7 +13,7 @@ import React, { useState } from "react";
 
 import { getTooltipPosition, TooltipWrapper } from "./TooltipWrapper";
 
-import styles from "./GroupedBarGraph.module.css";
+import { lexend } from "@/utils/fonts";
 
 interface GroupedBarGraphProps {
   data: GroupedBarGraphData[];
@@ -163,8 +163,8 @@ export const GroupedBarGraphVertical = withTooltip<GroupedBarGraphProps, Tooltip
     valueScale.rangeRound([valueMax, 0]);
 
     return (
-      <div className={className ? `${className} ${styles.wrapper}` : styles.wrapper}>
-        <div className={styles.legend}>
+      <div className={`${className || ""} "flex flex-col"`}>
+        <div className="flex m-[calc(16rem/16)] justify-center">
           <LegendOrdinal scale={colorScale} direction="row" itemMargin={itemMargin} labelAlign="center" />
         </div>
         <svg width={width} height={height}>
@@ -187,7 +187,7 @@ export const GroupedBarGraphVertical = withTooltip<GroupedBarGraphProps, Tooltip
                 const backgroundBarWidth = barWidth / (1 - BAR_PADDING);
                 return idx % 2 === 0 ? (
                   <Bar
-                    className={styles.barBackground}
+                    className="fill-bar-background"
                     key={`bar-${barName}-background`}
                     x={
                       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
@@ -245,7 +245,7 @@ export const GroupedBarGraphVertical = withTooltip<GroupedBarGraphProps, Tooltip
                 const alternatingDy = index % 2 == 0 ? defaultLabelDy : lowerLabelDy;
                 return {
                   ...bottomTickLabelProps,
-                  className: styles.tickLabel,
+                  className: `fill-primary font-bold ${lexend}`,
                   dy: alternatingLabel ? alternatingDy : defaultLabelDy,
                   fontSize: `${categoryTickLabelSize / 16}rem`,
                   width: categoryScale.bandwidth(),
@@ -253,7 +253,7 @@ export const GroupedBarGraphVertical = withTooltip<GroupedBarGraphProps, Tooltip
                 };
               }}
               label={categoryAxisLabel}
-              labelClassName={styles.axisLabel}
+              labelClassName={`fill-primary font-bold ${lexend}`}
               labelOffset={categoryAxisLabelOffset}
               labelProps={{
                 fontSize: `${categoryAxisLabelSize / 16}rem`,
@@ -267,14 +267,14 @@ export const GroupedBarGraphVertical = withTooltip<GroupedBarGraphProps, Tooltip
               tickLabelProps={() => {
                 return {
                   ...leftTickLabelProps,
-                  className: styles.tickLabel,
+                  className: `fill-primary font-bold ${lexend}`,
                   dx: "-0.5rem",
                   dy: "0.25rem",
                   fontSize: `${valueTickLabelSize / 16}rem`,
                 };
               }}
               label={valueAxisLabel}
-              labelClassName={styles.axisLabel}
+              labelClassName={`fill-primary font-bold ${lexend}`}
               labelOffset={valueAxisLabelOffset}
               labelProps={{
                 fontSize: `${valueAxisLabelSize / 16}rem`,
@@ -361,8 +361,8 @@ export const GroupedBarGraphHorizontal = withTooltip<GroupedBarGraphProps, Toolt
     valueScale.rangeRound([valueMax, 0]);
 
     return (
-      <div className={className ? `${className} ${styles.wrapper}` : styles.wrapper}>
-        <div className={styles.legend}>
+      <div className={`${className || ""} "flex flex-col"`}>
+        <div className="flex m-[calc(16rem/16)] justify-center">
           <LegendOrdinal scale={colorScale} direction="row" itemMargin={itemMargin} labelAlign="center" />
         </div>
         <svg width={width} height={height}>
@@ -385,7 +385,7 @@ export const GroupedBarGraphHorizontal = withTooltip<GroupedBarGraphProps, Toolt
                 const backgroundBarWidth = barWidth / (1 - BAR_PADDING);
                 return idx % 2 === 0 ? (
                   <Bar
-                    className={styles.barBackground}
+                    className="fill-bar-background"
                     key={`bar-${barName}-background`}
                     x={0}
                     y={
@@ -441,7 +441,7 @@ export const GroupedBarGraphHorizontal = withTooltip<GroupedBarGraphProps, Toolt
               tickLabelProps={() => {
                 return {
                   ...leftTickLabelProps,
-                  className: styles.tickLabel,
+                  className: `fill-primary font-bold ${lexend}`,
                   dx: "-0.5rem",
                   dy: defaultLabelDy,
                   fontSize: `${valueTickLabelSize / 16}rem`,
@@ -449,7 +449,7 @@ export const GroupedBarGraphHorizontal = withTooltip<GroupedBarGraphProps, Toolt
                 };
               }}
               label={categoryAxisLabel}
-              labelClassName={styles.axisLabel}
+              labelClassName={`fill-primary font-bold ${lexend}`}
               labelOffset={categoryAxisLabelOffset}
               labelProps={{
                 fontSize: `${categoryAxisLabelSize / 16}rem`,
@@ -464,14 +464,14 @@ export const GroupedBarGraphHorizontal = withTooltip<GroupedBarGraphProps, Toolt
               tickLabelProps={() => {
                 return {
                   ...bottomTickLabelProps,
-                  className: styles.tickLabel,
+                  className: `fill-primary font-bold ${lexend}`,
                   dy: "-0.25rem",
                   fontSize: `${categoryTickLabelSize / 16}rem`,
                   verticalAnchor: "start",
                 };
               }}
               label={valueAxisLabel}
-              labelClassName={styles.axisLabel}
+              labelClassName={`fill-primary font-bold ${lexend}`}
               labelOffset={valueAxisLabelOffset}
               labelProps={{
                 fontSize: `${valueAxisLabelSize / 16}rem`,
@@ -505,7 +505,6 @@ function HoverableBar(props: HoverableBarProps) {
 
   return (
     <Group
-      className={styles.singleBar}
       onMouseEnter={() => {
         setIsHovered(true);
       }}
@@ -513,7 +512,7 @@ function HoverableBar(props: HoverableBarProps) {
         setIsHovered(false);
       }}>
       <Bar
-        className={styles.bar}
+        className="transition-colors duration-[500ms]"
         onMouseMove={onMouseMove}
         onMouseOut={onMouseOut}
         x={bar.x}

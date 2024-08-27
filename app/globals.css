@@ -7,6 +7,9 @@
   --dark-pink: #dc538e;
   --darker-pink: #c8417c;
   --light-pink: #faa3bd;
+  --dark-blue: #141d34;
+  --light-blue: #a1ccf2;
+  --light-orange: #ffddcd;
   --primary: #fdf9ec;
   --yellow: #fbd961;
   --bar-background: #2c3651;
@@ -21,13 +24,21 @@
 }
 
 .chart-base {
-  @apply transition-all duration-500;
+  @apply transition-colors duration-[500ms];
   fill: var(--chart-light);
 }
 
 .chart-base:hover {
   fill: var(--chart-dark);
   filter: drop-shadow(0 0 0.5rem var(--chart-light));
+}
+
+.hover-shadow {
+  @apply transition-all duration-[500ms];
+}
+
+.hover-shadow:hover {
+  filter: drop-shadow(0 0 calc(4rem / 16) var(--pink));
 }
 
 .chart-blue {
@@ -143,7 +154,7 @@ body {
   --dark--secondary-accent-lighter: var(--lighter-orange);
   --dark--translucent-accent: rgba(239, 131, 157, 0.75);
   /* --dark--primary-heading: #ffc48d; */
-  --dark--primary-heading: #a1ccf2;
+  --dark--primary-heading: #;
   /* Above is New H2 */
   /* --dark--secondary-heading: var(--pink); */
   --dark--secondary-heading: #ef839d;
