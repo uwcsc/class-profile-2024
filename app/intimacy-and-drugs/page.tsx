@@ -15,14 +15,13 @@ import { Color } from "@/utils/Color";
 import { DefaultProp, barGraphMargin, barGraphProps, barGraphWidth, pieChartProps, wordCloudWidth } from "@/utils/defaultProps";
 import { useWindowDimensions } from "@/utils/getWindowDimensions";
 import { useIsMobile } from "@/utils/isMobile";
-import styles from "../basePage.module.css";
 
 export default function IntimacyAndDrugs() {
   const pageWidth = useWindowDimensions().width;
   const isMobile = useIsMobile();
 
   return (
-    <div className={styles.page}>
+    <div className="flex flex-col items-center">
       <Header />
       <SectionHeader title="Intimacy and Drugs" subtitle="What have people tried during university?" />
 
@@ -39,7 +38,6 @@ export default function IntimacyAndDrugs() {
         }
         align="left">
         <GroupedBarGraphHorizontal
-          className={styles.barGraphDemo}
           data={I1}
           barColors={[Color.chartGreenLight, Color.chartBlueLight, Color.chartPinkLight]}
           barHoverColorsMap={{
@@ -67,13 +65,13 @@ export default function IntimacyAndDrugs() {
         }
         align="right"
         noBackground>
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <BarGraphVertical data={I2i} {...barGraphProps(isMobile, pageWidth)} lowerLabelDy="0" />
         </div>
       </ComponentWrapper>
 
       <ComponentWrapper heading="If so, in which term did you first have sexual intercourse?">
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <BarGraphVertical data={I2ii} {...barGraphProps(isMobile, pageWidth, true)} lowerLabelDy="0" />
         </div>
       </ComponentWrapper>
@@ -126,7 +124,7 @@ export default function IntimacyAndDrugs() {
         heading="Have you ever cheated on someone, been cheated on, or helped someone cheat?"
         bodyText={<p>Almost all respondents have never been in any cheating situations.</p>}
         align="left">
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <BarGraphVertical data={I6} {...barGraphProps(isMobile, pageWidth, true)} lowerLabelDy="0" />
         </div>
       </ComponentWrapper>
@@ -136,7 +134,7 @@ export default function IntimacyAndDrugs() {
         bodyText={<p>Most respondents have not dated another CS/ CS/BBA / CFM student. 42 students reported having done so, while 74 said they did not.</p>}
         align="right"
         noBackground>
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={I7} {...pieChartProps(isMobile, pageWidth)} />
         </div>
       </ComponentWrapper>
@@ -151,7 +149,7 @@ export default function IntimacyAndDrugs() {
           </p>
         }
         align="left">
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={I8} {...pieChartProps(isMobile, pageWidth, true)} />
         </div>
       </ComponentWrapper>
@@ -237,19 +235,19 @@ export default function IntimacyAndDrugs() {
         }
         align="right"
         noBackground>
-        <div className={styles.quotationCarouselContainer}>
+        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
           <QuotationCarousel data={I11} circleDiameter={0} width={barGraphWidth(isMobile, pageWidth)} height={isMobile ? 600 : 500} />
         </div>
       </ComponentWrapper>
 
       <ComponentWrapper heading="Any advice for people looking for a relationship?" bodyText={<p>How does one get rizz?</p>} align="left">
-        <div className={styles.quotationCarouselContainer}>
+        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
           <QuotationCarousel data={I12} circleDiameter={0} width={barGraphWidth(isMobile, pageWidth)} height={600} />
         </div>
       </ComponentWrapper>
 
       <ComponentWrapper heading="Any advice for people already in a relationship?" align="right" noBackground>
-        <div className={styles.quotationCarouselContainer}>
+        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
           <QuotationCarousel data={I13} circleDiameter={0} width={barGraphWidth(isMobile, pageWidth)} height={600} />
         </div>
       </ComponentWrapper>

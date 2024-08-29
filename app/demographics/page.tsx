@@ -13,14 +13,13 @@ import { pageRoutes } from "@/data/routes";
 import { DefaultProp, barGraphMargin, barGraphProps, barGraphWidth, pieChartProps, wordCloudWidth } from "@/utils/defaultProps";
 import { useWindowDimensions } from "@/utils/getWindowDimensions";
 import { useIsMobile } from "@/utils/isMobile";
-import styles from "../basePage.module.css";
 
 export default function Demographics() {
   const pageWidth = useWindowDimensions().width;
   const isMobile = useIsMobile();
 
   return (
-    <div className={styles.page}>
+    <div className="flex flex-col items-center">
       <Header />
       <SectionHeader title="Demographics" subtitle="An insight into the demographics of UW's CS programs" />
 
@@ -38,7 +37,7 @@ export default function Demographics() {
             </p>
           </>
         }>
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={D1} {...pieChartProps(isMobile, pageWidth, true)} />
         </div>
       </ComponentWrapper>
@@ -61,13 +60,13 @@ export default function Demographics() {
         }
         align="right"
         noBackground>
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={D2} {...pieChartProps(isMobile, pageWidth)} />
         </div>
       </ComponentWrapper>
 
       <ComponentWrapper heading="What are your pronouns?">
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={D3} {...pieChartProps(isMobile, pageWidth, true)} labelTextSize={15} labelTextRadialOffset={-45} />
         </div>
       </ComponentWrapper>
@@ -277,7 +276,7 @@ export default function Demographics() {
       </ComponentWrapper>
 
       <ComponentWrapper heading="What immigrant generation do you belong to?" align="left">
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={D14} {...pieChartProps(isMobile, pageWidth, true)} labelTextSize={20} labelTextRadialOffset={-45} />
         </div>
       </ComponentWrapper>
@@ -296,7 +295,7 @@ export default function Demographics() {
           </p>
         }
         align="right">
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={D16} {...pieChartProps(isMobile, pageWidth, true)} labelTextSize={20} labelTextRadialOffset={-45} />
         </div>
       </ComponentWrapper>
@@ -311,7 +310,7 @@ export default function Demographics() {
         }
         align="left"
         noBackground>
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <BarGraphHorizontal data={D16i} {...barGraphProps(isMobile, pageWidth)} lowerLabelDy="0" margin={{ ...barGraphMargin, ...{ left: 150 } }} />
         </div>
       </ComponentWrapper>

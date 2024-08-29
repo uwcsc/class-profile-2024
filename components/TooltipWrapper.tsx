@@ -3,7 +3,7 @@ import { Point } from "@visx/point";
 import { Tooltip } from "@visx/tooltip";
 import React from "react";
 
-import styles from "./TooltipWrapper.module.css";
+import { lexend } from "@/utils/fonts";
 
 type TooltipWrapperProps = {
   top?: number;
@@ -32,9 +32,14 @@ function getOutmostSVG(element: Element): SVGElement | undefined {
 
 const TooltipWrapper = ({ top, left, className, header, children }: TooltipWrapperProps) => {
   return (
-    <Tooltip top={top} left={left} className={`${styles.tooltip} ${className ?? ""}`} unstyled applyPositionStyle>
-      {header ? <span className={styles.header}>{header}</span> : null}
-      {children ? <div className={styles.body}>{children}</div> : null}
+    <Tooltip
+      top={top}
+      left={left}
+      className={`${lexend} top-0 left-0 absolute bg-white pointer-events-none p-[calc(10rem/16)] rounded-[calc(10rem/16)] text-sm ${className ?? ""}`}
+      unstyled
+      applyPositionStyle>
+      {header ? <span className="m-0 text-lg font-bold text-black">{header}</span> : null}
+      {children ? <div className="text-black mt-[calc(5rem/16)] text-md">{children}</div> : null}
     </Tooltip>
   );
 };
@@ -64,4 +69,4 @@ function getTooltipPosition(e: React.MouseEvent<SVGTextElement | SVGPathElement 
   };
 }
 
-export { TooltipWrapper, getTooltipPosition };
+export { getTooltipPosition, TooltipWrapper };

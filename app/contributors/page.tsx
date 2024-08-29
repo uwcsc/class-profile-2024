@@ -6,7 +6,6 @@ import { Panel } from "@/components/Panel";
 import { SectionHeader } from "@/components/SectionHeader";
 import { CPWebDevs, communityReps, designers } from "@/data/contributors";
 import { pageRoutes } from "@/data/routes";
-import styles from "../basePage.module.css";
 
 interface ContributorProfile {
   name: string;
@@ -43,7 +42,7 @@ function ContributorGroup({ group }: ContributorGroupProps) {
 
 export default function Contributors() {
   return (
-    <div className={styles.page}>
+    <div className="flex flex-col items-center">
       <Header />
       <SectionHeader
         title="Contributors"

@@ -1,8 +1,6 @@
 import { Color } from "@/utils/Color";
 import { useState } from "react";
 
-import styles from "./QuotationCarousel.module.css";
-
 interface QuotationCarouselProps {
   data: string[];
   /** Width of the entire carousel including the buttons, in px. */
@@ -22,7 +20,7 @@ interface CarouselButtonProps {
 }
 
 export function QuotationCarousel(props: QuotationCarouselProps) {
-  const { data, width = 600, height = 100, circleDiameter = 120, minWidth = 600, className } = props;
+  const { data, width = 600, height = 100, minWidth = 600, className } = props;
   const actualWidth = width < minWidth ? minWidth : width;
   const [activeIdx, setActiveIdx] = useState(0);
 
@@ -36,28 +34,28 @@ export function QuotationCarousel(props: QuotationCarouselProps) {
 
   return (
     <section
-      className={className ? `${className} ${styles.carousel}` : styles.carousel}
+      className={`${className || ""} relative flex justify-between items-center gap-[calc(8rem/16)] m-auto`}
       style={{
         width: `${actualWidth / 16}rem`,
         minHeight: `${height / 16}rem`,
       }}>
-      <Circle className={styles.circle} diameter={circleDiameter} />
-      <Circle className={`${styles.right} ${styles.circle}`} diameter={circleDiameter} />
       <CarouselButton onClick={showPreviousCard} isPrevious />
-      <div className={styles.card}>
-        <QuotationMark className={styles.quotationMark} />
-        <ul>
+      <div
+        className="flex flex-col justify-between items-stretch gap-4 min-h-[inherit] h-full w-full p-[calc(30rem/16)] border-[calc(2rem/16)] rounded-[calc(12rem/16)] bg-light-navy"
+        style={{ filter: "box-shadow(0 calc(1rem / 16) calc(10rem / 16)" }}>
+        <QuotationMark className="w-[calc(20rem/16)] h-[calc(20rem/16)]" />
+        <ul className="flex flex-col justify-center items-center relative w-full grow">
           {data.map((quote, idx) => (
-            <li key={idx} className={idx !== activeIdx ? styles.hidden : ""}>
-              <p>{quote}</p>
+            <li key={idx} className={`absolute inset-0 list-none flex overflow-y-scroll ${idx !== activeIdx ? "invisible opacity-0" : "visible opacity-1"}`}>
+              <p className="mx-4 my-auto font-bold text-center h-max w-full">{quote}</p>
             </li>
           ))}
         </ul>
-        <div className={styles.bottomRow}>
+        <div className="flex justify-between w-full">
           <span>
             {activeIdx + 1}/{data.length}
           </span>
-          <QuotationMark className={`${styles.right} ${styles.quotationMark}`} />
+          <QuotationMark className="w-[calc(20rem/16)] h-[calc(20rem/16)] rotate-180 self-end" />
         </div>
       </div>
       <CarouselButton onClick={showNextCard} />
@@ -65,24 +63,11 @@ export function QuotationCarousel(props: QuotationCarouselProps) {
   );
 }
 
-function Circle({ className, diameter }: { className: string; diameter: number }) {
-  return (
-    <div
-      className={className}
-      aria-hidden
-      style={{
-        width: `${diameter / 16}rem`,
-        height: `${diameter / 16}rem`,
-      }}
-    />
-  );
-}
-
 function CarouselButton({ isPrevious, onClick }: CarouselButtonProps) {
   return (
-    <button className={styles.carouselButton} onClick={onClick}>
+    <button className="flex flex-col justify-center items-center p-4 h-min group" onClick={onClick}>
       <svg
-        className={isPrevious ? `${styles.previous} ${styles.arrow}` : styles.arrow}
+        className={`${isPrevious ? "rotate-180" : ""} relative w-[calc(20rem/16)] h-[calc(40rem/16)] transition-transform duration-200 ${isPrevious ? "group-hover:-translate-x-[calc(4rem/16)]" : "group-hover:translate-x-[calc(4rem/16)]"}`}
         width="39"
         height="72"
         viewBox="0 0 39 72"

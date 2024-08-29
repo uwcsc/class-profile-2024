@@ -1,5 +1,6 @@
-import { AxisLeft, AxisBottom } from "@visx/axis";
-import { GridRows, GridColumns } from "@visx/grid";
+import { Color } from "@/utils/Color";
+import { AxisBottom, AxisLeft } from "@visx/axis";
+import { GridColumns, GridRows } from "@visx/grid";
 import { Group } from "@visx/group";
 import { LegendOrdinal } from "@visx/legend";
 import { Point } from "@visx/point";
@@ -8,12 +9,8 @@ import { BarStack, BarStackHorizontal, Line } from "@visx/shape";
 import { SeriesPoint } from "@visx/shape/lib/types";
 import { withTooltip } from "@visx/tooltip";
 import { WithTooltipProvidedProps } from "@visx/tooltip/lib/enhancers/withTooltip";
-import React from "react";
-import { Color } from "@/utils/Color";
 
 import { getTooltipPosition, TooltipWrapper } from "./TooltipWrapper";
-
-import styles from "./StackedBarGraph.module.css";
 
 interface StackedBarData {
   category: string;
@@ -132,8 +129,8 @@ export const StackedBarGraphVertical = withTooltip<StackedBarProps, TooltipData>
     valueScale.range([yMax, 0]);
 
     return width < 10 ? null : (
-      <div className={styles.container}>
-        <div className={styles.legend}>
+      <div className="relative">
+        <div className="flex top-0 justify-center">
           <LegendOrdinal scale={colorScale} direction="row" itemMargin={itemMargin} labelAlign="center" />
         </div>
 
@@ -161,7 +158,7 @@ export const StackedBarGraphVertical = withTooltip<StackedBarProps, TooltipData>
                 barStacks.map((barStack) =>
                   barStack.bars.map((bar) => (
                     <rect
-                      className={styles.barStack}
+                      className="hover-shadow"
                       key={`bar-stack-${barStack.index}-${bar.index}`}
                       x={bar.x}
                       y={bar.y}
@@ -311,8 +308,8 @@ export const StackedBarGraphHorizontal = withTooltip<StackedBarProps, TooltipDat
     valueScale.range([0, xMax]);
 
     return width < 10 ? null : (
-      <div className={styles.container}>
-        <div className={styles.legend}>
+      <div className="relative">
+        <div className="flex top-0 justify-center">
           <LegendOrdinal scale={colorScale} direction="row" itemMargin={itemMargin} />
         </div>
 
@@ -348,7 +345,7 @@ export const StackedBarGraphHorizontal = withTooltip<StackedBarProps, TooltipDat
                 barStacks.map((barStack) =>
                   barStack.bars.map((bar) => (
                     <rect
-                      className={styles.barStack}
+                      className="hover-shadow"
                       key={`bar-stack-${barStack.index}-${bar.index}`}
                       x={bar.x}
                       y={bar.y}

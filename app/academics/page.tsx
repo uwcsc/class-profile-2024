@@ -58,14 +58,13 @@ import { Color } from "@/utils/Color";
 import { DefaultProp, barGraphMargin, barGraphProps, barGraphWidth, pieChartProps, wordCloudWidth } from "@/utils/defaultProps";
 import { useWindowDimensions } from "@/utils/getWindowDimensions";
 import { useIsMobile } from "@/utils/isMobile";
-import styles from "../basePage.module.css";
 
 export default function Academics() {
   const pageWidth = useWindowDimensions().width;
   const isMobile = useIsMobile();
 
   return (
-    <div className={styles.page}>
+    <div className="flex flex-col items-center">
       <Header />
       <SectionHeader title="Academics" />
 
@@ -86,7 +85,7 @@ export default function Academics() {
           </p>
         }
         align="left">
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={A1} {...pieChartProps(isMobile, pageWidth, true)} />
         </div>
       </ComponentWrapper>
@@ -354,7 +353,7 @@ export default function Academics() {
         }
         align="right"
         noBackground>
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={A12} {...pieChartProps(isMobile, pageWidth)} />
         </div>
       </ComponentWrapper>
@@ -411,7 +410,7 @@ export default function Academics() {
         }
         align="right"
         noBackground>
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={A13} {...pieChartProps(isMobile, pageWidth, false)} />
         </div>
       </ComponentWrapper>
@@ -435,7 +434,7 @@ export default function Academics() {
           </>
         }
         align="left">
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <BarGraphHorizontal data={A13i} {...barGraphProps(isMobile, pageWidth, true)} margin={{ ...barGraphMargin, ...{ left: 120 } }} />
         </div>
       </ComponentWrapper>
@@ -450,7 +449,7 @@ export default function Academics() {
         }
         align="right"
         noBackground>
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <BarGraphVertical data={A13ii} {...barGraphProps(isMobile, pageWidth, false)} />
         </div>
       </ComponentWrapper>
@@ -465,7 +464,7 @@ export default function Academics() {
           </p>
         }
         align="left">
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <BarGraphHorizontal
             data={A13iii}
             widthAlternatingLabel={1000}
@@ -684,7 +683,7 @@ export default function Academics() {
         }
         align="left"
         noBackground>
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={A20} {...pieChartProps(isMobile, pageWidth, false)} />
         </div>
       </ComponentWrapper>
@@ -725,7 +724,7 @@ export default function Academics() {
       </ComponentWrapper>
 
       <ComponentWrapper heading="What made you want to complete the option, specialization, and/or minor?" align="left" noBackground>
-        <div className={styles.quotationCarouselContainer}>
+        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
           <QuotationCarousel data={A20iv} circleDiameter={0} height={300} />
         </div>
       </ComponentWrapper>
@@ -753,7 +752,7 @@ export default function Academics() {
         }
         align="left"
         noBackground>
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <BarGraphVertical data={A22} {...barGraphProps(isMobile, pageWidth, false)} />
         </div>
       </ComponentWrapper>
@@ -783,7 +782,7 @@ export default function Academics() {
         }
         align="left"
         noBackground>
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={A24} {...pieChartProps(isMobile, pageWidth, false)} />
         </div>
       </ComponentWrapper>
@@ -797,7 +796,7 @@ export default function Academics() {
           </p>
         }
         align="right">
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={A24i} {...pieChartProps(isMobile, pageWidth, true)} />
         </div>
       </ComponentWrapper>
@@ -813,19 +812,19 @@ export default function Academics() {
         }
         align="left"
         noBackground>
-        <div className={styles.quotationCarouselContainer}>
+        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
           <QuotationCarousel data={A24ii} circleDiameter={0} height={300} />
         </div>
       </ComponentWrapper>
 
       <ComponentWrapper heading="What was the hardest thing about going on exchange?" align="right">
-        <div className={styles.quotationCarouselContainer}>
+        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
           <QuotationCarousel data={A24iii} circleDiameter={0} height={300} />
         </div>
       </ComponentWrapper>
 
       <ComponentWrapper heading="What is your favourite memory from your time during the exchange?" align="right" noBackground>
-        <div className={styles.quotationCarouselContainer}>
+        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
           <QuotationCarousel data={A24iv} circleDiameter={0} height={300} />
         </div>
       </ComponentWrapper>
@@ -862,7 +861,7 @@ export default function Academics() {
         }
         align="right"
         noBackground>
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={A26} {...pieChartProps(isMobile, pageWidth, false)} />
         </div>
       </ComponentWrapper>

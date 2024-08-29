@@ -23,7 +23,7 @@ export function Header() {
         }}
       />
       <div
-        className="flex justify-between items-center fixed w-full top-0 left-0 z-[98] box-border px-[6.25rem]"
+        className="flex justify-between items-center fixed w-full top-0 left-0 z-[98] box-border px-[1rem] md:px-[3rem] lg:px-[6.25rem]"
         style={{
           backgroundColor: `rgb(var(--navbar-background-rgb), ${(state.y ?? 0) / 200})`,
           paddingTop: verticalPadding,

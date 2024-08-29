@@ -4,10 +4,10 @@ import { Header } from "@/components/Header";
 import { Panel } from "@/components/Panel";
 import { Sections } from "@/components/Sections";
 import { pageRoutes } from "@/data/routes";
+import { basePath } from "@/utils/getBasePath";
 import { title } from "@/utils/title";
 import Image from "next/image";
 import styles from "./page.module.css";
-import { basePath } from "@/utils/getBasePath";
 
 export const metadata = title("Home");
 
@@ -15,9 +15,13 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div className={styles.main}>
-        <div className={styles.top}>
-          <h1 className={styles.title}>UW Computer Science 2023 Class Profile</h1>
+      <div className="flex flex-col items-center gap-[calc(65rem/16)] mb-[calc(65rem/16)]">
+        <div className="mx-[10%] relative">
+          <h1
+            className="mt-[2rem] sm:mt-[4rem] md:mt-[6rem] lg:mt-[8rem] xl:mt-[12rem] text-[200%] sm:text-[250%] md:text-[320%] lg:text-[400%] xl:text-[600%] bg-[linear-gradient(285deg,#fff0bb_34.7%,#faa3bd_79.88%)] bg-clip-text"
+            style={{ WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
+            UW Computer Science 2023 Class Profile
+          </h1>
           <div className={styles.space}>
             <div className={styles.planet}>
               <Image className={styles.planetRing} src={basePath + "/images/planet-ring.svg"} alt="Planet Ring" width={300} height={300} />

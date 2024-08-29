@@ -12,14 +12,13 @@ import { pageRoutes } from "@/data/routes";
 import { barGraphProps, barGraphWidth, pieChartProps } from "@/utils/defaultProps";
 import { useWindowDimensions } from "@/utils/getWindowDimensions";
 import { useIsMobile } from "@/utils/isMobile";
-import styles from "../basePage.module.css";
 
 export default function MentalHealth() {
   const pageWidth = useWindowDimensions().width;
   const isMobile = useIsMobile();
 
   return (
-    <div className={styles.page}>
+    <div className="flex flex-col items-center">
       <Header />
       <SectionHeader title="Mental Health" />
 
@@ -33,7 +32,7 @@ export default function MentalHealth() {
           </p>
         }
         align="left">
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={H1} {...pieChartProps(isMobile, pageWidth, true)} />
         </div>
       </ComponentWrapper>
@@ -49,7 +48,7 @@ export default function MentalHealth() {
         }
         align="right"
         noBackground>
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={H2} {...pieChartProps(isMobile, pageWidth)} />
         </div>
       </ComponentWrapper>
@@ -102,7 +101,7 @@ export default function MentalHealth() {
           </>
         }
         align="left">
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={H5} {...pieChartProps(isMobile, pageWidth, true)} />
         </div>
       </ComponentWrapper>
@@ -148,19 +147,19 @@ export default function MentalHealth() {
         }
         align="right"
         noBackground>
-        <div className={styles.quotationCarouselContainer}>
+        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
           <QuotationCarousel data={H7} circleDiameter={0} width={barGraphWidth(isMobile, pageWidth)} height={500} />
         </div>
       </ComponentWrapper>
 
       <ComponentWrapper heading="What do you do to help cope with your mental health issues?" align="left">
-        <div className={styles.quotationCarouselContainer}>
+        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
           <QuotationCarousel data={H8} circleDiameter={0} width={barGraphWidth(isMobile, pageWidth)} height={500} />
         </div>
       </ComponentWrapper>
 
       <ComponentWrapper heading="What do you think UW can do better to accommodate your mental health?" align="center" noBackground>
-        <div className={styles.quotationCarouselContainer}>
+        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
           <QuotationCarousel data={H9} circleDiameter={0} width={barGraphWidth(isMobile, pageWidth)} height={500} />
         </div>
       </ComponentWrapper>
@@ -184,7 +183,7 @@ export default function MentalHealth() {
       </ComponentWrapper>
 
       <ComponentWrapper heading="What has been your experience with imposter syndrome?" align="left" noBackground>
-        <div className={styles.quotationCarouselContainer}>
+        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
           <QuotationCarousel data={H11} circleDiameter={0} width={barGraphWidth(isMobile, pageWidth)} height={500} />
         </div>
       </ComponentWrapper>

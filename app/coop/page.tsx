@@ -17,7 +17,6 @@ import { Color } from "@/utils/Color";
 import { DefaultProp, barGraphMargin, barGraphProps, pieChartProps, wordCloudWidth } from "@/utils/defaultProps";
 import { useWindowDimensions } from "@/utils/getWindowDimensions";
 import { useIsMobile } from "@/utils/isMobile";
-import styles from "../basePage.module.css";
 
 export default function Coop() {
   const pageWidth = useWindowDimensions().width;
@@ -28,7 +27,7 @@ export default function Coop() {
   const colorRange2 = [Color.primaryAccent, Color.secondaryAccentLight, Color.primaryAccentLight, Color.secondaryAccent, Color.primaryAccentLighter];
 
   return (
-    <div className={styles.page}>
+    <div className="flex flex-col items-center">
       <Header />
       <SectionHeader title="Co-op" subtitle="Explore careers, gain experience and earn money through UWaterloo's co-op program!" />
       {/* C1 */}
@@ -41,7 +40,7 @@ export default function Coop() {
           </p>
         }
         align="left">
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={C1} {...pieChartProps(isMobile, pageWidth, true)} />
         </div>
       </ComponentWrapper>
@@ -84,7 +83,7 @@ export default function Coop() {
           </>
         }
         align="left">
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={C3} {...pieChartProps(isMobile, pageWidth, true)} />
         </div>
       </ComponentWrapper>
@@ -100,7 +99,7 @@ export default function Coop() {
         }
         align="right"
         noBackground>
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={C4} {...pieChartProps(isMobile, pageWidth)} />
         </div>
       </ComponentWrapper>

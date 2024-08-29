@@ -12,14 +12,13 @@ import { pageRoutes } from "@/data/routes";
 import { DefaultProp, barGraphMargin, barGraphProps, barGraphWidth, pieChartProps } from "@/utils/defaultProps";
 import { useWindowDimensions } from "@/utils/getWindowDimensions";
 import { useIsMobile } from "@/utils/isMobile";
-import styles from "../basePage.module.css";
 
 export default function LifestyleAndInterests() {
   const pageWidth = useWindowDimensions().width;
   const isMobile = useIsMobile();
 
   return (
-    <div className={styles.page}>
+    <div className="flex flex-col items-center">
       <Header />
       <SectionHeader title="Lifestyle and Interests" subtitle="What did the class of 2023 do in their free time?" />
 
@@ -51,7 +50,7 @@ export default function LifestyleAndInterests() {
         }
         align="right"
         noBackground>
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={L2} {...pieChartProps(isMobile, pageWidth)} />
         </div>
       </ComponentWrapper>

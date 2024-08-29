@@ -12,14 +12,13 @@ import { pageRoutes } from "@/data/routes";
 import { DefaultProp, barGraphMargin, barGraphProps, barGraphWidth, pieChartProps, wordCloudWidth } from "@/utils/defaultProps";
 import { useWindowDimensions } from "@/utils/getWindowDimensions";
 import { useIsMobile } from "@/utils/isMobile";
-import styles from "../basePage.module.css";
 
 export default function Academics() {
   const pageWidth = useWindowDimensions().width;
   const isMobile = useIsMobile();
 
   return (
-    <div className={styles.page}>
+    <div className="flex flex-col items-center">
       <Header />
 
       <SectionHeader title="CS Experience" subtitle="Learn about the Computer Science Experience of the graduating class" />
@@ -131,7 +130,7 @@ export default function Academics() {
           </>
         }
         align="left">
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={E5} {...pieChartProps(isMobile, pageWidth, true)} />
         </div>
       </ComponentWrapper>
@@ -147,7 +146,7 @@ export default function Academics() {
         }
         align="right"
         noBackground>
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={E6} {...pieChartProps(isMobile, pageWidth)} {...{ labelTextSize: 20 }} />
         </div>
       </ComponentWrapper>

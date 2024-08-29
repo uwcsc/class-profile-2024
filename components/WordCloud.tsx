@@ -11,8 +11,6 @@ import React from "react";
 
 import { getTooltipPosition, TooltipWrapper } from "./TooltipWrapper";
 
-import styles from "./WordCloud.module.css";
-
 interface WordCloudProps {
   data: Array<WordData>;
   /** Width of the graph, in px */
@@ -194,7 +192,7 @@ const WordCloudWords: React.FC<WordCloudWordsProps> = ({
               fontSize={word.size}
               fontFamily={word.font}
               fontWeight={fontWeight}
-              className={background ? styles.greenWord : styles.yellowWord}
+              className={`cursor-default ${background ? "chart-green" : "chart-yellow"}`}
               textAnchor="middle"
               onMouseMove={
                 ((e: React.MouseEvent<SVGTextElement | SVGLineElement, MouseEvent>) => {

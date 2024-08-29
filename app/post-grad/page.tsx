@@ -11,14 +11,13 @@ import { pageRoutes } from "@/data/routes";
 import { barGraphMargin, barGraphProps, pieChartProps } from "@/utils/defaultProps";
 import { useWindowDimensions } from "@/utils/getWindowDimensions";
 import { useIsMobile } from "@/utils/isMobile";
-import styles from "../basePage.module.css";
 
 export default function PostGrad() {
   const pageWidth = useWindowDimensions().width;
   const isMobile = useIsMobile();
 
   return (
-    <div className={styles.page}>
+    <div className="flex flex-col items-center">
       <Header />
       <SectionHeader title="Post-grad" subtitle="Furthering your Computer Science Academic Journey" />
 
@@ -31,7 +30,7 @@ export default function PostGrad() {
           </p>
         }
         align="left">
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <BarGraphHorizontal data={P1} {...barGraphProps(isMobile, pageWidth, true)} margin={{ ...barGraphMargin, left: 150 }} />
         </div>
       </ComponentWrapper>
@@ -46,7 +45,7 @@ export default function PostGrad() {
         }
         align="right"
         noBackground>
-        <div className={styles.graphContainer}>
+        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
           <PieChart data={P2} {...pieChartProps(isMobile, pageWidth)} />
         </div>
       </ComponentWrapper>
