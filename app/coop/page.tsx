@@ -22,9 +22,9 @@ export default function Coop() {
   const pageWidth = useWindowDimensions().width;
   const isMobile = useIsMobile();
 
-  const colorRange = [Color.primaryAccent, Color.secondaryAccentLight, Color.primaryAccentLight];
+  const colorRange = [Color.pink, Color.lightOrange, Color.lightPink];
 
-  const colorRange2 = [Color.primaryAccent, Color.secondaryAccentLight, Color.primaryAccentLight, Color.secondaryAccent, Color.primaryAccentLighter];
+  const colorRange2 = [Color.pink, Color.lightOrange, Color.lightPink, Color.orange, Color.lighterPink];
 
   return (
     <div className="flex flex-col items-center">
@@ -209,7 +209,7 @@ export default function Coop() {
             width={isMobile ? pageWidth / 1.5 : 600}
             height={DefaultProp.graphHeight}
             keys={C6viKey}
-            colorRange={[Color.primaryAccentLight, Color.primaryAccent, Color.primaryAccentDark, Color.primaryAccentDarker]}
+            colorRange={[Color.lightPink, Color.pink, Color.darkPink, Color.darkerPink]}
             data={C6vi}
             margin={barGraphMargin}
             displayPercentage
@@ -225,7 +225,7 @@ export default function Coop() {
             width={isMobile ? pageWidth / 1.5 : 600}
             height={DefaultProp.graphHeight}
             keys={C6viiKey}
-            colorRange={[Color.secondaryAccentLight, Color.primaryAccentLight, Color.primaryAccent, Color.primaryAccentDark, Color.primaryAccentDarker]}
+            colorRange={[Color.lightOrange, Color.lightPink, Color.pink, Color.darkPink, Color.darkerPink]}
             data={C6vii}
             margin={barGraphMargin}
             tooltipBottomLabel="Co-op Term: "
@@ -259,7 +259,7 @@ export default function Coop() {
             width={isMobile ? pageWidth / 1.5 : 600}
             height={DefaultProp.graphHeight}
             keys={C6ixKey}
-            colorRange={[Color.primaryAccentLight, Color.primaryAccentDark]}
+            colorRange={[Color.lightPink, Color.darkPink]}
             data={C6ix}
             margin={barGraphMargin}
             displayPercentage
@@ -275,7 +275,7 @@ export default function Coop() {
             width={isMobile ? pageWidth / 1.5 : 600}
             height={DefaultProp.graphHeight}
             keys={C6xKey}
-            colorRange={[Color.primaryAccentLight, Color.primaryAccentDark]}
+            colorRange={[Color.lightPink, Color.darkPink]}
             data={C6x}
             margin={barGraphMargin}
             displayPercentage

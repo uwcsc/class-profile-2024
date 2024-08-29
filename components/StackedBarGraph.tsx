@@ -141,7 +141,7 @@ export const StackedBarGraphVertical = withTooltip<StackedBarProps, TooltipData>
               width={xMax}
               height={yMax}
               numTicks={numTicksValueAxis}
-              stroke={Color.tertiaryBackground}
+              stroke={Color.lightNavy}
               strokeWidth={strokeWidth}
               strokeDasharray={strokeDashArray}
             />
@@ -149,7 +149,7 @@ export const StackedBarGraphVertical = withTooltip<StackedBarProps, TooltipData>
               scale={categoryScale}
               height={yMax}
               offset={categoryScale.bandwidth() / 2}
-              stroke={Color.tertiaryBackground}
+              stroke={Color.lightNavy}
               strokeWidth={strokeWidth}
               strokeDasharray={strokeDashArray}
             />
@@ -185,10 +185,10 @@ export const StackedBarGraphVertical = withTooltip<StackedBarProps, TooltipData>
               }
             </BarStack>
             <Line
-              fill={Color.tertiaryBackground}
+              fill={Color.lightNavy}
               to={new Point({ x: 0, y: 0 })}
               from={new Point({ x: 0, y: yMax })}
-              stroke={Color.tertiaryBackground}
+              stroke={Color.lightNavy}
               strokeWidth={strokeWidth}
               strokeDasharray={strokeDashArray}
             />
@@ -202,7 +202,7 @@ export const StackedBarGraphVertical = withTooltip<StackedBarProps, TooltipData>
                 fontSize: `${10 / 16}rem`,
               }}
               tickLabelProps={() => ({
-                fill: Color.label,
+                fill: Color.white,
                 fontWeight: TICK_LABEL_FONT_WEIGHT,
                 textAnchor: "end",
               })}
@@ -218,7 +218,7 @@ export const StackedBarGraphVertical = withTooltip<StackedBarProps, TooltipData>
               fontSize: `${10 / 16}rem`,
             }}
             tickLabelProps={() => ({
-              fill: Color.label,
+              fill: Color.white,
               fontWeight: TICK_LABEL_FONT_WEIGHT,
               textAnchor: "middle",
             })}
@@ -320,7 +320,7 @@ export const StackedBarGraphHorizontal = withTooltip<StackedBarProps, TooltipDat
               width={xMax}
               height={yMax}
               offset={categoryScale.bandwidth() / 2}
-              stroke={Color.tertiaryBackground}
+              stroke={Color.lightNavy}
               strokeWidth={strokeWidth}
               strokeDasharray={strokeDashArray}
             />
@@ -328,15 +328,15 @@ export const StackedBarGraphHorizontal = withTooltip<StackedBarProps, TooltipDat
               scale={valueScale}
               height={yMax}
               numTicks={numTicksValueAxis}
-              stroke={Color.tertiaryBackground}
+              stroke={Color.lightNavy}
               strokeWidth={strokeWidth}
               strokeDasharray={strokeDashArray}
             />
             <Line
-              fill={Color.tertiaryBackground}
+              fill={Color.lightNavy}
               to={new Point({ x: 0, y: 2 })}
               from={new Point({ x: xMax, y: 2 })}
-              stroke={Color.tertiaryBackground}
+              stroke={Color.lightNavy}
               strokeWidth={strokeWidth}
               strokeDasharray={strokeDashArray}
             />
@@ -381,7 +381,7 @@ export const StackedBarGraphHorizontal = withTooltip<StackedBarProps, TooltipDat
                 fontSize: `${10 / 16}rem`,
               }}
               tickLabelProps={() => ({
-                fill: Color.label,
+                fill: Color.white,
                 fontWeight: TICK_LABEL_FONT_WEIGHT,
                 textAnchor: "middle",
               })}
@@ -394,7 +394,7 @@ export const StackedBarGraphHorizontal = withTooltip<StackedBarProps, TooltipDat
                 fontSize: `${10 / 16}rem`,
               }}
               tickLabelProps={() => ({
-                fill: Color.label,
+                fill: Color.white,
                 fontWeight: TICK_LABEL_FONT_WEIGHT,
                 textAnchor: "end",
               })}

@@ -378,7 +378,7 @@ export default function Academics() {
           width={isMobile ? pageWidth / 1.5 : 600}
           height={DefaultProp.graphHeight}
           keys={A12iKeys}
-          colorRange={[Color.primaryAccentDarker, Color.primaryAccentDark, Color.primaryAccent, Color.primaryAccentLight, Color.secondaryAccentLight]}
+          colorRange={[Color.darkerPink, Color.darkPink, Color.pink, Color.lightPink, Color.lightOrange]}
           data={A12i.map(({ category, values }) => {
             const total = values.reduce((x, y) => x + y);
             const data: [string, number][] = A12iKeys.map((k, i) => [k, +((values[i] * 100) / total).toFixed(2)]);
@@ -543,13 +543,13 @@ export default function Academics() {
             height={400}
             keys={A17Keys}
             colorRange={[
-              Color.primaryAccentLighter,
-              Color.secondaryAccentLighter,
-              Color.secondaryAccentLight,
-              Color.primaryAccentLight,
-              Color.primaryAccent,
-              Color.primaryAccentDark,
-              Color.primaryAccentDarker,
+              Color.lighterPink,
+              Color.lighterOrange,
+              Color.lightOrange,
+              Color.lightPink,
+              Color.pink,
+              Color.darkPink,
+              Color.darkerPink,
             ]}
             data={A17}
             margin={barGraphMargin}

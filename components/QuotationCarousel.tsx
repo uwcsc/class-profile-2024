@@ -75,7 +75,7 @@ function CarouselButton({ isPrevious, onClick }: CarouselButtonProps) {
         xmlns="http://www.w3.org/2000/svg">
         <path
           d="M4 4L34.4206 35.804C35.2926 36.7157 35.2597 38.1619 34.3471 39.0329L4 68"
-          stroke={Color.primaryAccentLighter}
+          stroke={Color.lighterPink}
           strokeWidth="4"
           strokeLinecap="round"
         />

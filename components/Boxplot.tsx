@@ -175,7 +175,7 @@ export const BoxPlot = withTooltip<StatsPlotProps, TooltipData>(
                 scale={yScale}
                 width={xMax}
                 numTicks={numTicksLeftAxis}
-                stroke={Color.tertiaryBackground}
+                stroke={Color.lightNavy}
                 strokeWidth={strokeWidth}
                 strokeDasharray={strokeDashArray}
               />
@@ -183,7 +183,7 @@ export const BoxPlot = withTooltip<StatsPlotProps, TooltipData>(
                 scale={xScale}
                 height={yMax - gridColumnTopOffset}
                 top={gridColumnTopOffset}
-                stroke={Color.tertiaryBackground}
+                stroke={Color.lightNavy}
                 strokeWidth={strokeWidth}
                 strokeDasharray={strokeDashArray}
               />
@@ -197,7 +197,7 @@ export const BoxPlot = withTooltip<StatsPlotProps, TooltipData>(
                 }}
                 tickLabelProps={() => {
                   return {
-                    fill: Color.label,
+                    fill: Color.white,
                     fontWeight: TICK_LABEL_FONT_WEIGHT,
                     textAnchor: "middle",
                   };
@@ -213,7 +213,7 @@ export const BoxPlot = withTooltip<StatsPlotProps, TooltipData>(
                 }}
                 tickLabelProps={() => {
                   return {
-                    fill: Color.label,
+                    fill: Color.white,
                     fontWeight: TICK_LABEL_FONT_WEIGHT,
                     textAnchor: "end",
                     verticalAnchor: "middle",
@@ -221,16 +221,16 @@ export const BoxPlot = withTooltip<StatsPlotProps, TooltipData>(
                 }}
               />
               <Line
-                fill={Color.tertiaryBackground}
+                fill={Color.lightNavy}
                 to={new Point({ x: 0, y: gridColumnTopOffset })}
                 from={new Point({ x: 0, y: yMax })}
-                stroke={Color.tertiaryBackground}
+                stroke={Color.lightNavy}
                 strokeWidth={strokeWidth}
                 strokeDasharray={strokeDashArray}
               />
             </Group>
             <Line
-              fill={Color.tertiaryBackground}
+              fill={Color.lightNavy}
               to={
                 new Point({
                   x: xMax - margin.left - strokeWidth,
@@ -243,7 +243,7 @@ export const BoxPlot = withTooltip<StatsPlotProps, TooltipData>(
                   y: yMax,
                 })
               }
-              stroke={Color.tertiaryBackground}
+              stroke={Color.lightNavy}
               strokeWidth={strokeWidth}
               strokeDasharray={strokeDashArray}
             />
@@ -260,7 +260,7 @@ export const BoxPlot = withTooltip<StatsPlotProps, TooltipData>(
                   boxWidth={constrainedWidth * boxPlotWidthFactor}
                   rx={0}
                   ry={0}
-                  stroke={Color.label}
+                  stroke={Color.white}
                   strokeWidth={strokeWidth}
                   valueScale={yScale}
                   minProps={{
@@ -278,7 +278,7 @@ export const BoxPlot = withTooltip<StatsPlotProps, TooltipData>(
                   }}
                   medianProps={{
                     style: {
-                      stroke: Color.label,
+                      stroke: Color.white,
                     },
                     onMouseMove: mouseOverEventHandler(d),
                     onMouseLeave: () => {

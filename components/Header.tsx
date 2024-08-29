@@ -58,7 +58,7 @@ export function Header() {
         <div className="w-full flex">
           <div className="m-auto flex-[1_1] border-b-[3px] border-white"></div>
           <button
-            className="bg-light-blue hover:bg-light-orange px-[calc(20rem/16)] rounded-[calc(50rem/16)] flex ml-[calc(20rem/16)] cursor-pointer transition-colors duration-[250ms]"
+            className="bg-light-blue hover:bg-lighter-orange px-[calc(20rem/16)] rounded-[calc(50rem/16)] flex ml-[calc(20rem/16)] cursor-pointer transition-colors duration-[250ms]"
             onClick={() => {
               setIsShowingMenu(false);
             }}>

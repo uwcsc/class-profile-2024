@@ -200,7 +200,7 @@ export const GroupedBarGraphVertical = withTooltip<GroupedBarGraphProps, Tooltip
                 ) : null;
               })}
             </Group>
-            <GridRows scale={valueScale} width={categoryMax} numTicks={5} stroke={Color.label} strokeWidth={4} strokeDasharray="10" strokeLinecap="round" />
+            <GridRows scale={valueScale} width={categoryMax} numTicks={5} stroke={Color.white} strokeWidth={4} strokeDasharray="10" strokeLinecap="round" />
             <BarGroup
               data={data}
               keys={keys}
@@ -398,7 +398,7 @@ export const GroupedBarGraphHorizontal = withTooltip<GroupedBarGraphProps, Toolt
                 ) : null;
               })}
             </Group>
-            <GridColumns scale={valueScale} height={categoryMax} numTicks={5} stroke={Color.label} strokeWidth={4} strokeDasharray="10" strokeLinecap="round" />
+            <GridColumns scale={valueScale} height={categoryMax} numTicks={5} stroke={Color.white} strokeWidth={4} strokeDasharray="10" strokeLinecap="round" />
             <BarGroupHorizontal
               data={data}
               keys={keys}

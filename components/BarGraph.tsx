@@ -139,7 +139,7 @@ export const BarGraphHorizontal = withTooltip<BarGraphProps, TooltipData>(
                 ) : null;
               })}
             </Group>
-            <GridColumns scale={valueScale} height={categoryMax} numTicks={5} stroke={Color.label} strokeWidth={4} strokeDasharray="10" strokeLinecap="round" />
+            <GridColumns scale={valueScale} height={categoryMax} numTicks={5} stroke={Color.white} strokeWidth={4} strokeDasharray="10" strokeLinecap="round" />
             <Group>
               {data.map((d, idx) => {
                 const barName = `${getCategory(d)}-${idx}`;
@@ -290,7 +290,7 @@ export const BarGraphVertical = withTooltip<BarGraphProps, TooltipData>(
                 ) : null;
               })}
             </Group>
-            <GridRows scale={valueScale} width={categoryMax} numTicks={5} stroke={Color.label} strokeWidth={4} strokeDasharray="10" strokeLinecap="round" />
+            <GridRows scale={valueScale} width={categoryMax} numTicks={5} stroke={Color.white} strokeWidth={4} strokeDasharray="10" strokeLinecap="round" />
             <Group>
               {data.map((d, idx) => {
                 const barName = `${getCategory(d)}-${idx}`;

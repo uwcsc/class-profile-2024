@@ -15,7 +15,7 @@ export function SectionHeader({ title, subtitle }: SectionHeaderProps) {
           style={{ WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
           {title}
         </h1>
-        {subtitle && <h5 className="max-w-[min(90vw,40rem)] text-xl md:text-2xl lg:text-3xl mx-2 md:mx-4 text-lighter-pink">{subtitle}</h5>}
+        {subtitle && <h5 className="max-w-[min(90vw,40rem)] text-xl md:text-2xl lg:text-3xl mx-2 md:mx-4 text-lightest-pink">{subtitle}</h5>}
       </div>
     </>
   );
