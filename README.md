@@ -12,8 +12,8 @@ To build the project, run `npm run build`. This will also give you linter warnin
 
 ## Contributing
 
-Implement changes on your own branch. The preferred branch naming scheme is `name/ticket/description`; for example, `alex/CSP-1234/fix-the-bug`, but this isn't really a big deal and won't be enforced.
+Implement changes on your own branch. The preferred branch naming scheme is `name/ticket/description`; for example, `iris/CSP-1234/fix-the-bug`, but this isn't really a big deal and won't be enforced.
 
-The `main` branch is protected and requires a PR with one approval to merge to it. When reviewing PRs, look for the automatic deployment from Vercel which allows you to inspect the development preview without needing to clone and run the branch locally. Once you push to `main`, your changes will be automatically deployed to https://class-profile-2023.vercel.app/.
+The `main` branch is protected and requires a PR with one approval to merge to it. When reviewing PRs, checkout the branch and run it locally to test the changes.
 
 Make sure you assign a ticket to yourself before you start working on it to avoid conflicts/duplicate work. Please update the status as well so everyone can keep track of what's going on and people can ask to take over tickets if they want a task and notice you haven't started.
