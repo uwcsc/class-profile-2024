@@ -12,7 +12,7 @@ To build the project, run `npm run build`. This will also give you linter warnin
 
 ## Contributing
 
-Implement changes on your own branch. The preferred branch naming scheme is `name/ticket/description`; for example, `iris/CSP-1234/fix-the-bug`, but this isn't really a big deal and won't be enforced.
+Implement changes on your own branch. The preferred branch naming scheme is `name/issue-number/description`; for example, `iris/1234/fix-the-bug`, but this isn't really a big deal and won't be enforced.
 
 The `main` branch is protected and requires a PR with one approval to merge to it. When reviewing PRs, checkout the branch and run it locally to test the changes.
 
