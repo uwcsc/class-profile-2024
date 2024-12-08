@@ -35,7 +35,7 @@ export function QuotationCarousel(props: QuotationCarouselProps) {
 
   return (
     <section
-      className={`${className || ""} relative flex justify-between items-center gap-[calc(8rem/16)] m-auto z-30`}
+      className={`${className || ""} relative flex justify-between items-center gap-[calc(8rem/16)] m-auto py-8 pr-2 z-30`}
       style={{
         width: `${actualWidth / 16}rem`,
         minHeight: `${height / 26}rem`,
@@ -44,7 +44,7 @@ export function QuotationCarousel(props: QuotationCarouselProps) {
       <img 
         src="/images/shooting-star.svg" 
         alt="Shooting star" 
-        className="absolute end-[-3rem] top-[-3.3rem] w-[calc(30rem/2)] h-[calc(8rem)] z-[inherit]"
+        className="absolute end-[-2rem] top-[-1.3rem] w-[calc(30rem/2)] h-[calc(8rem)] z-[inherit]"
         aria-hidden="true"
       />
       <div
