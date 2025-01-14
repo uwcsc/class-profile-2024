@@ -42,7 +42,9 @@ export function Header() {
               className="text-yellow"
               style={{ textShadow: "-1px 0 black, 1px 0 black, 0 -1px black, 0 1px black" }}
               onClick={() => setIsShowingMenu(true)}>
-              CS '24
+              <span className="flex items-center gap-2">
+                <span>&#8942;</span> <span>CS '24</span>
+              </span>
             </button>
           </h1>
           <div
