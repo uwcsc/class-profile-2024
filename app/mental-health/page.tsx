@@ -4,9 +4,9 @@ import { BarGraphVertical } from "@/components/BarGraph";
 import { BottomNav } from "@/components/BottomNav";
 import { ComponentWrapper } from "@/components/ComponentWrapper";
 import { Header } from "@/components/Header";
+import PageHeader from "@/components/PageHeader";
 import { PieChart } from "@/components/PieChart";
 import { QuotationCarousel } from "@/components/QuotationCarousel";
-import { SectionHeader } from "@/components/SectionHeader";
 import { H1, H10, H11, H2, H3, H4, H5, H5i, H6, H7, H8, H9 } from "@/data/mental-health";
 import { pageRoutes } from "@/data/routes";
 import { barGraphProps, barGraphWidth, pieChartProps } from "@/utils/defaultProps";
@@ -20,7 +20,7 @@ export default function MentalHealth() {
   return (
     <div className="flex flex-col items-center">
       <Header />
-      <SectionHeader title="Mental Health" />
+      <PageHeader name="mental-health" alt="Mental Health" />
 
       <ComponentWrapper
         heading="Have you struggled with mental health during undergrad?"

@@ -2,8 +2,6 @@ import { About } from "@/components/About";
 import { BodyLink } from "@/components/BlankLink";
 import { Header } from "@/components/Header";
 import { Panel } from "@/components/Panel";
-import { Sections } from "@/components/Sections";
-import { pageRoutes } from "@/data/routes";
 import { basePath } from "@/utils/getBasePath";
 import { title } from "@/utils/title";
 import Image from "next/image";
@@ -89,7 +87,6 @@ export default function Home() {
             , so please check us out if you enjoy what you see!
           </p>
         </Panel>
-        <Sections data={pageRoutes} className={styles.homeSectionsStyles} />
       </div>
     </>
   );

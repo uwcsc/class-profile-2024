@@ -3,8 +3,8 @@
 import { BottomNav } from "@/components/BottomNav";
 import { ComponentWrapper } from "@/components/ComponentWrapper";
 import { Header } from "@/components/Header";
+import PageHeader from "@/components/PageHeader";
 import { QuotationCarousel } from "@/components/QuotationCarousel";
-import { SectionHeader } from "@/components/SectionHeader";
 import { P1, P10, P2, P3, P4, P5, P6, P7, P8, P9 } from "@/data/personal";
 import { pageRoutes } from "@/data/routes";
 
@@ -12,7 +12,7 @@ export default function Personal() {
   return (
     <div className="flex flex-col items-center">
       <Header />
-      <SectionHeader title="Personal" subtitle="Life lessons from students" />
+      <PageHeader name="personal" alt="Personal" />
 
       <ComponentWrapper heading="What was your favourite extracurricular activity that you participated in during your time at UW?" align="left">
         <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">

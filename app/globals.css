@@ -17,7 +17,7 @@
   --light-orange: #ffc4a9;
   --lighter-orange: #ffddcd;
   --primary: #fdf9ec;
-  --yellow: #fbd961;
+  --yellow: #fdff74;
   --light-green: #91f1ac;
   --bar-background: #2c3651;
   --chart-blue-light: #3472a8;
@@ -28,6 +28,8 @@
   --chart-green-heavy: #4bbc6b;
   --chart-pink-light: #ba4366;
   --chart-pink-heavy: #dd547d;
+  --page-background-start: #1c253f;
+  --page-background-end: #6e5796;
 
   --navbar-background-rgb: 25, 27, 33;
 }

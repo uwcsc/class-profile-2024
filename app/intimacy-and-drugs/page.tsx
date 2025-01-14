@@ -5,9 +5,9 @@ import { BottomNav } from "@/components/BottomNav";
 import { ComponentWrapper } from "@/components/ComponentWrapper";
 import { GroupedBarGraphHorizontal } from "@/components/GroupedBarGraph";
 import { Header } from "@/components/Header";
+import PageHeader from "@/components/PageHeader";
 import { PieChart } from "@/components/PieChart";
 import { QuotationCarousel } from "@/components/QuotationCarousel";
-import { SectionHeader } from "@/components/SectionHeader";
 import { WordCloud } from "@/components/WordCloud";
 import { I1, I10, I11, I12, I13, I2i, I2ii, I3, I4, I5, I6, I7, I8, I9i, I9ii, I9iii } from "@/data/intimacy-and-drugs";
 import { pageRoutes } from "@/data/routes";
@@ -23,7 +23,7 @@ export default function IntimacyAndDrugs() {
   return (
     <div className="flex flex-col items-center">
       <Header />
-      <SectionHeader title="Intimacy and Drugs" subtitle="What have people tried during university?" />
+      <PageHeader name="intimacy-and-drugs" alt="Intimacy and Drugs" />
 
       <ComponentWrapper
         heading="Which drugs have you tried?"

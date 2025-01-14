@@ -7,8 +7,8 @@ import { ComponentSwitcher } from "@/components/ComponentSwitcher";
 import { ComponentWrapper } from "@/components/ComponentWrapper";
 import { Header } from "@/components/Header";
 import { LineGraph } from "@/components/LineGraph";
+import PageHeader from "@/components/PageHeader";
 import { PieChart } from "@/components/PieChart";
-import { SectionHeader } from "@/components/SectionHeader";
 import { StackedBarGraphHorizontal, StackedBarGraphVertical } from "@/components/StackedBarGraph";
 import { WordCloud } from "@/components/WordCloud";
 import { C1, C2, C3, C4, C5, C6i, C6ii, C6iii, C6iv, C6ix, C6ixKey, C6v, C6vi, C6viKey, C6vii, C6viiKey, C6viii, C6x, C6xKey } from "@/data/coop";
@@ -29,7 +29,8 @@ export default function Coop() {
   return (
     <div className="flex flex-col items-center">
       <Header />
-      <SectionHeader title="Co-op" subtitle="Explore careers, gain experience and earn money through UWaterloo's co-op program!" />
+      <PageHeader name="co-op" alt="Co-op" />
+
       {/* C1 */}
       <ComponentWrapper
         heading="Are you in a co-op program?"

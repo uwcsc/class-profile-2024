@@ -5,9 +5,9 @@ import { BodyLink } from "@/components/BlankLink";
 import { BottomNav } from "@/components/BottomNav";
 import { ComponentWrapper } from "@/components/ComponentWrapper";
 import { Header } from "@/components/Header";
+import PageHeader from "@/components/PageHeader";
 import { PieChart } from "@/components/PieChart";
 import { QuotationCarousel } from "@/components/QuotationCarousel";
-import { SectionHeader } from "@/components/SectionHeader";
 import { SectionWrapper } from "@/components/SectionWrapper";
 import { StackedBarGraphHorizontal, StackedBarGraphVertical } from "@/components/StackedBarGraph";
 import { WordCloud } from "@/components/WordCloud";
@@ -66,7 +66,7 @@ export default function Academics() {
   return (
     <div className="flex flex-col items-center">
       <Header />
-      <SectionHeader title="Academics" />
+      <PageHeader name="academics" alt="Academics" />
 
       <SectionWrapper title="Courses" />
 
@@ -542,15 +542,7 @@ export default function Academics() {
             width={600}
             height={400}
             keys={A17Keys}
-            colorRange={[
-              Color.lighterPink,
-              Color.lighterOrange,
-              Color.lightOrange,
-              Color.lightPink,
-              Color.pink,
-              Color.darkPink,
-              Color.darkerPink,
-            ]}
+            colorRange={[Color.lighterPink, Color.lighterOrange, Color.lightOrange, Color.lightPink, Color.pink, Color.darkPink, Color.darkerPink]}
             data={A17}
             margin={barGraphMargin}
             displayPercentage

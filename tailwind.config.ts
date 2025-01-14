@@ -31,6 +31,8 @@ const config: Config = {
             "chart-green-heavy",
             "chart-pink-light",
             "chart-pink-heavy",
+            "page-background-start",
+            "page-backgroud-end",
           ].map((color) => [color, `var(--${color})`]),
         ),
       },

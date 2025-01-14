@@ -6,6 +6,7 @@ const nextConfig = {
   basePath,
   assetPrefix: `${basePath}/`,
   publicRuntimeConfig: { basePath },
+  images: { unoptimized: true },
 };
 
 module.exports = nextConfig;

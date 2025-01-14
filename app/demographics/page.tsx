@@ -5,8 +5,8 @@ import { BodyLink } from "@/components/BlankLink";
 import { BottomNav } from "@/components/BottomNav";
 import { ComponentWrapper } from "@/components/ComponentWrapper";
 import { Header } from "@/components/Header";
+import PageHeader from "@/components/PageHeader";
 import { PieChart } from "@/components/PieChart";
-import { SectionHeader } from "@/components/SectionHeader";
 import { WordCloud } from "@/components/WordCloud";
 import { D1, D10, D11, D12, D13, D14, D15, D16, D16i, D17, D18, D19, D2, D3, D4, D5, D6, D7, D8, D8i, D9 } from "@/data/demographics";
 import { pageRoutes } from "@/data/routes";
@@ -21,7 +21,7 @@ export default function Demographics() {
   return (
     <div className="flex flex-col items-center">
       <Header />
-      <SectionHeader title="Demographics" subtitle="An insight into the demographics of UW's CS programs" />
+      <PageHeader name="demographics" alt="Demographics" />
 
       <ComponentWrapper
         heading="What program are you in?"

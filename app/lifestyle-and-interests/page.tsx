@@ -4,8 +4,8 @@ import { BarGraphHorizontal, BarGraphVertical } from "@/components/BarGraph";
 import { BottomNav } from "@/components/BottomNav";
 import { ComponentWrapper } from "@/components/ComponentWrapper";
 import { Header } from "@/components/Header";
+import PageHeader from "@/components/PageHeader";
 import { PieChart } from "@/components/PieChart";
-import { SectionHeader } from "@/components/SectionHeader";
 import { WordCloud } from "@/components/WordCloud";
 import { L1, L10, L11, L12, L13, L14, L15, L16, L17, L18, L19, L2, L20, L21, L3, L4, L5, L6, L7, L8, L9 } from "@/data/lifestyle-and-interests";
 import { pageRoutes } from "@/data/routes";
@@ -20,7 +20,7 @@ export default function LifestyleAndInterests() {
   return (
     <div className="flex flex-col items-center">
       <Header />
-      <SectionHeader title="Lifestyle and Interests" subtitle="What did the class of 2023 do in their free time?" />
+      <PageHeader name="lifestyle-and-interests" alt="Lifestyle and Interests" />
 
       <ComponentWrapper
         heading="How did your outlook on religion change during university?"

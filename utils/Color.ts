@@ -18,4 +18,6 @@ export const Color = {
   chartGreenHeavy: "var(--chart-green-heavy)",
   chartPinkLight: "var(--chart-pink-light)",
   chartPinkHeavy: "var(--chart-pink-heavy)",
+  pageBackgroundStart: "var(--page-background-start)",
+  pageBackgroudEnd: "var(--page-background-end)",
 } as const;
