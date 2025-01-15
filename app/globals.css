@@ -30,8 +30,21 @@
   --chart-pink-heavy: #dd547d;
   --page-background-start: #1c253f;
   --page-background-end: #6e5796;
+  --window-panel-background: #e6deff3f;
+  --window-panel-title-dark: #3f2c74;
+  --window-panel-title-dark-dot-1: #a1ffee;
+  --window-panel-title-dark-dot-2: #fdff74;
+  --window-panel-title-dark-dot-3: #f262ff;
+  --window-panel-title-light: #c5bbe1ca;
+  --window-panel-title-light-dot-1: #39b9a1;
+  --window-panel-title-light-dot-2: #ffc634;
+  --window-panel-title-light-dot-3: #d762e1;
 
   --navbar-background-rgb: 25, 27, 33;
+}
+
+.glow {
+  filter: drop-shadow(0 0 8px #fff8);
 }
 
 .bg-response {
@@ -127,42 +140,22 @@ body {
 
 /* Page titles (e.g. Demographics) */
 h1 {
-  font-size: calc(48rem / 16);
-  font-weight: 700;
-  color: var(--light-pink);
-  margin-top: calc(32rem / 16);
-  margin-bottom: calc(16rem / 16);
-  letter-spacing: 0.2rem;
+  @apply text-yellow text-4xl font-bold;
 }
 
 /* Major section headings (e.g. About the Programs) */
 h2 {
-  font-size: calc(36rem / 16);
-  font-weight: 700;
-  color: var(--light-pink);
-  margin-top: calc(32rem / 16);
-  margin-bottom: calc(16rem / 16);
-  letter-spacing: 0.1rem;
+  @apply text-yellow text-3xl font-bold;
 }
 
 /* Minor section headings & questions (e.g. What Program Are You In?) */
 h3 {
-  font-size: calc(32rem / 16);
-  font-weight: 700;
-  color: var(--pink);
-  margin-top: calc(24rem / 16);
-  margin-bottom: calc(16rem / 16);
-  letter-spacing: 0.075rem;
+  @apply text-yellow text-2xl font-bold;
 }
 
 /* Titles within paragraphs (e.g. About the Programs -> Computer Science)*/
 h4 {
-  font-size: calc(26rem / 16);
-  font-weight: 700;
-  color: var(--light-green);
-  margin-top: calc(24rem / 16);
-  margin-bottom: calc(8rem / 16);
-  letter-spacing: 0.05rem;
+  @apply text-yellow text-xl font-bold;
 }
 
 p {

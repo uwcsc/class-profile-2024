@@ -12,7 +12,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${lexend}`} style={{ backgroundImage: "linear-gradient(var(--page-background-start), var(--page-background-end))" }}>
+    <html lang="en" className={`min-h-screen ${lexend}`} style={{ backgroundImage: "linear-gradient(var(--page-background-start), var(--page-background-end))" }}>
       <body>{children}</body>
     </html>
   );
