@@ -1,23 +1,10 @@
 "use client";
 
+import { links } from "@/data/routes";
 import { useWindowDimensions } from "@/utils/getWindowDimensions";
 import { useWindowScroll } from "@uidotdev/usehooks";
 import Link from "next/link";
 import { useState } from "react";
-
-const links: [`/${string}`, string][] = [
-  ["/", "Home"],
-  ["/demographics", "Demographics"],
-  ["/academics", "Academics"],
-  ["/cs-experience", "CS Experience"],
-  ["/coop", "Co-op"],
-  ["/lifestyle-and-interests", "Lifestyle and Interests"],
-  ["/intimacy-and-drugs", "Intimacy and Drugs"],
-  ["/postgrad-and-full-time", "Postgrad + Full-Time"],
-  ["/mental-health", "Mental Health"],
-  ["/personal", "Personal"],
-  ["/contributors", "Contributors"],
-];
 
 export function Header({ transparent = false }: { transparent?: boolean }) {
   const pageWidth = useWindowDimensions().width;
@@ -51,7 +38,7 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
             className={`bg-dark-blue border border-light-blue rounded-xl mt-4 p-4 transition-opacity absolute ${isShowingMenu ? "" : "opacity-0 pointer-events-none"}`}>
             <h3 className="text-xl md:text-2xl m-0">Directory</h3>
             <ul>
-              {links.map(([url, text]) => (
+              {[["/", "Home"], ...links].map(([url, text]) => (
                 <li key={url}>
                   <Link href={url} className="text-light-blue whitespace-nowrap">
                     {text}
