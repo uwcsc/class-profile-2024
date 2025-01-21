@@ -23,13 +23,13 @@ export const communityRepresentatives: { name: string; link: string; lead?: bool
   { name: "Lindsay Xie", link: "https://www.linkedin.com/in/lindsayxie/", lead: true },
   { name: "Alia Cai", link: "https://www.linkedin.com/in/alia-cai-9795752a5/" },
   { name: "Ethan Kwon", link: "https://www.linkedin.com/in/ethan-kwon/" },
-  { name: "Reina Kuan", link: "#" },
+  { name: "Reina Kuan", link: "#rk" },
 ];
 
 export const pastContributors: { name: string; link: string; role: string }[] = [
   { name: "Aaryan Shroff", link: "https://www.linkedin.com/in/aaryan-shroff", role: "Design" },
   { name: "Amy Luo", link: "https://www.linkedin.com/in/amytluo/", role: "Reps" },
-  { name: "Amy Wang", link: "#", role: "Web Dev" },
+  { name: "Amy Wang", link: "#aw", role: "Web Dev" },
   { name: "Ashlyn Wu", link: "https://linkedin.com/in/ashlynwu/", role: "Design" },
   { name: "Ashnoor Randhawa", link: "https://www.linkedin.com/in/ashnoor-kaur/", role: "Reps" },
   { name: "Beihao Zhou", link: "https://www.linkedin.com/in/beihaozhou/", role: "Web Dev" },
@@ -54,8 +54,8 @@ export const pastContributors: { name: string; link: string; role: string }[] = 
   { name: "Max Erenberg", link: "https://maxerenberg.github.io/", role: "Syscom" },
   { name: "Mayank Mehra", link: "https://linkedin.com/in/mayank808/", role: "Reps" },
   { name: "Nikki Guo", link: "https://www.linkedin.com/in/nikkiguo", role: "Reps" },
-  { name: "Olivia Liu", link: "#", role: "Reps" },
-  { name: "Rachel Ma", link: "#", role: "Design" },
+  { name: "Olivia Liu", link: "#ol", role: "Reps" },
+  { name: "Rachel Ma", link: "#rm", role: "Design" },
   { name: "Raymond Li", link: "https://raymond.li/", role: "Syscom" },
   { name: "Roni Wu", link: "https://linkedin.com/in/roni-wu-908900140/", role: "Design" },
   { name: "Ryan Zhou", link: "https://www.linkedin.com/in/ryan-zhou-498b94285/", role: "Web Dev" },
