@@ -30,23 +30,23 @@ export default function Home() {
             <h1 className="glow">About the Programs</h1>
             <div className="col-span-3">
               <WindowPanel dark>
-                <h3>Computer Science</h3>
+                <h3>Computer Science [CS]</h3>
                 <p>
-                  Computer Science (CS) is commonly offered by the Faculty of Mathematics as a co-op program, with students usually attending 8 school and 6
-                  co-op terms in their degree. However, CS is more flexible than the other two programs because of the ability to choose from a wider range and
-                  number of electives, to take terms off, and to change their academic schedules to fit their needs.
+                  CS is commonly offered by the Faculty of Mathematics as a co-op program, with students usually attending 8 school and 6 co-op terms in their
+                  degree. CS is more flexible than the other two programs with the ability to choose from a wider range and number of electives, take terms off,
+                  and change academic schedules.
                 </p>
-                <h3>Computing and Financial Management</h3>
+                <h3>Computing and Financial Management [CFM]</h3>
                 <p>
-                  Computing and Financial Management (CFM) combines the core CS courses with electives from areas such as accounting, economics, and financial
-                  management. This is a joint offering by the Faculty of Mathematics and the School of Accounting and Finance. The program is offered only as a
-                  co-op program with 6 co-op terms.
+                  CFM combines core CS courses with electives from areas such as accounting, economics, and financial management. This is a joint offering by
+                  the Faculty of Mathematics and the School of Accounting and Finance. The program is offered only as a co-op program with 8 school and 6 co-op
+                  terms.
                 </p>
-                <h3>Computer Science/Business Administration</h3>
+                <h3>Computer Science/Business Administration [CS/BBA]</h3>
                 <p>
-                  Joint with Wilfrid Laurier University, the Business Administration and Computer Science Double Degree (CS/BBA) is an exclusive offering that
-                  allows students to gain experience in CS as well as many subfields of business. There are 10 school terms and either 4 or 5 co-op terms in the
-                  usual schedule, so it's a longer degree with more academic terms than CS or CFM.
+                  CS/BBA is a joint program with the Wilfrid Laurier University. It is an exclusive offering that provides students experience in CS as well as
+                  many areas of business. There are 10 school terms and either 4 or 5 co-op terms in the usual schedule, so it's a longer degree with more
+                  academic terms than CS or CFM.
                 </p>
               </WindowPanel>
             </div>
@@ -54,19 +54,22 @@ export default function Home() {
             <div className="col-span-3">
               <WindowPanel>
                 <p>
-                  The CS Class Profile consists of data relevant to CS, CFM, and CS/BBA students. These were combined with the knowledge that students in these
-                  programs tend to have similar experiences, as many of the same CS required courses are shared. In the standard co-op offering, CS and CFM take
-                  4 years and 2 semesters to complete, while CS/BBA can take up to a full 5 years.
+                  The 2024 CS Class Profile consists of data relevant to CS, CFM, and CS/BBA students. These are combined as students in these programs tend to
+                  have similar experiences with many required CS courses being shared. In the standard co-op offering, CS and CFM take 4 years and 2 semesters
+                  to complete, whereas CS/BBA can take up to a full 5 years.
                 </p>
                 <p>
-                  Computer Science (and the others) is known to be a very prestigious program, and is very well known in Canada as well as across the world. For
-                  prospective students or anyone who is interested in learning more about what the students are like, this CS Class Profile will attempt to
-                  answer some of your questions, and you may even learn a thing or two you didn’t expect!
+                  CS, CFM, and CS/BBA at the University of Waterloo are known to be very prestigious programs and are well known in Canada and across the world.
+                  For prospective students or anyone who is interested in learning more about what the students are like, this Class Profile will attempt to
+                  answer some of your questions, and you may even learn a thing or two you didn't expect!
                 </p>
                 <p>
-                  The survey questions were approved by the Institutional Analysis & Planning, where all University of Waterloo stakeholders that are interested
-                  in conducting a non-academic research survey involving a large portion of the UWaterloo population are reviewed and approved. The entirety of
-                  the survey creation and data processing was done by the UW Computer Science Club, so please check us out if you enjoy what you see!
+                  According to{" "}
+                  <a href="https://uwaterloo.ca/institutional-analysis-planning/university-data-and-statistics/student-data/degrees-granted-0" target="_blank">
+                    Institutional Analysis & Planning
+                  </a>
+                  , there were 613 graduates from CS, CFM, and CS/BBA in 2024, leading to an overall survey turnout of 7.8%. By program, this was 6.6% from CS
+                  and 19.4% from CS/BBA. We unfortunately did not get any responses from CFM students this year.
                 </p>
               </WindowPanel>
             </div>

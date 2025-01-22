@@ -9,6 +9,7 @@
   --light-pink: #faa3bd;
   --lighter-pink: #ffe7e7;
   --lightest-pink: #ffbc9f;
+  --fg-blue: #141d34;
   --dark-blue: #141d34;
   --light-blue: #a1ccf2;
   --navy: #0b2041;
@@ -28,8 +29,13 @@
   --chart-green-heavy: #4bbc6b;
   --chart-pink-light: #ba4366;
   --chart-pink-heavy: #dd547d;
+  --chart-color-1: #5320a6;
+  --chart-color-2: #6831c1;
+  --chart-color-3: #8b59dd;
+  --chart-color-4: #a87dee;
+  --chart-color-5: #c3b4e9;
   --page-background-start: #1c253f;
-  --page-background-end: #6e5796;
+  --page-background-end: #4e3776;
   --window-panel-background: #e6deff3f;
   --window-panel-title-dark: #3f2c74;
   --window-panel-title-dark-dot-1: #a1ffee;
@@ -138,31 +144,20 @@ body {
   font-weight: 500;
 }
 
-/* Page titles (e.g. Demographics) */
 h1 {
-  @apply text-yellow text-4xl font-bold;
+  @apply text-yellow text-3xl md:text-4xl lg:text-5xl font-bold;
 }
 
-/* Major section headings (e.g. About the Programs) */
 h2 {
-  @apply text-yellow text-3xl font-bold;
+  @apply text-yellow text-2xl md:text-3xl lg:text-4xl font-bold;
 }
 
-/* Minor section headings & questions (e.g. What Program Are You In?) */
 h3 {
-  @apply text-yellow text-2xl font-bold;
-}
-
-/* Titles within paragraphs (e.g. About the Programs -> Computer Science)*/
-h4 {
-  @apply text-yellow text-xl font-bold;
+  @apply text-yellow text-xl md:text-2xl lg:text-3xl font-bold;
 }
 
 p {
-  color: var(--primary-text);
-  margin-top: 0.75rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.5rem;
+  @apply text-white mt-6 md:text-lg lg:text-xl md:leading-8 lg:leading-10;
 }
 
 a {

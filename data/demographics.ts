@@ -1,68 +1,59 @@
 export const D1 = [
-  { category: "CS", value: 121 },
-  { category: "CS/BBA", value: 7 },
-  { category: "CFM", value: 7 },
+  { category: "CS", value: 34 },
+  { category: "CS/BBA", value: 14 },
 ];
 
 export const D2 = [
-  { category: "Man", value: 91 },
-  { category: "Woman", value: 42 },
-  { category: "Gender non-conforming", value: 3 },
+  { category: "Man", value: 36 },
+  { category: "Woman", value: 10 },
+  { category: "Gender non-conforming", value: 1 },
+  { category: "No Response", value: 1 },
 ];
 
 export const D3 = [
-  { category: "She/Her", value: 42 },
-  { category: "He/Him", value: 91 },
-  { category: "They/Them", value: 3 },
+  { category: "She/Her", value: 10 },
+  { category: "He/Him", value: 36 },
+  { category: "They/Them", value: 2 },
 ];
 
 export const D4 = [
-  { category: "2001", value: 7 },
-  { category: "2000", value: 109 },
-  { category: "1999", value: 10 },
-  { category: "1998", value: 1 },
+  { category: "2006", value: 1 },
+  { category: "1999", value: 1 },
+  { category: "2001", value: 40 },
+  { category: "2002", value: 3 },
 ];
 
 export const D5 = [
-  { category: "Latin", value: 3 },
-  { category: "East Asian", value: 92 },
+  { category: "South Asian", value: 8 },
+  { category: "East Asian", value: 28 },
   { category: "Middle Eastern", value: 2 },
-  { category: "South Asian", value: 15 },
-  { category: "Southeast Asian", value: 8 },
-  { category: "White", value: 23 },
-  { category: "Other", value: 2 },
+  { category: "White", value: 8 },
+  { category: "Southeast Asian", value: 1 },
 ];
 
 export const D6 = [
-  { category: "No religious affiliation", value: 3 },
-  { category: "Christianity", value: 26 },
-  { category: "Judaism", value: 3 },
   { category: "Buddhism", value: 3 },
-  { category: "Islam", value: 4 },
   { category: "Hinduism", value: 5 },
-  { category: "Jainism", value: 1 },
-  { category: "Agnosticism", value: 48 },
-  { category: "Atheism", value: 42 },
-  { category: "Spiritual", value: 2 },
-  { category: "Bahá'í Faith", value: 1 },
+  { category: "Atheism", value: 18 },
+  { category: "Daoism", value: 1 },
+  { category: "Agnosticism", value: 16 },
+  { category: "Christianity", value: 7 },
+  { category: "Possibly Spiritual", value: 1 },
+  { category: "Sikhism", value: 2 },
+  { category: "Islam", value: 1 },
 ];
 
 export const D7 = [
-  { category: "Asexual", value: 3 },
-  { category: "Bisexual", value: 8 },
-  { category: "Gay", value: 4 },
-  { category: "Heterosexual", value: 117 },
-  { category: "Queer", value: 2 },
-  { category: "Pansexual", value: 1 },
-  { category: "Questioning", value: 4 },
-  { category: "Lesbian", value: 1 },
+  { category: "Asexual", value: 2 },
+  { category: "Heterosexual (Straight)", value: 39 },
+  { category: "Bisexual", value: 5 },
+  { category: "Queer/Questioning", value: 2 },
 ];
 
 export const D8 = [
-  { category: "1", value: 28 },
-  { category: "1.5", value: 1 },
-  { category: "2", value: 88 },
-  { category: "3", value: 13 },
+  { category: "1", value: 15 },
+  { category: "2", value: 23 },
+  { category: "3", value: 8 },
   { category: "4", value: 1 },
 ];
 
