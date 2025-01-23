@@ -10,9 +10,11 @@ export type PieProps = {
   anglePad?: number; // angle of spacing between the slices
   separation?: number; // parallel spacing between the slices
   drift?: number; // pixels the slices move out further when hovered
+  rotation?: number; // rotate the pie graph clockwise
+  whole?: number; // angle of the entire graph
 };
 
-export default function Pie({ data, radius = 40, rounding = 1, anglePad = 0.01, separation = 0.5, drift = 3 }: PieProps) {
+export default function Pie({ data, radius = 40, rounding = 1, anglePad = 0.01, separation = 0.5, drift = 3, rotation = 0, whole = Math.PI * 2 }: PieProps) {
   const setTooltip = getSetTooltip();
   const [hover, setHover] = useState<Record<number, boolean>>({});
 
@@ -29,13 +31,13 @@ export default function Pie({ data, radius = 40, rounding = 1, anglePad = 0.01, 
     setTooltip("");
   }, [hover]);
 
-  let angle = 0;
+  let angle = rotation;
 
   const arcs = data.map(({ category, value }) => ({
     category,
     value,
     start: angle + anglePad / 2,
-    end: (angle += (Math.PI * 2 * value) / total) - anglePad / 2,
+    end: (angle += (whole * value) / total) - anglePad / 2,
   }));
 
   const roundAngle = 2 * Math.asin(rounding / (2 * radius + 2 * rounding));
@@ -109,7 +111,7 @@ function add([x, y]: [number, number], [dx, dy]: [number, number]): [number, num
 }
 
 function tf(x: number, y: number): string {
-  return `${x + 50} ${50 - y}`;
+  return `${(x + 50).toFixed(5)} ${(50 - y).toFixed(5)}`;
 }
 
 function intersection(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, x4: number, y4: number): [number, number] {

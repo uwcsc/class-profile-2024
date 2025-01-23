@@ -10,7 +10,7 @@ export default function StandardChart({
 }: PropsWithChildren<{ variant: "dark" | "light" | "blank"; title: string; chart: ReactNode }>) {
   return (
     <WindowPanel blank={variant === "blank"} dark={variant === "dark"}>
-      <ChartContainer vertical={variant === "blank"} title={title} chart={chart}>
+      <ChartContainer reverse={variant === "blank"} title={title} chart={chart}>
         {children}
       </ChartContainer>
     </WindowPanel>

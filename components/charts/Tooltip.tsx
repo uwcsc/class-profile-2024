@@ -13,9 +13,11 @@ export default function Tooltip({ text }: { text: string }) {
 
   return (
     <div
-      className={`fixed bg-white rounded-lg text-fg-blue px-3 py-1 pointer-events-none ${text ? "" : "hidden"}`}
+      className={`fixed flex flex-col bg-white rounded-lg text-fg-blue px-3 py-1 pointer-events-none ${text ? "" : "hidden"}`}
       style={{ left: `${x}px`, bottom: `${y == -1 ? -1 : window.innerHeight - y}px`, zIndex: 100 }}>
-      {text}
+      {text.split("\n").map((line, i) => (
+        <span key={i}>{line}</span>
+      ))}
     </div>
   );
 }
