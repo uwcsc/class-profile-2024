@@ -81,7 +81,7 @@ export default function Pie({ data, radius = 40, rounding = 1, anglePad = 0.01, 
                 }}
                 onMouseEnter={() => setHover((hover) => ({ ...hover, [index]: true }))}
                 onMouseLeave={() => setHover((hover) => ({ ...hover, [index]: false }))}
-                className={`${hover[index] ? "text-chart-color-5" : "text-chart-color-4"} fill-current`}
+                className={`${hover[index] ? "text-chart-color-pie-hover" : "text-chart-color-pie-base"} fill-current`}
               />
               <path
                 d={`M ${tf(mx, my)} A ${radius} ${radius} 0 ${value * 2 >= total ? 1 : 0} 1 ${tf(nx, ny)} L 50 50 Z`}

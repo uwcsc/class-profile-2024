@@ -32,6 +32,8 @@ const config: Config = {
             "chart-green-heavy",
             "chart-pink-light",
             "chart-pink-heavy",
+            "chart-color-pie-base",
+            "chart-color-pie-hover",
             "chart-color-1",
             "chart-color-2",
             "chart-color-3",
