@@ -2,7 +2,7 @@
 
 import HorizontalBar, { GroupedHorizontalBar } from "@/components/charts/HorizontalBar";
 import Pie from "@/components/charts/Pie";
-import SixPointDisplay from "@/components/charts/SixPointDisplay";
+import BoxPlot from "@/components/charts/BoxPlot";
 import StandardChart from "@/components/charts/StandardChart";
 import Tooltip from "@/components/charts/Tooltip";
 import { Header } from "@/components/Header";
@@ -256,21 +256,21 @@ export default function Academics() {
             <div className="flex flex-col items-center">
               <div className="grid grid-cols-[max-content_1fr] items-center gap-2">
                 <span className="mt-1.5">1A:</span>
-                <SixPointDisplay points={[66, 81.45, 85.8, 90, 98, 84.98]} min={63} max={98.6} />
+                <BoxPlot points={[66, 81.45, 85.8, 90, 98, 84.98]} min={63} max={98.6} />
                 <span className="mt-1.5">1B:</span>
-                <SixPointDisplay points={[81, 85, 89.04, 92.1, 97.2, 88.67]} min={63} max={98.6} />
+                <BoxPlot points={[81, 85, 89.04, 92.1, 97.2, 88.67]} min={63} max={98.6} />
                 <span className="mt-1.5">2A:</span>
-                <SixPointDisplay points={[63, 86.9, 91, 93.79, 98.6, 89.37]} min={63} max={98.6} />
+                <BoxPlot points={[63, 86.9, 91, 93.79, 98.6, 89.37]} min={63} max={98.6} />
                 <span className="mt-1.5">2B:</span>
-                <SixPointDisplay points={[68, 83, 86, 88.1, 96.6, 85.91]} min={63} max={98.6} />
+                <BoxPlot points={[68, 83, 86, 88.1, 96.6, 85.91]} min={63} max={98.6} />
                 <span className="mt-1.5">3A:</span>
-                <SixPointDisplay points={[73, 86, 89.75, 93.15, 97.8, 89.18]} min={63} max={98.6} />
+                <BoxPlot points={[73, 86, 89.75, 93.15, 97.8, 89.18]} min={63} max={98.6} />
                 <span className="mt-1.5">3B:</span>
-                <SixPointDisplay points={[73, 82.8, 88, 91, 96.33, 87.09]} min={63} max={98.6} />
+                <BoxPlot points={[73, 82.8, 88, 91, 96.33, 87.09]} min={63} max={98.6} />
                 <span className="mt-1.5">4A:</span>
-                <SixPointDisplay points={[69, 84.44, 86.5, 89.88, 94.4, 86.06]} min={63} max={98.6} />
+                <BoxPlot points={[69, 84.44, 86.5, 89.88, 94.4, 86.06]} min={63} max={98.6} />
                 <span className="mt-1.5">4B:</span>
-                <SixPointDisplay points={[81, 82.19, 86.38, 90, 98, 87.23]} min={63} max={98.6} />
+                <BoxPlot points={[81, 82.19, 86.38, 90, 98, 87.23]} min={63} max={98.6} />
               </div>
             </div>
           </StandardChart>
@@ -280,7 +280,7 @@ export default function Academics() {
             chart={
               <div className="flex flex-col items-center gap-12">
                 <HorizontalBar data={A16} lines={[0, 5, 10, 15]} />
-                <SixPointDisplay points={[71, 85, 87.345, 91.1, 95.02, 87.48]} />
+                <BoxPlot points={[71, 85, 87.345, 91.1, 95.02, 87.48]} />
               </div>
             }>
             <p>
@@ -294,7 +294,7 @@ export default function Academics() {
             chart={
               <div className="flex flex-col items-center gap-12">
                 <HorizontalBar data={A17} lines={[0, 5, 10]} />
-                <SixPointDisplay points={[70, 83.84, 87.61, 92.32, 96, 86.94]} />
+                <BoxPlot points={[70, 83.84, 87.61, 92.32, 96, 86.94]} />
               </div>
             }>
             <p>Overall, we observed a higher mean faculty average but a lower median compared to the cumulative average.</p>

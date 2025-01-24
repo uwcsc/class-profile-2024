@@ -39,7 +39,7 @@ export function GroupedHorizontalBar({
         const [x, y] = key.split("/").map((x) => parseInt(x));
         const num = data[x].value[y];
         setTooltip(
-          `${supernarrow ? `${data[x].category}: ` : ""}${percents === "only" ? "" : num}${percents === "none" ? "" : percents === "only" ? `${((num / total) * 100).toFixed(2)}%` : ` (${((num / total) * 100).toFixed(2)}%)`}`,
+          `${supernarrow ? `${data[x].category}: ` : ""}${percents === "only" ? "" : num}${percents === "none" ? "" : percents === "only" ? `${((num / totals[x]) * 100).toFixed(2)}%` : ` (${((num / totals[x]) * 100).toFixed(2)}%)`}`,
         );
         return;
       }
@@ -52,7 +52,10 @@ export function GroupedHorizontalBar({
   for (let i = data[0].value.length - 1; i >= 0; i--) colors.push(colorMap[(-i % 5) + 5]);
 
   const max = Math.max(...lines, ...data.flatMap(({ value }) => value));
-  const total = data.flatMap(({ value }) => value).reduce((x, y) => x + y, 0);
+  const totals =
+    data[0].value.length === 1
+      ? new Array(data.length).fill(data.map(({ value }) => value[0]).reduce((x, y) => x + y, 0))
+      : data.map(({ value }) => value.reduce((x, y) => x + y, 0));
 
   const xl = pageWidth >= 1280;
   const lg = pageWidth >= 1024;
@@ -71,10 +74,10 @@ export function GroupedHorizontalBar({
         </div>
       ) : null}
       <div
-        className={`relative grid grid-cols-[max-content_50vw] md:grid-cols-[max-content_20vw] lg:grid-cols-[max-content_40vw] xl:grid-cols-[max-content_512px] items-center gap-x-4 ${supernarrow ? "gap-y-0.5" : narrow ? "gap-y-2" : "gap-y-4"}`}>
+        className={`relative grid grid-cols-[max-content_50vw] md:grid-cols-[max-content_20vw] lg:grid-cols-[max-content_40vw] xl:grid-cols-[max-content_512px] items-center gap-x-4 ${supernarrow ? (data[0].value.length < 3 ? "gap-y-1" : "gap-y-2") : narrow ? "gap-y-2" : "gap-y-4"}`}>
         {data.map(({ category, value }, index) => (
           <Fragment key={category}>
-            <div className={`justify-self-end leading-none ${supernarrow ? "text-xs" : ""}`}>{textTransform(category)}</div>
+            <div className={`justify-self-end leading-none ${supernarrow && data[0].value.length < 2 ? "text-xs" : ""}`}>{textTransform(category)}</div>
             <div className="flex-col">
               {value.map((num, i) => (
                 <div

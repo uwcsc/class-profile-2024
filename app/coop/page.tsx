@@ -1,291 +1,220 @@
 "use client";
 
-import { BarGraphVertical } from "@/components/BarGraph";
-import { BottomNav } from "@/components/BottomNav";
-import { BoxPlot } from "@/components/Boxplot";
-import { ComponentSwitcher } from "@/components/ComponentSwitcher";
-import { ComponentWrapper } from "@/components/ComponentWrapper";
+import BoxPlot from "@/components/charts/BoxPlot";
+import ChartContainer from "@/components/charts/ChartContainer";
+import HorizontalBar, { GroupedHorizontalBar } from "@/components/charts/HorizontalBar";
+import Pie from "@/components/charts/Pie";
+import StandardChart from "@/components/charts/StandardChart";
+import Tooltip from "@/components/charts/Tooltip";
 import { Header } from "@/components/Header";
-import { LineGraph } from "@/components/LineGraph";
 import PageHeader from "@/components/PageHeader";
-import { PieChart } from "@/components/PieChart";
-import { StackedBarGraphHorizontal, StackedBarGraphVertical } from "@/components/StackedBarGraph";
-import { WordCloud } from "@/components/WordCloud";
-import { C1, C2, C3, C4, C5, C6i, C6ii, C6iii, C6iv, C6ix, C6ixKey, C6v, C6vi, C6viKey, C6vii, C6viiKey, C6viii, C6x, C6xKey } from "@/data/coop";
-import { pageRoutes } from "@/data/routes";
-import { Color } from "@/utils/Color";
-import { DefaultProp, barGraphMargin, barGraphProps, pieChartProps, wordCloudWidth } from "@/utils/defaultProps";
-import { useWindowDimensions } from "@/utils/getWindowDimensions";
-import { useIsMobile } from "@/utils/isMobile";
+import WindowPanel from "@/components/WindowPanel";
+import {
+  C1,
+  C2,
+  C3,
+  C4,
+  C5,
+  C6ai,
+  C6aii,
+  C6aiii,
+  C6bi,
+  C6bii,
+  C6biii,
+  C6ci,
+  C6cii,
+  C6ciii,
+  C6di,
+  C6dii,
+  C6diii,
+  C6ei,
+  C6eii,
+  C6eiii,
+  C6fi,
+  C6fii,
+  C6fiii,
+  C6iv,
+  C6v,
+  C6vi,
+  C6vii,
+  C6viii,
+} from "@/data/coop";
+import { TooltipContext } from "@/utils/context";
+import { useState } from "react";
 
 export default function Coop() {
-  const pageWidth = useWindowDimensions().width;
-  const isMobile = useIsMobile();
+  const [tooltip, setTooltip] = useState("");
 
-  const colorRange = [Color.pink, Color.lightOrange, Color.lightPink];
+  const [term, setTerm] = useState(0);
 
-  const colorRange2 = [Color.pink, Color.lightOrange, Color.lightPink, Color.orange, Color.lighterPink];
+  const TermButtons = () => (
+    <div className="flex items-center gap-2">
+      {new Array(6).fill(0).map((_, i) => (
+        <button
+          key={i}
+          className={`${i === term ? "bg-pink" : "bg-darker-pink"} transition-colors border border-black rounded-md px-3 py-1 mt-2`}
+          onClick={() => setTerm(i)}>
+          Co-op #{i + 1}
+        </button>
+      ))}
+    </div>
+  );
+
+  const C6i = [C6ai, C6bi, C6ci, C6di, C6ei, C6fi][term];
+  const C6ii = [C6aii, C6bii, C6cii, C6dii, C6eii, C6fii][term];
+  const C6iii = [C6aiii, C6biii, C6ciii, C6diii, C6eiii, C6fiii][term];
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center mb-16">
       <Header />
       <PageHeader name="co-op" alt="Co-op" />
 
-      {/* C1 */}
-      <ComponentWrapper
-        heading="Are you in a co-op program?"
-        bodyText={
-          <p>
-            Out of the 135 individuals that participated in this class profile, 128 were in a co-op program and 7 were not. Most students choose to be in the
-            co-op program because of the great experiences it provides!
-          </p>
-        }
-        align="left">
-        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
-          <PieChart data={C1} {...pieChartProps(isMobile, pageWidth, true)} />
-        </div>
-      </ComponentWrapper>
+      <Tooltip text={tooltip} />
 
-      {/* C2 */}
-      <ComponentWrapper
-        heading=" What was your favourite co-op location?"
-        bodyText={
-          <p>
-            There is a variety of favoured co-op locations, with some of the most popular being New York, Toronto, San Francisco, and various other cities in
-            California.
-          </p>
-        }
-        align="right"
-        noBackground
-        wordCloud>
-        <WordCloud
-          data={C2}
-          width={wordCloudWidth(isMobile, pageWidth)}
-          height={DefaultProp.graphHeight * 0.7}
-          wordPadding={15}
-          desktopMaxFontSize={75}
-          mobileMaxFontSize={48}
-        />
-      </ComponentWrapper>
-
-      {/* c3 */}
-      <ComponentWrapper
-        heading="Have you ever had a co-op term without a placement?"
-        bodyText={
-          <>
+      <TooltipContext.Provider value={setTooltip}>
+        <div className="w-full flex flex-col items-center gap-8">
+          <StandardChart variant="dark" title="Are you in a co-op program?" chart={<Pie data={C1} />}>
             <p>
-              About 18% of respondents have had at least one co-op term without a placement. If you&apos;re also in thie situation and cannot find one,
-              don&apos;t worry; you&apos;re not alone!
+              Out of the 48 individuals that participated in this Class Profile, 46 were in a co-op program with only 2 not. Most students choose to be in the
+              co-op program because of the great experiences it provides, but it's not right for everyone!
             </p>
+          </StandardChart>
+          <StandardChart variant="blank" title="What was your favorite co-op location?" chart={<HorizontalBar data={C2} lines={[0, 5, 10]} narrow />}>
             <p>
-              Finding a co-op placement, especially your first one, can be pretty difficult. As the recent pandemic also affected students in this year, it
-              could have also caused finding a placement to be even more difficult.
+              NYC and Toronto were fairly popular locations, possibly caused by more good co-ops being available in these cities or because this class liked the
+              environment of the big cities.
             </p>
-          </>
-        }
-        align="left">
-        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
-          <PieChart data={C3} {...pieChartProps(isMobile, pageWidth, true)} />
-        </div>
-      </ComponentWrapper>
-
-      {/* c4 */}
-      <ComponentWrapper
-        heading="Were you ever banned from WaterlooWorks for renegotiating an offer/match?"
-        bodyText={
-          <p>
-            Reneging an offer/match comes with its risks, but if you believe that your other offer is better, you can decide it to be worth it. Out of those who
-            participated in this class profile, about 6% of students were banned from WaterlooWorks for this activity.
-          </p>
-        }
-        align="right"
-        noBackground>
-        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
-          <PieChart data={C4} {...pieChartProps(isMobile, pageWidth)} />
-        </div>
-      </ComponentWrapper>
-
-      {/* C5 */}
-      <ComponentWrapper
-        heading="How many co-op offers did you have rescinded?"
-        bodyText={
-          <p>
-            Majority of the participants, standing at 64%, did not rescind any co-op offers. If a participant did rescind any offers, they, for the most part,
-            only rescinded one, at 13% of the respondents, with very few rescinding more than one offer.
-          </p>
-        }
-        align="left">
-        <BarGraphVertical data={C5} {...barGraphProps(isMobile, pageWidth, true)} />
-      </ComponentWrapper>
-
-      {/* c6i */}
-      <ComponentWrapper heading="What company did you work for?" align="left" noBackground wordCloud>
-        <ComponentSwitcher
-          graphList={C6i.map((coopTerm, i) => (
-            <WordCloud
-              data={coopTerm}
-              width={wordCloudWidth(isMobile, pageWidth)}
-              height={DefaultProp.graphHeight}
-              wordPadding={7}
-              desktopMaxFontSize={75}
-              mobileMaxFontSize={38}
-              key={i}
+          </StandardChart>
+          <StandardChart variant="light" title="Have you ever had a co-op term without a placement?" chart={<Pie data={C3} />}>
+            <p>
+              About 15% of respondents had a co-op term without a placement, so if you find yourself in the same situation, not all is lost and you're not
+              alone!
+            </p>
+            <p>Finding a co-op placement especially in this job market can be fairly difficult. Don't give up!</p>
+          </StandardChart>
+          <StandardChart variant="blank" title="Were you ever banned from WaterlooWorks for renegotiating an offer/match?" chart={<Pie data={C4} />}>
+            <p>
+              Reneging an offer or match comes with its risks, but if you believe it's really worth it for another offer, you can make that decision. Only about
+              13% of respondents were banned from WaterlooWorks for this.
+            </p>
+          </StandardChart>
+          <StandardChart variant="dark" title="How many co-op offers did you have rescinded?" chart={<HorizontalBar data={C5} />}>
+            <p>
+              Most people didn't have any offers rescinded, which is good to see. Of those who did, all but 3 had only 1 rescinded with an whopping 6 for one
+              unlucky graduate.
+            </p>
+          </StandardChart>
+          <WindowPanel blank>
+            <ChartContainer
+              vertical
+              title={`What company did you work for (co-op #${term + 1})?`}
+              chart={
+                <div className="flex flex-col items-center gap-8">
+                  <TermButtons />
+                  <HorizontalBar data={C6i} lines={term === 0 || term === 2 ? [0, 2, 4] : term === 3 ? [0, 1, 2, 3] : [0, 1, 2]} narrow />
+                </div>
+              }
             />
-          ))}
-          buttonList={C6i.map((_, i) => "Co-op #" + (i + 1).toString())}
-        />
-      </ComponentWrapper>
-
-      {/* C6ii */}
-      <ComponentWrapper heading="Where were you located during work?" align="right">
-        <LineGraph
-          data={C6ii}
-          colorRange={colorRange2}
-          width={isMobile ? pageWidth / 1.5 : 600}
-          height={DefaultProp.graphHeight}
-          margin={{
-            top: 20,
-            bottom: 80,
-            left: 30,
-            right: 20,
-          }}
-        />
-      </ComponentWrapper>
-
-      {/* C6iii */}
-      <ComponentWrapper heading="What was your position?" align="right" noBackground wordCloud>
-        <ComponentSwitcher
-          graphList={C6iii.map((coopTerm, i) => (
-            <WordCloud
-              data={coopTerm}
-              width={wordCloudWidth(isMobile, pageWidth)}
-              height={DefaultProp.graphHeight}
-              wordPadding={7}
-              desktopMaxFontSize={75}
-              mobileMaxFontSize={38}
-              key={i}
+          </WindowPanel>
+          <WindowPanel>
+            <ChartContainer
+              vertical
+              title={`Where were you located during work (co-op #${term + 1})?`}
+              chart={
+                <div className="flex flex-col items-center gap-8">
+                  <TermButtons />
+                  <HorizontalBar data={C6ii} lines={term < 2 ? [0, 10, 20, 30, 40] : term === 2 ? [0, 10, 20] : term < 5 ? [0, 5, 10] : [0, 2, 4]} narrow />
+                </div>
+              }
             />
-          ))}
-          buttonList={C6iii.map((_, i) => "Co-op #" + (i + 1).toString())}
-        />
-      </ComponentWrapper>
-
-      {/* C6iv */}
-      <ComponentWrapper heading="What was your salary per hour in CAD (excluding other forms of compensation)?" align="left">
-        <BoxPlot
-          width={isMobile ? pageWidth / 1.5 : 500}
-          height={DefaultProp.graphHeight}
-          data={C6iv}
-          margin={{
-            top: 20,
-            left: 20,
-          }}
-          background
-          means={{ 1: 23.43, 2: 30.14, 3: 36.43, 4: 43.6, 5: 57.91, 6: 63.42 }}
-        />
-      </ComponentWrapper>
-
-      {/* C6v */}
-      <ComponentWrapper
-        heading="How much did you receive in other forms of compensation in CAD? (i.e. bonuses, stock options, relocation, housing, etc.)"
-        align="left"
-        noBackground>
-        <BoxPlot
-          width={isMobile ? pageWidth / 1.5 : 600}
-          height={DefaultProp.graphHeight}
-          data={C6v}
-          valueAxisLeftMargin={75}
-          margin={{
-            top: 20,
-            left: 20,
-          }}
-          means={{ 1: 724.87, 2: 1874.68, 3: 1363.7, 4: 2706.27, 5: 7694.31, 6: 7623.83 }}
-        />
-      </ComponentWrapper>
-
-      {/* C6vi */}
-      <ComponentWrapper heading="What was your co-op evaluation rating?" align="right">
-        <div>
-          <StackedBarGraphHorizontal
-            width={isMobile ? pageWidth / 1.5 : 600}
-            height={DefaultProp.graphHeight}
-            keys={C6viKey}
-            colorRange={[Color.lightPink, Color.pink, Color.darkPink, Color.darkerPink]}
-            data={C6vi}
-            margin={barGraphMargin}
-            displayPercentage
-            tooltipBottomLabel="Co-op Term: "
-          />
+          </WindowPanel>
+          <WindowPanel blank>
+            <ChartContainer
+              vertical
+              title={`What was your position (co-op #${term + 1})?`}
+              chart={
+                <div className="flex flex-col items-center gap-8">
+                  <TermButtons />
+                  <HorizontalBar data={C6iii} lines={term === 2 || term === 5 ? [0, 5, 10] : [0, 5, 10, 15]} narrow />
+                </div>
+              }
+            />
+          </WindowPanel>
+          <WindowPanel dark>
+            <ChartContainer
+              vertical
+              title="What was your salary per hour in CAD (excluding other forms of compensation)?"
+              chart={
+                <div className="flex flex-col items-center">
+                  <div className="grid grid-cols-[max-content_1fr] items-center gap-2">
+                    <span className="mt-1.5">Co-op #1:</span>
+                    <BoxPlot points={[0, 18, 20, 25, 35, 20.58]} min={0} max={164} width={10} />
+                    <span className="mt-1.5">Co-op #2:</span>
+                    <BoxPlot points={[15, 22, 24, 29, 56.56, 26.61]} min={0} max={164} width={10} />
+                    <span className="mt-1.5">Co-op #3:</span>
+                    <BoxPlot points={[23, 29.75, 36.5, 50.75, 81.25, 40.34]} min={0} max={164} width={10} />
+                    <span className="mt-1.5">Co-op #4:</span>
+                    <BoxPlot points={[24, 39.9, 60, 67, 85, 53.08]} min={0} max={164} width={10} />
+                    <span className="mt-1.5">Co-op #5:</span>
+                    <BoxPlot points={[22, 39.6, 50, 74.2, 164, 60.84]} min={0} max={164} width={10} />
+                    <span className="mt-1.5">Co-op #6:</span>
+                    <BoxPlot points={[42, 51.12, 66.5, 80.25, 162, 77.19]} min={0} max={164} width={10} />
+                  </div>
+                </div>
+              }
+            />
+          </WindowPanel>
+          <StandardChart
+            variant="blank"
+            title="What was your co-op evaluation rating?"
+            chart={
+              <GroupedHorizontalBar
+                data={C6iv}
+                lines={[0, 2, 4, 6, 8]}
+                supernarrow
+                legend={["Excellent", "Outstanding", "Very Good", "Good", "N/A (not WW)"]}
+              />
+            }>
+            <p>Overall, the co-op ratings remain fairly inflated, though co-op employees in their 6th term seemed to encounter harsher evaluations.</p>
+          </StandardChart>
+          <StandardChart
+            variant="light"
+            title="How happy were you with your co-op?"
+            chart={<GroupedHorizontalBar data={C6v} lines={[0, 5, 10, 15, 20]} supernarrow legend={["1", "2", "3", "4", "5"]} />}>
+            <p>
+              People seemed to get happier with their co-ops later on. Students tend to get more opportunities as they gain experience; additionally, the
+              earlier terms let you learn more about what you enjoy and what to look for.
+            </p>
+          </StandardChart>
+          <StandardChart
+            variant="blank"
+            title="How did you find your job?"
+            chart={<GroupedHorizontalBar data={C6vi} lines={[0, 10, 20, 30]} narrow legend={["Main Round (Cycle 1/2)", "Continuous Round", "External"]} />}>
+            <p>
+              Later in people's careers, a greater number of co-ops are found externally, which is likely both due to having more experience to reach out to
+              companies not going through WaterlooWorks and due to students taking return offers.
+            </p>
+          </StandardChart>
+          <StandardChart
+            variant="dark"
+            title="Were you referred to your job?"
+            chart={<GroupedHorizontalBar data={C6vii} lines={[0, 10, 20, 30]} narrow legend={["No", "Yes"]} />}>
+            <p>
+              Most people find their jobs without referrals. Each term, a handful (of varying size) of people do get referred. This shows the importance of
+              building relationships and networking.
+            </p>
+          </StandardChart>
+          <StandardChart
+            variant="blank"
+            title="Did you complete another co-op term after this one?"
+            chart={<GroupedHorizontalBar data={C6viii} lines={[0, 10, 20, 30, 40]} narrow legend={["Yes", "No"]} />}>
+            <p>
+              With only a few people stopping co-op in the first 4 terms, about half of the respondents stopped after their 5th term, which makes sense as many
+              sequences have 5 terms with one of them being 8 months long. 2 people did more than 6 terms, but we did not ask questions beyond the 6th term.
+            </p>
+          </StandardChart>
         </div>
-      </ComponentWrapper>
-
-      {/* C7vi */}
-      <ComponentWrapper heading="How happy were you with your co-op during the work term specified?" align="left" noBackground>
-        <div>
-          <StackedBarGraphVertical
-            width={isMobile ? pageWidth / 1.5 : 600}
-            height={DefaultProp.graphHeight}
-            keys={C6viiKey}
-            colorRange={[Color.lightOrange, Color.lightPink, Color.pink, Color.darkPink, Color.darkerPink]}
-            data={C6vii}
-            margin={barGraphMargin}
-            tooltipBottomLabel="Co-op Term: "
-            displayPercentage
-          />
-        </div>
-      </ComponentWrapper>
-
-      {/* C6viii */}
-      <ComponentWrapper heading="How did you find your job?" align="left">
-        <div style={{ padding: "10px" }}>
-          <LineGraph
-            data={C6viii}
-            colorRange={colorRange}
-            width={isMobile ? pageWidth / 1.5 : 600}
-            height={DefaultProp.graphHeight}
-            margin={{
-              top: 20,
-              bottom: 80,
-              left: 30,
-              right: 20,
-            }}
-          />
-        </div>
-      </ComponentWrapper>
-
-      {/* C6ix */}
-      <ComponentWrapper heading="Were you referred for the co-op?" align="left" noBackground>
-        <div>
-          <StackedBarGraphVertical
-            width={isMobile ? pageWidth / 1.5 : 600}
-            height={DefaultProp.graphHeight}
-            keys={C6ixKey}
-            colorRange={[Color.lightPink, Color.darkPink]}
-            data={C6ix}
-            margin={barGraphMargin}
-            displayPercentage
-            tooltipBottomLabel="Co-op term: "
-          />
-        </div>
-      </ComponentWrapper>
-
-      {/* C6x */}
-      <ComponentWrapper heading="Did you complete another co-op term after this?" align="right">
-        <div>
-          <StackedBarGraphVertical
-            width={isMobile ? pageWidth / 1.5 : 600}
-            height={DefaultProp.graphHeight}
-            keys={C6xKey}
-            colorRange={[Color.lightPink, Color.darkPink]}
-            data={C6x}
-            margin={barGraphMargin}
-            displayPercentage
-            tooltipBottomLabel="Co-op term: "
-          />
-        </div>
-      </ComponentWrapper>
-
-      <BottomNav leftPage={pageRoutes.computerScienceExperience} rightPage={pageRoutes.lifestyleAndInterests} />
+      </TooltipContext.Provider>
     </div>
   );
 }

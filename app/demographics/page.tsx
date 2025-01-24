@@ -2,7 +2,7 @@
 
 import HorizontalBar from "@/components/charts/HorizontalBar";
 import Pie from "@/components/charts/Pie";
-import SixPointDisplay from "@/components/charts/SixPointDisplay";
+import BoxPlot from "@/components/charts/BoxPlot";
 import StandardChart from "@/components/charts/StandardChart";
 import Tooltip from "@/components/charts/Tooltip";
 import { Header } from "@/components/Header";
@@ -124,7 +124,7 @@ export default function Demographics() {
             chart={
               <div className="flex flex-col items-center gap-12">
                 <HorizontalBar data={D15} narrow lines={[0, 5, 10, 15]} />
-                <SixPointDisplay points={[90, 95, 96, 97, 99, 95.66]} />
+                <BoxPlot points={[90, 95, 96, 97, 99, 95.66]} />
               </div>
             }>
             <p>All respondents had an admissions average of 90% or higher. Answers have been rounded down for the chart but not for the statistics.</p>
@@ -153,7 +153,7 @@ export default function Demographics() {
             chart={
               <div className="flex flex-col items-center gap-12">
                 <HorizontalBar data={D18} narrow lines={[0, 5, 10, 15]} />
-                <SixPointDisplay points={[0, 2000, 2500, 7250, 33414, 5585.35]} />
+                <BoxPlot points={[0, 2000, 2500, 7250, 33414, 5585.35]} />
               </div>
             }>
             <p>For our respondents, UW scholarships and grants totaled somewhere between $0 to $33k with $2k being the most common amount to receive.</p>
