@@ -21,7 +21,7 @@ interface CarouselButtonProps {
 }
 
 export function QuotationCarousel(props: QuotationCarouselProps) {
-  const { data, width = 600, height = 100, minWidth = 600, className } = props;
+  const { data, width = 600, height = 300, minWidth = 600, className } = props;
   const actualWidth = width < minWidth ? minWidth : width;
   const [activeIdx, setActiveIdx] = useState(0);
 
@@ -35,7 +35,7 @@ export function QuotationCarousel(props: QuotationCarouselProps) {
 
   return (
     <section
-      className={`${className || ""} relative flex justify-between items-center gap-2 m-auto py-8 pr-2 z-30 max-w-[80vw]`}
+      className={`${className || ""} relative flex justify-between items-center gap-2 m-auto py-8 pr-2 z-30 max-w-[calc(min(40vw,512px))]`}
       style={{
         width: `${actualWidth / 16}rem`,
         minHeight: `${height / 26}rem`,
@@ -51,19 +51,22 @@ export function QuotationCarousel(props: QuotationCarouselProps) {
         className="flex flex-col justify-between items-stretch gap-4 min-h-[inherit] h-full w-full p-[calc(30rem/16)] border border-solid border-white/20 rounded-[calc(12rem/16)] bg-response"
         style={{ filter: "box-shadow(0 calc(1rem / 16) calc(10rem / 16)" }}>
         <QuotationMark className="w-[calc(20rem/12)] h-[calc(20rem/12)] z-30" />
-        <ul className="flex flex-col justify-center items-center relative w-full m-0 p-0 grow z-50 bg-pink">
+        <ul className="flex flex-col justify-center items-center relative w-full m-0 p-0 grow z-50">
           {data.map((quote, idx) => (
             <li
               key={idx}
-              className={`absolute inset-0 p-0 list-none flex h-full overflow-y-auto ${idx !== activeIdx ? "invisible opacity-0" : "visible opacity-100"}`}>
-              <p className="mx-4 my-auto font-bold text-center h-max w-full">{quote}</p>
+              className={`absolute inset-0 p-0 list-none flex h-full overflow-y-auto transition-all ${idx !== activeIdx ? "invisible opacity-0" : "visible opacity-100"} ${(idx + 1) % data.length === activeIdx ? "-translate-x-8" : (idx + data.length - 1) % data.length === activeIdx ? "translate-x-8" : ""}`}>
+              <p className="mx-4 my-auto h-max w-full text-center text-lg lg:text-xl xl:text-2xl">{quote}</p>
             </li>
           ))}
         </ul>
         <div className="flex justify-end w-full z-30">
           <QuotationMark className="w-[calc(20rem/12)] h-[calc(20rem/12)] rotate-180" />
         </div>
-        <Star className="absolute mt-[7.2rem] w-[calc(20rem/5)] h-[calc(20rem/5)] z-30" colour="rgba(255, 255, 243, 1)" />
+        <Star className="absolute -bottom-5 w-[calc(20rem/5)] h-[calc(20rem/5)] z-30" colour="rgba(255, 255, 243, 1)" />
+        <div className="absolute bottom-4 left-0 right-0 flex flex-col items-center">
+          {activeIdx + 1} / {data.length}
+        </div>
       </div>
       <CarouselButton onClick={showNextCard} />
     </section>

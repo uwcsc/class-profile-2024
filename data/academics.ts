@@ -460,14 +460,14 @@ export const A23 = [
   { category: "Yes", value: 9 },
 ];
 
-export const A24 = [
+export const A23i = [
   { category: "3A", value: 1 },
   { category: "3B", value: 1 },
   { category: "4A", value: 6 },
   { category: "4B", value: 1 },
 ];
 
-export const A25 = [
+export const A23ii = [
   "SUTD (Singapore, Singapore)",
   "HKUST (Hong Kong SAR, China)",
   "Paris Nanterre (Paris, France)",
@@ -477,4 +477,43 @@ export const A25 = [
   "Kyoto University (Kyoto, Japan)",
   "UNSW Sydney (Sydney, Australia)",
   "KCL (London, UK)",
+];
+
+export const A23iii = [
+  "Moving to a foreign country and being in an unfamiliar environment with no friends or family",
+  "Leaving my social circle and being alone in a new country",
+  "Adjusting to a new life",
+  "Spending too much money on traveling every other weekend",
+  "Logistics",
+  "Having no friends or family to rely on",
+  "Seeing all of my friends hanging out in Waterloo without me",
+];
+
+export const A23iv = [
+  "Traveling",
+  "Traveling all around Southeast Asia (8 different countries), exploring new cultures, meeting new people, and trying different cuisines",
+  "Befriending locals in other cities and countries",
+  "New friends and experiencing a different country's geography",
+  "Walking to school every day through the historic and iconic streets of London that I see in countless movies and shows before and living that myself in real life",
+  "Making friends",
+  "Experiencing a completely new culture",
+  "Shoutout to my American friends I made on exchange: Max, Xander, Anneka, David, Raya, Aileen, Anjali, Cathy, Liam, Lorene, Luca",
+  "Taking a weekend trip to Spain just to chase an artist's tour",
+];
+
+export const A24 = [
+  { category: "At Home", value: 4 },
+  { category: "Claudette Millar Hall", value: 4 },
+  { category: "Mackenzie King Village", value: 7 },
+  { category: "Off-Campus", value: 7 },
+  { category: "Other", value: 1 },
+  { category: "Ron Eydt Village (REV)", value: 4 },
+  { category: "St. Jerome's University College", value: 3 },
+  { category: "UW Place (UWP)", value: 7 },
+  { category: "Village 1 (V1)", value: 11 },
+];
+
+export const A25 = [
+  { category: "Yes", value: 9 },
+  { category: "No", value: 39 },
 ];

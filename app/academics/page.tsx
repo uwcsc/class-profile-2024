@@ -28,6 +28,10 @@ import {
   A21,
   A22,
   A23,
+  A23i,
+  A23ii,
+  A23iii,
+  A23iv,
   A24,
   A25,
   A3,
@@ -329,12 +333,37 @@ export default function Academics() {
               your world view and give you more cultural exposure.
             </p>
           </StandardChart>
-          <StandardChart variant="light" title="What term did you take your exchange in?" chart={<Pie data={A24} />}>
+          <StandardChart variant="light" title="What term did you take your exchange in?" chart={<Pie data={A23i} />}>
             <p>Taking exchange terms seems to become popular later in people's careers, perhaps due to wanting a break from being in the same environment.</p>
           </StandardChart>
-          <StandardChart variant="blank" title="Where did you take your exchange term?" chart={<QuotationCarousel data={A25} />}>
+          <StandardChart variant="blank" title="Where did you take your exchange term?" chart={<QuotationCarousel data={A23ii} height={375} />}>
             <p>
               The UK and Singapore were popular destinations for people taking exchange terms, with many people heading to Asia for their exchange experience.
+            </p>
+          </StandardChart>
+          <StandardChart variant="dark" title="What was the hardest thing about going on exchange?" chart={<QuotationCarousel data={A23iii} height={525} />}>
+            <p>Exchange terms can be challenging to adapt to, but nonetheless, it is a very fulfilling and worthwhile experience for many.</p>
+          </StandardChart>
+          <StandardChart
+            variant="blank"
+            title="What is your favorite memory from your time during the exchange?"
+            chart={<QuotationCarousel data={A23iv} height={600} />}>
+            <p>Despite potential challenges, there are many amazing and unforgettable memories to make in exchange terms.</p>
+          </StandardChart>
+          <StandardChart
+            variant="light"
+            title="In which residence did you live in your first year?"
+            chart={<HorizontalBar data={A24} lines={[0, 5, 10]} narrow />}>
+            <p>
+              Our graduates came from a variety of residences in their first years with V1 being a common place given its large capacity and priority for
+              first-years.
+            </p>
+          </StandardChart>
+          <StandardChart variant="blank" title="Have you done an Undergraduate Research Assistanceship (URA)?" chart={<Pie data={A25} />}>
+            <p>
+              While the majority of the class has not done a URA, almost 20% of them have. A URA is a program that allows students to undertake a part-time
+              research opportunity during a study term which is a good way to get research experience and establish relationships with professors which can be
+              helpful for your future career.
             </p>
           </StandardChart>
         </div>

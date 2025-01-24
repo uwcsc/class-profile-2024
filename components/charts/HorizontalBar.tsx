@@ -54,6 +54,10 @@ export function GroupedHorizontalBar({
   const max = Math.max(...lines, ...data.flatMap(({ value }) => value));
   const total = data.flatMap(({ value }) => value).reduce((x, y) => x + y, 0);
 
+  const xl = pageWidth >= 1280;
+  const lg = pageWidth >= 1024;
+  const md = pageWidth >= 768;
+
   return (
     <div className="flex flex-col items-center gap-4">
       {legend ? (
@@ -67,7 +71,7 @@ export function GroupedHorizontalBar({
         </div>
       ) : null}
       <div
-        className={`relative grid grid-cols-[max-content_50vw] md:grid-cols-[max-content_25vw] items-center gap-x-4 ${supernarrow ? "gap-y-0.5" : narrow ? "gap-y-2" : "gap-y-4"}`}>
+        className={`relative grid grid-cols-[max-content_50vw] md:grid-cols-[max-content_20vw] lg:grid-cols-[max-content_40vw] xl:grid-cols-[max-content_512px] items-center gap-x-4 ${supernarrow ? "gap-y-0.5" : narrow ? "gap-y-2" : "gap-y-4"}`}>
         {data.map(({ category, value }, index) => (
           <Fragment key={category}>
             <div className={`justify-self-end leading-none ${supernarrow ? "text-xs" : ""}`}>{textTransform(category)}</div>
@@ -76,7 +80,7 @@ export function GroupedHorizontalBar({
                 <div
                   key={i}
                   className={`hover:drop-shadow-[0_0_4px_#fff8] transition ${supernarrow ? "h-2" : narrow ? "h-4" : "h-8"} ${colors[i]}`}
-                  style={{ width: `calc(max(${(num / max) * (pageWidth >= 768 ? 25 : 50)}vw, 5px))`, opacity: num === 0 ? 0.4 : 1 }}
+                  style={{ width: `calc(max(${(num / max) * (xl ? 512 : lg ? 40 : md ? 20 : 50)}${xl ? "px" : "vw"}, 5px))`, opacity: num === 0 ? 0.4 : 1 }}
                   onMouseEnter={() => setHover((hover) => ({ ...hover, [`${index}/${i}`]: true }))}
                   onMouseLeave={() => setHover((hover) => ({ ...hover, [`${index}/${i}`]: false }))}
                 />
@@ -84,12 +88,12 @@ export function GroupedHorizontalBar({
             </div>
           </Fragment>
         ))}
-        <div className={`absolute right-0 top-0 bottom-0 pointer-events-none -z-10 w-[50vw] md:w-[25vw]`}>
+        <div className={`absolute right-0 top-0 bottom-0 pointer-events-none -z-10 w-[50vw] md:w-[20vw] lg:w-[40vw] xl:w-[512px]`}>
           {lines.map((pos) => (
             <div
               key={pos}
               className="absolute h-full border border-white border-dashed"
-              style={{ right: `calc(${(1 - pos / max) * (pageWidth >= 768 ? 25 : 50)}vw - 1px)` }}>
+              style={{ right: `calc(${(1 - pos / max) * (xl ? 512 : lg ? 40 : md ? 20 : 50)}${xl ? "px" : "vw"} - 1px)` }}>
               <div className="absolute top-full mt-2" style={{ translate: "-50%" }}>
                 {pos}
               </div>
