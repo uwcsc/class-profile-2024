@@ -161,13 +161,13 @@ p {
 }
 
 a {
-  color: var(--pink);
+  color: var(--light-pink);
   text-decoration: none;
   transition: color 0.5s ease-out;
 }
 
 a:hover {
-  color: var(--light-pink);
+  color: var(--lighter-pink);
 }
 
 /* Custom styles for scroll bars on chromium */

@@ -1,6 +1,6 @@
 import { Color } from "@/utils/Color";
-import Star from "./Star";
 import { useState } from "react";
+import Star from "./Star";
 
 interface QuotationCarouselProps {
   data: string[];
@@ -35,25 +35,27 @@ export function QuotationCarousel(props: QuotationCarouselProps) {
 
   return (
     <section
-      className={`${className || ""} relative flex justify-between items-center gap-[calc(8rem/16)] m-auto py-8 pr-2 z-30`}
+      className={`${className || ""} relative flex justify-between items-center gap-2 m-auto py-8 pr-2 z-30 max-w-[80vw]`}
       style={{
         width: `${actualWidth / 16}rem`,
         minHeight: `${height / 26}rem`,
       }}>
       <CarouselButton onClick={showPreviousCard} isPrevious />
-      <img 
-        src="/images/shooting-star.svg" 
-        alt="Shooting star" 
-        className="absolute end-[-2rem] top-[-1.3rem] w-[calc(30rem/2)] h-[calc(8rem)] z-[inherit]"
+      <img
+        src="/images/shooting-star.svg"
+        alt="Shooting star"
+        className="absolute pointer-events-none end-[-2rem] top-[-1.3rem] w-[calc(30rem/2)] h-[calc(8rem)] z-[inherit]"
         aria-hidden="true"
       />
       <div
-        className="flex flex-col justify-between items-stretch gap-4 min-h-[inherit] h-full w-full p-[calc(30rem/18)] border-[1.64px] border-solid border-[#6456AD] rounded-[calc(12rem/16)] bg-response"
+        className="flex flex-col justify-between items-stretch gap-4 min-h-[inherit] h-full w-full p-[calc(30rem/16)] border border-solid border-white/20 rounded-[calc(12rem/16)] bg-response"
         style={{ filter: "box-shadow(0 calc(1rem / 16) calc(10rem / 16)" }}>
         <QuotationMark className="w-[calc(20rem/12)] h-[calc(20rem/12)] z-30" />
-        <ul className="flex flex-col justify-center items-center relative w-full grow z-30">
+        <ul className="flex flex-col justify-center items-center relative w-full m-0 p-0 grow z-50 bg-pink">
           {data.map((quote, idx) => (
-            <li key={idx} className={`absolute inset-0 list-none flex overflow-y-auto ${idx !== activeIdx ? "invisible opacity-0" : "visible opacity-1"}`}>
+            <li
+              key={idx}
+              className={`absolute inset-0 p-0 list-none flex h-full overflow-y-auto ${idx !== activeIdx ? "invisible opacity-0" : "visible opacity-100"}`}>
               <p className="mx-4 my-auto font-bold text-center h-max w-full">{quote}</p>
             </li>
           ))}
@@ -61,7 +63,7 @@ export function QuotationCarousel(props: QuotationCarouselProps) {
         <div className="flex justify-end w-full z-30">
           <QuotationMark className="w-[calc(20rem/12)] h-[calc(20rem/12)] rotate-180" />
         </div>
-        <Star className="absolute mt-[7.2rem] w-[calc(20rem/5)] h-[calc(20rem/5)] z-30" colour="rgba(255, 255, 243, 1)"/>
+        <Star className="absolute mt-[7.2rem] w-[calc(20rem/5)] h-[calc(20rem/5)] z-30" colour="rgba(255, 255, 243, 1)" />
       </div>
       <CarouselButton onClick={showNextCard} />
     </section>
@@ -70,17 +72,17 @@ export function QuotationCarousel(props: QuotationCarouselProps) {
 
 function CarouselButton({ isPrevious, onClick }: CarouselButtonProps) {
   return (
-    <button className="flex flex-col justify-center items-center p-4 h-min group" onClick={onClick}>
+    <button className="p-0 group" onClick={onClick}>
       <svg
-        className={`${isPrevious ? "" : "rotate-180"} relative w-[calc(20rem/16)] h-[calc(40rem/16)] transition-transform duration-200 ${isPrevious ? "group-hover:-translate-x-[calc(4rem/16)]" : "group-hover:translate-x-[calc(4rem/16)]"} group-hover:drop-shadow-[0_0_2px_rgba(204,195,255,1)]`}
-        width="39"
-        height="72"
-        viewBox="0 0 39 72"
+        className={`relative w-[calc(10rem/16)] h-[calc(20rem/16)] transition-transform duration-200 ${isPrevious ? "group-hover:-translate-x-[calc(4rem/16)]" : "group-hover:translate-x-[calc(4rem/16)]"} group-hover:drop-shadow-[0_0_2px_rgba(204,195,255,1)]`}
+        width={20}
+        height={40}
+        viewBox="0 0 20 40"
         fill="none"
         xmlns="http://www.w3.org/2000/svg">
         <path
-          d="M23.1724 39.5986L3.18624 21.5394C2.56099 20.9744 2.58323 19.986 3.23327 19.4497L23.1724 3.00033"
-          strokeWidth="4"
+          d={isPrevious ? "M 20 40 L 3 23 C 1 21 1 19 3 17 L 20 0" : "M 0 40 L 17 23 C 19 21 19 19 17 17 L 0 0"}
+          strokeWidth="3"
           stroke={Color.lighterPink} // TODO: change colour palette
           strokeLinecap="round"
         />

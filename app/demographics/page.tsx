@@ -9,15 +9,10 @@ import { Header } from "@/components/Header";
 import PageHeader from "@/components/PageHeader";
 import { D1, D10, D11, D12, D13, D14, D15, D16, D16i, D17, D18, D19, D2, D3, D4, D5, D6, D7, D8, D8i, D9 } from "@/data/demographics";
 import { TooltipContext } from "@/utils/context";
-import { useWindowDimensions } from "@/utils/getWindowDimensions";
-import { useIsMobile } from "@/utils/isMobile";
 import { useState } from "react";
 
 export default function Demographics() {
   const [tooltip, setTooltip] = useState("");
-
-  const pageWidth = useWindowDimensions().width;
-  const isMobile = useIsMobile();
 
   return (
     <div className="flex flex-col items-center mb-16">
@@ -129,7 +124,7 @@ export default function Demographics() {
             chart={
               <div className="flex flex-col items-center gap-12">
                 <HorizontalBar data={D15} narrow lines={[0, 5, 10, 15]} />
-                <SixPointDisplay points={[90, 94.5, 96, 97, 99, 95.7]} />
+                <SixPointDisplay points={[90, 95, 96, 97, 99, 95.66]} />
               </div>
             }>
             <p>All respondents had an admissions average of 90% or higher. Answers have been rounded down for the chart but not for the statistics.</p>
@@ -158,7 +153,7 @@ export default function Demographics() {
             chart={
               <div className="flex flex-col items-center gap-12">
                 <HorizontalBar data={D18} narrow lines={[0, 5, 10, 15]} />
-                <SixPointDisplay points={[0, 2000, 2500, 7500, 33414, 5585.35]} />
+                <SixPointDisplay points={[0, 2000, 2500, 7250, 33414, 5585.35]} />
               </div>
             }>
             <p>For our respondents, UW scholarships and grants totaled somewhere between $0 to $33k with $2k being the most common amount to receive.</p>
