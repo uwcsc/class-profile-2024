@@ -14,6 +14,7 @@ export function title(title: string): Metadata {
       description,
       url: "https://csclub.uwaterloo.ca/classprofile/2024/",
     },
+    twitter: { card: "summary_large_image", images: new URL("https://i.imgur.com/XUS0S9A.png") },
     icons: ["/images/favicon.ico"],
   };
 }
