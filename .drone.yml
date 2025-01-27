@@ -30,7 +30,7 @@ steps:
     commands:
       - 'echo "$SSH_KEY" > /tmp/ssh_key'
       - chmod 600 /tmp/ssh_key
-      - ssh -4 -i /tmp/ssh_key www@caffeine.csclub.uwaterloo.ca -o StrictHostKeyChecking=no '~/bin/classprofile/deploy-2023.sh'
+      - ssh -4 -i /tmp/ssh_key www@caffeine.csclub.uwaterloo.ca -o StrictHostKeyChecking=no '~/bin/classprofile/deploy-2024.sh'
     when:
       branch:
         - main
