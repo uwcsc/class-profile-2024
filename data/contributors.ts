@@ -1,10 +1,7 @@
 export const classProfileWebDevelopers: { name: string; link: string; lead?: boolean }[] = [
   { name: "Iris Liao", link: "https://www.hyperneutrino.xyz", lead: true },
   { name: "Cathie Yan", link: "https://www.linkedin.com/in/cathie-yan/" },
-  { name: "Cindy Li", link: "https://www.linkedin.com/in/cindehaa/" },
   { name: "Om Ogale", link: "https://omogale.vercel.app/" },
-  { name: "Vivek Manoj", link: "https://www.linkedin.com/in/vivekjudemanoj/" },
-  { name: "Yiyan Li", link: "https://yiyanhuang.netlify.app/" },
 ];
 
 export const designers: { name: string; link: string; lead?: boolean }[] = [
