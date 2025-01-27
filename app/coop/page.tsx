@@ -45,7 +45,7 @@ export default function Coop() {
       {new Array(6).fill(0).map((_, i) => (
         <button
           key={i}
-          className={`${i === term ? "bg-pink" : "bg-darker-pink"} transition-colors border border-black rounded-md px-3 py-1 mt-2`}
+          className={`${i === term ? "bg-pink" : "bg-dark-pink"} transition-colors border border-black rounded-md px-3 py-1 mt-2`}
           onClick={() => setTerm(i)}>
           Co-op #{i + 1}
         </button>

@@ -79,7 +79,7 @@ export default function Academics() {
 
   const ToggleFullCharts = () => (
     <div className="flex items-center gap-2">
-      <button className="bg-darker-pink border border-black rounded-md px-3 py-1 mt-2" onClick={() => setFullCharts(() => !fullCharts)}>
+      <button className="bg-dark-pink border border-black rounded-md px-3 py-1 mt-2" onClick={() => setFullCharts(() => !fullCharts)}>
         {fullCharts ? "Show Compressed Charts" : "Show Full Charts"}
       </button>
     </div>
