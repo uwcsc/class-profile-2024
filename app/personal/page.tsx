@@ -1,80 +1,66 @@
 "use client";
 
-import { BottomNav } from "@/components/BottomNav";
-import { ComponentWrapper } from "@/components/ComponentWrapper";
-import { Header } from "@/components/Header";
-import PageHeader from "@/components/PageHeader";
+import HorizontalBar from "@/components/charts/HorizontalBar";
+import StandardChart from "@/components/charts/StandardChart";
+import PageTemplate from "@/components/PageTemplate";
 import { QuotationCarousel } from "@/components/QuotationCarousel";
-import { P1, P10, P2, P3, P4, P5, P6, P7, P8, P9 } from "@/data/personal";
-import { pageRoutes } from "@/data/routes";
+import { P1, P10, P11, P2, P3, P4, P5, P6, P7, P8, P9 } from "@/data/personal";
 
 export default function Personal() {
   return (
-    <div className="flex flex-col items-center">
-      <Header />
-      <PageHeader name="personal" alt="Personal" />
-
-      <ComponentWrapper heading="What was your favourite extracurricular activity that you participated in during your time at UW?" align="left">
-        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
-          <QuotationCarousel data={P1} circleDiameter={0} height={300} />
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper heading="What is one extracurricular you regret not joining?" align="left" noBackground>
-        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
-          <QuotationCarousel data={P2} circleDiameter={0} height={300} />
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper heading="What is the best life hack/tip?" align="right">
-        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
-          <QuotationCarousel data={P3} circleDiameter={0} height={300} />
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper heading="What is your favourite inspirational quote/words to live by?" align="right" noBackground>
-        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
-          <QuotationCarousel data={P4} circleDiameter={0} height={400} width={700} />
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper heading="What is your most embarrassing story from your time at UW?" align="left">
-        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
-          <QuotationCarousel data={P5} circleDiameter={0} height={300} />
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper heading="What is the nicest thing someone at UW did for you?" align="left" noBackground>
-        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
-          <QuotationCarousel data={P6} circleDiameter={0} height={300} />
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper heading="What is one regret you have after finishing university?" align="right">
-        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
-          <QuotationCarousel data={P7} circleDiameter={0} height={300} />
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper heading="What is one thing that you wish you could tell your first-year self?" align="right" noBackground>
-        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
-          <QuotationCarousel data={P8} circleDiameter={0} height={300} />
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper heading="What is the best lesson you learned from your time at UW?" align="left">
-        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
-          <QuotationCarousel data={P9} circleDiameter={0} height={300} />
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper heading="What is your favourite memory from your time at UW?" align="left" noBackground>
-        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
-          <QuotationCarousel data={P10} circleDiameter={0} height={400} width={400} />
-        </div>
-      </ComponentWrapper>
-
-      <BottomNav leftPage={pageRoutes.mentalHealth} rightPage={pageRoutes.contributors} />
-    </div>
+    <PageTemplate name="personal" alt="Personal">
+      <StandardChart
+        variant="dark"
+        vertical
+        title="What was your favorite extracurricular activity during your time at UW?"
+        chart={<HorizontalBar data={P1} narrow />}></StandardChart>
+      <StandardChart variant="blank" title="What is one extracurricular you regret not joining?" chart={<QuotationCarousel data={P2} height={525} />}>
+        <p>
+          Many people have regrets about not joining clubs, so be sure to try things out while you have the time! If you missed your chance in university, it's
+          never too late to look for communities online or locally.
+        </p>
+      </StandardChart>
+      <StandardChart variant="light" vertical title="What is the best life hack/tip?" chart={<QuotationCarousel data={P3} height={525} />}></StandardChart>
+      <StandardChart
+        variant="blank"
+        vertical
+        title="What is your favorite inspirational quote/words to live by?"
+        chart={<QuotationCarousel data={P4} height={600} />}></StandardChart>
+      <StandardChart
+        variant="dark"
+        vertical
+        title="What is your most embarrassing story from your time at UW?"
+        chart={<QuotationCarousel data={P5} height={525} />}></StandardChart>
+      <StandardChart
+        variant="blank"
+        vertical
+        title="What is the nicest thing someone at UW did for you?"
+        chart={<QuotationCarousel data={P6} height={525} />}></StandardChart>
+      <StandardChart
+        variant="light"
+        vertical
+        title="What is the nicest thing you did for someone at UW?"
+        chart={<QuotationCarousel data={P7} height={425} />}></StandardChart>
+      <StandardChart
+        variant="blank"
+        vertical
+        title="What is one regret you have after finishing university?"
+        chart={<QuotationCarousel data={P8} height={525} />}></StandardChart>
+      <StandardChart
+        variant="dark"
+        vertical
+        title="What is one thing that you wish you could tell your first-year self?"
+        chart={<QuotationCarousel data={P9} height={475} />}></StandardChart>
+      <StandardChart
+        variant="blank"
+        vertical
+        title="What is the best lesson you learned from your time at UW?"
+        chart={<QuotationCarousel data={P10} height={425} />}></StandardChart>
+      <StandardChart
+        variant="light"
+        vertical
+        title="What is your favorite memory from your time at UW?"
+        chart={<QuotationCarousel data={P11} height={525} />}></StandardChart>
+    </PageTemplate>
   );
 }

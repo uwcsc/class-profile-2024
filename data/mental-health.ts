@@ -13,7 +13,7 @@ export const H1 = [
   "I was betrayed by my partner and isolated myself from my friends for a while.",
   "Job search in 3A",
   "My breakup",
-  "Returning from COVID and feeling like I was drifting away from my friends and like had nobody who really cared to talk to me. ",
+  "Returning from COVID and feeling like I was drifting away from my friends and like had nobody who really cared to talk to me.",
   "There were points where I felt terrible every day and didn't see how I'd get through things.",
   "When my course load was too heavy during COVID terms",
   "failing courses",
@@ -70,8 +70,8 @@ export const H7i = [
 export const H8 = [
   "What seems big in the moment is often small in the grander scheme of things. When it feels like you can't do anything, just focus on doing what you can.",
   "An sit up a day keeps the demons away.",
-  "Be kind to yourself, drop a course if the terms gets to be too rough, take a term off, do what you need to do! You yourself are the one person that will be with you for your while life, be kind to yourself or you'll go through life with a douchebag whispering in your ear the whole time. A healthy inner monologue is the difference between good mental health and bad mental health when things get rough. ",
-  "Being surrounded by more people can often be even more lonely if you feel like you don't have any genuine connection with them. I felt as if I was failing when I wasn't as close with some people in my program as I \"should be\". There is no \"should be\", and it's important to recognize that you sometimes just don't vibe with certain people or certain groups of people, and that's okay. You'll meet a lot of people through coop and school and you'll find your people eventually. ",
+  "Be kind to yourself, drop a course if the terms gets to be too rough, take a term off, do what you need to do! You yourself are the one person that will be with you for your while life, be kind to yourself or you'll go through life with a douchebag whispering in your ear the whole time. A healthy inner monologue is the difference between good mental health and bad mental health when things get rough.",
+  "Being surrounded by more people can often be even more lonely if you feel like you don't have any genuine connection with them. I felt as if I was failing when I wasn't as close with some people in my program as I \"should be\". There is no \"should be\", and it's important to recognize that you sometimes just don't vibe with certain people or certain groups of people, and that's okay. You'll meet a lot of people through coop and school and you'll find your people eventually.",
   "Don't be afraid to change paths and/or find new things to do. The worst part about being in a tough state mentally is feeling trapped.",
   "Enjoy university! It goes by so quickly.",
   "Even when everything seems like you'll never get better again, you'll make it through.",
@@ -86,7 +86,7 @@ export const H8 = [
 ];
 
 export const H9 = [
-  "Be kind and patient with yourself the way you would be with a friend. Have a support system you can count on\u2014which can certainly include your parents",
+  "Be kind and patient with yourself the way you would be with a friend. Have a support system you can count on, which can certainly include your parents",
   "Cry",
   "Find good friends and support system!",
   "Fitness, journaling, drinking, partying",
@@ -94,7 +94,7 @@ export const H9 = [
   "Journaling, pacing, go on a walk, talk with family and friends",
   "Play video games to forget about other problems",
   "Punch my pillows, longingly",
-  "Sometimes I like to vent or talk things out with myself in a private (me-only) chat. Typing things out helps to clear my mind and let me vent things out of my system, and it being private to just me means there's no worries about judgement. It can be cathartic for things I'm not ready to talk to people about, or don't feel worth talking to others about. ",
+  "Sometimes I like to vent or talk things out with myself in a private (me-only) chat. Typing things out helps to clear my mind and let me vent things out of my system, and it being private to just me means there's no worries about judgement. It can be cathartic for things I'm not ready to talk to people about, or don't feel worth talking to others about.",
   "Talk to friends and eat good food",
   "Talk to friends, family, partner, etc. Focus on something other than the thing stressing you out for a bit.",
   "Talk to my friends and keep doing my hobbies.",

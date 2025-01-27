@@ -47,7 +47,7 @@ export default function FullTime() {
         }>
         <p>There was some variance in the number of offers people got, but most people had more than one to choose from!</p>
       </StandardChart>
-      <StandardChart variant="dark" title="What company will you be working for post-grad?" chart={<HorizontalBar data={G5} lines={[0, 2, 4]} supernarrow />}>
+      <StandardChart variant="dark" title="What company will you be working for post-grad?" chart={<HorizontalBar data={G5} lines={[0, 2, 4]} narrow />}>
         <p>
           More than 60% of the students have secured a full time position and will be working post-grad. Meta is the most popular choice among the students.
         </p>

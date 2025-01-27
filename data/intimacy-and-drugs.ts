@@ -104,7 +104,7 @@ export const I8 = [
   "Just be yourself, except unless you're a weird asshole. Then be what a normally adjusted person would be.",
   "Keep looking",
   "Love yourself first",
-  "What kind of partner do you want to be? What kind of partner are you looking for? Work on yourself till you can be the kind of partner you want to be and be both reasonable and flexible in your criteria for others. If you want something serious, be patient, be kind, be respectful\u2014be the kind of person you'd want your kids to bring home. ",
+  "What kind of partner do you want to be? What kind of partner are you looking for? Work on yourself till you can be the kind of partner you want to be and be both reasonable and flexible in your criteria for others. If you want something serious, be patient, be kind, be respectful, be the kind of person you'd want your kids to bring home.",
   "What's meant to be is meant to be",
   "be kind, work on yourself, learn to love yourself first, and communicate well",
   "be sure of what you want",

@@ -97,7 +97,7 @@ export default function Academics() {
       <StandardChart
         variant="blank"
         title="Which CS course was your favorite?"
-        chart={<HorizontalBar data={A2} lines={[0, 2, 4, 6]} supernarrow textTransform={flowCourseTransform} />}>
+        chart={<HorizontalBar data={A2} lines={[0, 2, 4, 6]} narrow textTransform={flowCourseTransform} />}>
         <p>
           We saw a nice distribution of favored CS courses, though people seemed to especially like{" "}
           <b>{flowCourseTransform("CS 135/145")} Functional Programs</b>, <b>{flowCourseTransform("CS 246/246E")} Object-Oriented Software Development</b>, and{" "}
@@ -119,7 +119,7 @@ export default function Academics() {
       <StandardChart
         variant="blank"
         title="Which non-CS course was your favorite?"
-        chart={<HorizontalBar data={fullCharts ? A4 : A4c} lines={[0, 5, 10]} supernarrow={fullCharts} narrow textTransform={flowCourseTransform} />}>
+        chart={<HorizontalBar data={fullCharts ? A4 : A4c} lines={[0, 5, 10]} narrow textTransform={flowCourseTransform} />}>
         <p>
           There is always a very wide variety of favorite electives given the vast selection of choices at UW and the diverse interests and passions of each
           student. A couple of courses stand out, with 4 students stating that <b>{flowCourseTransform("CO 487")} Applied Cryptography</b> was their favorite
@@ -131,7 +131,7 @@ export default function Academics() {
       <StandardChart
         variant="dark"
         title="Which non-CS course was your least favorite?"
-        chart={<HorizontalBar data={fullCharts ? A5 : A5c} lines={[0, 5, 10]} supernarrow={fullCharts} narrow textTransform={flowCourseTransform} />}>
+        chart={<HorizontalBar data={fullCharts ? A5 : A5c} lines={[0, 5, 10]} narrow textTransform={flowCourseTransform} />}>
         <p>
           <b>{flowCourseTransform("STAT 231")} Statistics</b> was the least popular non-CS course by far. This course teaches fundamentals of statistics, but
           the content is quite difficult and it is a required course. As of January 2025, it only has a 40% Liked rating on UWFlow.
@@ -141,7 +141,7 @@ export default function Academics() {
       <StandardChart
         variant="blank"
         title="What is the hardest course you have taken?"
-        chart={<HorizontalBar data={A6} lines={[0, 5, 10]} supernarrow textTransform={flowCourseTransform} />}>
+        chart={<HorizontalBar data={A6} lines={[0, 5, 10]} narrow textTransform={flowCourseTransform} />}>
         <p>
           Many people found <b>{flowCourseTransform("MATH 239")} Introduction to Combinatorics</b> to be particularly difficult, and the 30% Easy rating on
           UWFlow reflects this. <b>{flowCourseTransform("CS 341")} Algorithms</b> was also rated as fairly difficult.
@@ -150,7 +150,7 @@ export default function Academics() {
       <StandardChart
         variant="light"
         title="What is the easiest course you have taken?"
-        chart={<HorizontalBar data={A7} lines={[0, 5, 10]} supernarrow textTransform={flowCourseTransform} />}>
+        chart={<HorizontalBar data={A7} lines={[0, 5, 10]} narrow textTransform={flowCourseTransform} />}>
         <p>
           7 people found <b>{flowCourseTransform("CLAS 104")} Classical Mythology</b> to be the easiest. Its UWFlow ratings reflect this with a 93% Easy rating.
           Of the CS courses, 4 people found <b>{flowCourseTransform("CS 492")} The Social Implications of Computing</b> to be the easiest.
@@ -159,7 +159,7 @@ export default function Academics() {
       <StandardChart
         variant="blank"
         title="Which course do you regret taking the most?"
-        chart={<HorizontalBar data={A8} lines={[0, 2, 4]} supernarrow textTransform={flowCourseTransform} />}>
+        chart={<HorizontalBar data={A8} lines={[0, 2, 4]} narrow textTransform={flowCourseTransform} />}>
         <p>
           <b>{flowCourseTransform("CLAS 104")} Classical Mythology</b> was rated as the easiest by our respondents yet also had a notable 4 people say they
           regretted taking it the most. Nobody put it down as both the easiest and most regretted, but it's likely that it being a "bird course" (one you take
@@ -180,7 +180,7 @@ export default function Academics() {
       <StandardChart
         variant="blank"
         title="Which course did you find the least useful?"
-        chart={<HorizontalBar data={A10} lines={[0, 5, 10]} supernarrow textTransform={flowCourseTransform} />}>
+        chart={<HorizontalBar data={A10} lines={[0, 5, 10]} narrow textTransform={flowCourseTransform} />}>
         <p>
           <b>{flowCourseTransform("CS 490")} Information Systems Management</b> was stated as the least useful course to 8 people, reflecting its unpopularity
           as well with these graduates. <b>{flowCourseTransform("CS 245/245E")} Logic &amp; Computation</b>, the most unpopular CS course, was also seen as not
@@ -207,21 +207,20 @@ export default function Academics() {
       </StandardChart>
       <StandardChart
         variant="light"
+        vertical
         title="Who is your favorite professor at UW?"
         chart={
           <HorizontalBar
             data={A12}
             lines={[0, 1, 2, 3]}
-            supernarrow
+            narrow
             textTransform={(text) => (
               <a href={`https://uwflow.com/professor/${text.toLowerCase().split(" ").join("_")}`} target="_blank">
                 {text}
               </a>
             )}
           />
-        }>
-        <p></p>
-      </StandardChart>
+        }></StandardChart>
       <StandardChart variant="blank" title="Which study term did you think was the hardest?" chart={<HorizontalBar data={A13} lines={[0, 5, 10, 15]} narrow />}>
         <p>Many people found 2B to be difficult. A lot of the harder required 2nd-year courses show up in this term.</p>
       </StandardChart>

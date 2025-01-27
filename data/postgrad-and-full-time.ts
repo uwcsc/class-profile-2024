@@ -39,7 +39,7 @@ export const G5 = [
   { category: "Alchemy", value: 1 },
   { category: "Amazon", value: 2 },
   { category: "Bloomberg LP", value: 1 },
-  { category: "Citadel Securities ", value: 1 },
+  { category: "Citadel Securities", value: 1 },
   { category: "Databricks", value: 3 },
   { category: "Faire", value: 1 },
   { category: "Global Trading Systems", value: 1 },
