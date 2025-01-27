@@ -5,7 +5,7 @@ const description =
 
 export function title(title: string): Metadata {
   return {
-    title: `${title} — 2023 CS Class Profile`,
+    title: `${title} — 2024 CS Class Profile`,
     description,
     keywords: ["uw", "csc", "csclub", "uwaterloo", "uwcsc", "university", "waterloo", "computer", "science", "club", "class", "profile", "2023"],
     openGraph: {

@@ -74,7 +74,7 @@ export function GroupedHorizontalBar({
         </div>
       ) : null}
       <div
-        className={`relative grid grid-cols-[max-content_50vw] md:grid-cols-[max-content_20vw] lg:grid-cols-[max-content_40vw] xl:grid-cols-[max-content_512px] items-center gap-x-4 ${supernarrow ? (data[0].value.length < 3 ? "gap-y-1" : "gap-y-2") : narrow ? "gap-y-2" : "gap-y-4"}`}>
+        className={`relative grid grid-cols-[max-content_50vw] md:grid-cols-[max-content_20vw] lg:grid-cols-[max-content_30vw] xl:grid-cols-[max-content_384px] items-center gap-x-4 ${supernarrow ? (data[0].value.length < 3 ? "" : "gap-y-2") : narrow ? "gap-y-2" : "gap-y-4"}`}>
         {data.map(({ category, value }, index) => (
           <Fragment key={category}>
             <div className={`justify-self-end leading-none ${supernarrow && data[0].value.length < 2 ? "text-xs" : ""}`}>{textTransform(category)}</div>
@@ -83,7 +83,7 @@ export function GroupedHorizontalBar({
                 <div
                   key={i}
                   className={`hover:drop-shadow-[0_0_4px_#fff8] transition ${supernarrow ? "h-2" : narrow ? "h-4" : "h-8"} ${colors[i]}`}
-                  style={{ width: `calc(max(${(num / max) * (xl ? 512 : lg ? 40 : md ? 20 : 50)}${xl ? "px" : "vw"}, 5px))`, opacity: num === 0 ? 0.4 : 1 }}
+                  style={{ width: `calc(max(${(num / max) * (xl ? 384 : lg ? 30 : md ? 20 : 50)}${xl ? "px" : "vw"}, 5px))`, opacity: num === 0 ? 0.4 : 1 }}
                   onMouseEnter={() => setHover((hover) => ({ ...hover, [`${index}/${i}`]: true }))}
                   onMouseLeave={() => setHover((hover) => ({ ...hover, [`${index}/${i}`]: false }))}
                 />
@@ -91,12 +91,12 @@ export function GroupedHorizontalBar({
             </div>
           </Fragment>
         ))}
-        <div className={`absolute right-0 top-0 bottom-0 pointer-events-none -z-10 w-[50vw] md:w-[20vw] lg:w-[40vw] xl:w-[512px]`}>
+        <div className={`absolute right-0 top-0 bottom-0 pointer-events-none -z-10 w-[50vw] md:w-[20vw] lg:w-[30vw] xl:w-[384px]`}>
           {lines.map((pos) => (
             <div
               key={pos}
               className="absolute h-full border border-white border-dashed"
-              style={{ right: `calc(${(1 - pos / max) * (xl ? 512 : lg ? 40 : md ? 20 : 50)}${xl ? "px" : "vw"} - 1px)` }}>
+              style={{ right: `calc(${(1 - pos / max) * (xl ? 384 : lg ? 30 : md ? 20 : 50)}${xl ? "px" : "vw"} - 1px)` }}>
               <div className="absolute top-full mt-2" style={{ translate: "-50%" }}>
                 {pos}
               </div>

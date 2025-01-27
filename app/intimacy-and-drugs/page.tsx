@@ -229,7 +229,7 @@ export default function IntimacyAndDrugs() {
         heading="How has your understanding of relationships changed during university?"
         bodyText={
           <p>
-            Relationships are often a major turning point in many people&apos;s lives. It is a commitment to each other—some struggle, while others do not.
+            Relationships are often a major turning point in many people&apos;s lives. It is a commitment to each other &mdash; some struggle, while others do not.
             Let&apos;s see what other people have to say.
           </p>
         }
