@@ -36,12 +36,14 @@ export default function Home() {
                   degree. CS is more flexible than the other two programs with the ability to choose from a wider range and number of electives, take terms off,
                   and change academic schedules.
                 </p>
+                <br />
                 <h3>Computing and Financial Management [CFM]</h3>
                 <p>
                   CFM combines core CS courses with electives from areas such as accounting, economics, and financial management. This is a joint offering by
                   the Faculty of Mathematics and the School of Accounting and Finance. The program is offered only as a co-op program with 8 school and 6 co-op
                   terms.
                 </p>
+                <br />
                 <h3>Computer Science/Business Administration [CS/BBA]</h3>
                 <p>
                   CS/BBA is a joint program with the Wilfrid Laurier University. It is an exclusive offering that provides students experience in CS as well as
@@ -53,7 +55,7 @@ export default function Home() {
             <h1 className="glow">Preface</h1>
             <div className="col-span-3">
               <WindowPanel>
-                <p>
+                <p className="mt-0">
                   The 2024 CS Class Profile consists of data relevant to CS, CFM, and CS/BBA students. These are combined as students in these programs tend to
                   have similar experiences with many required CS courses being shared. In the standard co-op offering, CS and CFM take 4 years and 2 semesters
                   to complete, whereas CS/BBA can take up to a full 5 years.
