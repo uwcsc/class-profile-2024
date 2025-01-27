@@ -1,194 +1,123 @@
 "use client";
 
-import { BarGraphVertical } from "@/components/BarGraph";
-import { BottomNav } from "@/components/BottomNav";
-import { ComponentWrapper } from "@/components/ComponentWrapper";
-import { Header } from "@/components/Header";
-import PageHeader from "@/components/PageHeader";
-import { PieChart } from "@/components/PieChart";
+import HorizontalBar from "@/components/charts/HorizontalBar";
+import Pie from "@/components/charts/Pie";
+import StandardChart from "@/components/charts/StandardChart";
+import PageTemplate from "@/components/PageTemplate";
 import { QuotationCarousel } from "@/components/QuotationCarousel";
-import { H1, H10, H11, H2, H3, H4, H5, H5i, H6, H7, H8, H9 } from "@/data/mental-health";
-import { pageRoutes } from "@/data/routes";
-import { barGraphProps, barGraphWidth, pieChartProps } from "@/utils/defaultProps";
-import { useWindowDimensions } from "@/utils/getWindowDimensions";
-import { useIsMobile } from "@/utils/isMobile";
+import WindowPanel from "@/components/WindowPanel";
+import { H1, H2, H3, H4, H5, H6, H7, H7i, H8, H9 } from "@/data/mental-health";
 
 export default function MentalHealth() {
-  const pageWidth = useWindowDimensions().width;
-  const isMobile = useIsMobile();
-
   return (
-    <div className="flex flex-col items-center">
-      <Header />
-      <PageHeader name="mental-health" alt="Mental Health" />
-
-      <ComponentWrapper
-        heading="Have you struggled with mental health during undergrad?"
-        bodyText={
-          <p>
-            Mental health is a serious concern for many students. A majority of those surveyed have mentioned struggling with mental health issues during their
-            time in college. The university environment can often be a source of stress, anxiety, or other mental health problems. So, it&apos;s important to
-            take care of yourself and support each other during challenging moments.
-          </p>
-        }
-        align="left">
-        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
-          <PieChart data={H1} {...pieChartProps(isMobile, pageWidth, true)} />
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper
-        heading="Have you ever experienced burnout?"
-        bodyText={
-          <p>
-            Burnout is quite prevalent among our respondents, with most individuals indicating they have encountered it at some point. The consistent workload
-            can easily lead to students feeling overwhelmed or emotionally exhausted. It&apos;s essential to recognize that these feelings are entirely normal
-            and to prioritize allowing yourself breaks.
-          </p>
-        }
-        align="right"
-        noBackground>
-        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
-          <PieChart data={H2} {...pieChartProps(isMobile, pageWidth)} />
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper
-        heading="Have you ever been to therapy?"
-        bodyText={
-          <p>
-            Many people mentioned they haven&apos;t tried therapy, but quite a few have either gone for it or thought about it. This shows that university life
-            can be really tough, so it&apos;s crucial to reach out and use the resources available to take care of your mental and physical health!
-          </p>
-        }
-        align="left">
-        <BarGraphVertical data={H3} {...barGraphProps(isMobile, pageWidth, true)} lowerLabelDy="0" />
-      </ComponentWrapper>
-
-      <ComponentWrapper
-        heading="Have you ever been to counselling?"
-        bodyText={
-          <>
-            <p>
-              Counseling is something that quite a few people have either tried or thought about. It&apos;s a reassuring sign that many students are open to
-              getting help when they need it.
-            </p>
-            <p>
-              So, remember to take care of yourself, both mentally and emotionally – it&apos;s an important step in looking out for your well-being during your
-              university journey.
-            </p>
-          </>
-        }
-        align="right"
-        noBackground>
-        <BarGraphVertical data={H4} {...barGraphProps(isMobile, pageWidth)} lowerLabelDy="0" />
-      </ComponentWrapper>
-
-      <ComponentWrapper
-        heading="Have you ever used UW Health Services for your mental health?"
-        bodyText={
-          <>
-            <p>
-              UW Health Services is a program that offers easily accessible medical services. It&apos;s wonderful to observe that a significant portion of our
-              respondents have availed themselves of these services for their well-being. We encourage the continued utilization of these valuable resources in
-              the future.
-            </p>
-            <p>
-              University life can be demanding, and seeking assistance from UW Health Services is a common and supportive choice. To schedule an appointment,
-              you can reach out to them at (519) 888-4096 or email hsforms@uwaterloo.ca if phone booking is not convenient for you. Taking care of your health
-              is a priority, and these services are here to assist you.
-            </p>
-          </>
-        }
-        align="left">
-        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
-          <PieChart data={H5} {...pieChartProps(isMobile, pageWidth, true)} />
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper
-        heading="If so, how was your experience with UW Health Services?"
-        bodyText={
-          <p>
-            Our respondents have expressed diverse opinions and provided feedback on their encounters with UW Health Services. The majority of respondents have
-            given ratings falling within the 1-3 range
-          </p>
-        }
-        align="right"
-        noBackground>
-        <BarGraphVertical data={H5i} {...barGraphProps(isMobile, pageWidth)} lowerLabelDy="0" />
-      </ComponentWrapper>
-
-      <ComponentWrapper
-        heading="Overall, how would you rate your mental health over your entire undergraduate career? "
-        bodyText={
-          <p>
-            In general, most respondents rated their mental health throughout their undergraduate career as a 3 or 4 out of 5. It&apos;s encouraging to note
-            that the majority of scores are toward the higher end of the scale!
-          </p>
-        }
-        align="left">
-        <BarGraphVertical data={H6} {...barGraphProps(isMobile, pageWidth)} minWidth={700} lowerLabelDy="60px" valueAxisLabelOffset={0} background />
-      </ComponentWrapper>
-
-      <ComponentWrapper
-        heading="Please give any general comments about mental health in university."
-        bodyText={
-          <>
-            <p>
-              Given the significant impact of mental health concerns in the university setting, a substantial number of our respondents have shared their
-              thoughts on this matter.
-            </p>
-            <p>
-              Here, you will find some quotes from students that discuss how UW&apos;s environment influences students&apos; mental health and offer suggestions
-              for enhancing mental well-being.
-            </p>
-          </>
-        }
-        align="right"
-        noBackground>
-        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
-          <QuotationCarousel data={H7} circleDiameter={0} width={barGraphWidth(isMobile, pageWidth)} height={500} />
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper heading="What do you do to help cope with your mental health issues?" align="left">
-        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
-          <QuotationCarousel data={H8} circleDiameter={0} width={barGraphWidth(isMobile, pageWidth)} height={500} />
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper heading="What do you think UW can do better to accommodate your mental health?" align="center" noBackground>
-        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
-          <QuotationCarousel data={H9} circleDiameter={0} width={barGraphWidth(isMobile, pageWidth)} height={500} />
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper
-        heading="How much of an effect has imposter syndrome played in your university life?"
-        bodyText={
-          <>
-            <p>
-              The impact of imposter syndrome on university life is a concerning issue. When asked to rate its influence on a scale of 1 to 5, the majority of
-              respondents selected 4 or 5, indicating that imposter syndrome has significantly affected their lives.
-            </p>
-            <p>
-              This highlights the need for greater awareness and support to help students address this syndrome and foster a greater sense of confidence in
-              themselves.
-            </p>
-          </>
-        }
-        align="right">
-        <BarGraphVertical data={H10} {...barGraphProps(isMobile, pageWidth)} lowerLabelDy="0" background />
-      </ComponentWrapper>
-
-      <ComponentWrapper heading="What has been your experience with imposter syndrome?" align="left" noBackground>
-        <div className="flex flex-col gap-[calc(48rem/16)] m-[calc(32rem/16)]">
-          <QuotationCarousel data={H11} circleDiameter={0} width={barGraphWidth(isMobile, pageWidth)} height={500} />
-        </div>
-      </ComponentWrapper>
-
-      <BottomNav leftPage={pageRoutes.fullTime} rightPage={pageRoutes.personal} />
-    </div>
+    <PageTemplate name="mental-health" alt="Mental Health">
+      <WindowPanel blank>
+        <p>
+          Mental health is a sensitive subject and some of the questions or their responses may be triggering to certain individuals. We have taken care to try
+          to avoid showing anything excessively upsetting, but please only proceed if you are in the headspace to.
+        </p>
+        <p>
+          If you are experiencing stress, difficult life events, or feelings like anxiety or depression, we encourage you to seek support &mdash; there's no
+          shame in reaching out. Here are some resources that are available to you:
+        </p>
+        <ul className="list-disc list-inside mt-4">
+          <li>
+            Campus Wellness &mdash;{" "}
+            <a href="https://uwaterloo.ca/campus-wellness" target="_blank">
+              uwaterloo.ca/campus-wellness
+            </a>
+          </li>
+          <li>
+            Counseling Services &mdash; <a href="mailto:counselling.services@uwaterloo.ca">counselling.services@uwaterloo.ca</a>,{" "}
+            <a href="tel:5198884567,32655">(519) 888 4567 ext. 32655</a>, Needles Hall North 2nd Floor (NH 240
+          </li>
+          <li>
+            MATES &mdash; 1-to-1 peer support program offered by WUSA and Counseling Services &mdash; <a href="mailto:mates@uwaterloo.ca">mates@uwaterloo.ca</a>
+          </li>
+          <li>
+            Health Services &mdash; Across the creek from SLC, <a href="tel:5198884096">(519) 888 4096</a>
+          </li>
+          <li>
+            Good2Talk (24/7) &mdash; Free confidential helpline for post-secondary students &mdash; <a href="tel:+18669255454">+1 (866) 925 5454</a>
+          </li>
+          <li>
+            Here 24/7 &mdash; Mental Health &amp; Crisis Service Team &mdash; <a href="+18444373247">+1 (844) 437 3247</a>
+          </li>
+          <li>
+            OK2BME &mdash; Support services for LGBTQ+ teens in Waterloo &mdash; <a href="5198840000,213">(519) 884 0000 ext. 213</a>
+          </li>
+        </ul>
+      </WindowPanel>
+      <StandardChart variant="dark" title="What was the lowest point in your university career?" chart={<QuotationCarousel data={H1} height={625} />}>
+        <p>
+          For most students in the graduating class of 2024, the lowest point in their university journey was their 1A term, marked by the challenges of
+          adapting to university life. Other significant low points included personal struggles like breakups, COVID-19 illnesses, finding their first co-op,
+          failing courses, and navigating Policy 71 proceedings.
+        </p>
+      </StandardChart>
+      <StandardChart
+        variant="blank"
+        title="Overall, how would you rate your mental health over your entire undergraduate career?"
+        chart={<HorizontalBar data={H2} lines={[0, 5, 10, 15]} />}>
+        <p>
+          Mental health ratings varied across the scale. Most students rated their mental health as a 3 or 4 out of 5. While a smaller group rated their
+          experience as a 5, showing resilience and well-being, others faced more significant challenges, as indicated by 9 students rating it a 2 and 1 student
+          rating it a 1. Overall, it's a reminder that mental health can fluctuate, and supporting one another through the highs and lows is important.
+        </p>
+      </StandardChart>
+      <StandardChart
+        variant="light"
+        title="To what extent did impostor syndrome affect you in your university life?"
+        chart={<HorizontalBar data={H3} lines={[0, 5, 10]} />}>
+        <p>
+          Imposter syndrome significantly impacted many students in the graduating class of 2024. Most responses fell in the lower range, with 2 (12 votes) and
+          1 (11 votes) being the most common, but the distribution was fairly even, indicating varying degrees of self-doubt. It's important to remember that
+          feeling this way is okay and a normal part of growth and learning.
+        </p>
+      </StandardChart>
+      <StandardChart variant="blank" title="Have you ever experienced burnout?" chart={<Pie data={H4} />}>
+        <p>
+          Burnout remains a significant concern, with nearly everyone indicating they experienced it at some point during their undergraduate career. The
+          demanding workload and fast-paced environment can take a toll, leaving students feeling overwhelmed or exhausted. Remember that these feelings are
+          common and that taking time for rest and self-care is crucial in maintaining mental and emotional well-being.
+        </p>
+      </StandardChart>
+      <StandardChart variant="dark" title="Have you ever been to therapy?" chart={<Pie data={H5} />}>
+        <p>
+          24% of respondents have attended therapy, while 28% have considered it but not gone. While therapy does not end up helping everyone, there is no shame
+          in reaching out and getting support.
+        </p>
+      </StandardChart>
+      <StandardChart variant="blank" title="Have you ever been to counseling?" chart={<Pie data={H6} />}>
+        <p>
+          28% of respondents have attended counselling, while 17% considered it but did not go. Like with therapy, it's not for everyone, and there are many
+          ways to get help and handle mental health issues, but many people end up finding it helpful in one way or another.
+        </p>
+      </StandardChart>
+      <StandardChart variant="light" title="Have you ever used UW Health Services for your mental health?" chart={<Pie data={H7} />}>
+        <p>
+          The majority of the graduating class of 2024 (77.8%) have not used UW Health Services for mental health support, but for many, it's a resource that's
+          easily accessible due to being on-campus and easily works with student health insurance.
+        </p>
+      </StandardChart>
+      <StandardChart variant="blank" title="If so, how was your experience with UW Health Services?" chart={<HorizontalBar data={H7i} lines={[0, 2, 4]} />}>
+        <p>
+          Most people had a neutral to positive experience with UW Health Services. There is still room for growth, with no responses indicating a perfect 5/5
+          experience, but many students found the support helpful and valuable.
+        </p>
+      </StandardChart>
+      <StandardChart
+        variant="dark"
+        vertical
+        title="Do you have any general comments about mental health in university?"
+        chart={<QuotationCarousel data={H8} height={625} />}></StandardChart>
+      <StandardChart variant="blank" title="What do you do to cope with mental health struggles?" chart={<QuotationCarousel data={H9} height={625} />}>
+        <p>
+          The graduating class of 2024 utilizes a wide range of coping strategies to manage mental health challenges. Many students turn to friends, family, and
+          partners for support, while others focus on self-care activities like working out, eating healthy, and getting rest. Overall, the class demonstrates a
+          strong sense of resilience and the importance of maintaining a good support system and healthy habits.
+        </p>
+      </StandardChart>
+    </PageTemplate>
   );
 }

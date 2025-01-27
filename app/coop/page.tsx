@@ -1,12 +1,10 @@
 "use client";
 
 import BoxPlot from "@/components/charts/BoxPlot";
-import ChartContainer from "@/components/charts/ChartContainer";
 import HorizontalBar, { GroupedHorizontalBar } from "@/components/charts/HorizontalBar";
 import Pie from "@/components/charts/Pie";
 import StandardChart from "@/components/charts/StandardChart";
 import PageTemplate from "@/components/PageTemplate";
-import WindowPanel from "@/components/WindowPanel";
 import {
   C1,
   C2,
@@ -91,66 +89,58 @@ export default function Coop() {
           unlucky graduate.
         </p>
       </StandardChart>
-      <WindowPanel blank>
-        <ChartContainer
-          vertical
-          title={`What company did you work for (co-op #${term + 1})?`}
-          chart={
-            <div className="flex flex-col items-center gap-8">
-              <TermButtons />
-              <HorizontalBar data={C6i} lines={term === 0 || term === 2 ? [0, 2, 4] : term === 3 ? [0, 1, 2, 3] : [0, 1, 2]} narrow />
+      <StandardChart
+        variant="blank"
+        vertical
+        title={`What company did you work for (co-op #${term + 1})?`}
+        chart={
+          <div className="flex flex-col items-center gap-8">
+            <TermButtons />
+            <HorizontalBar data={C6i} lines={term === 0 || term === 2 ? [0, 2, 4] : term === 3 ? [0, 1, 2, 3] : [0, 1, 2]} narrow />
+          </div>
+        }></StandardChart>
+      <StandardChart
+        variant="light"
+        vertical
+        title={`Where were you located during work (co-op #${term + 1})?`}
+        chart={
+          <div className="flex flex-col items-center gap-8">
+            <TermButtons />
+            <HorizontalBar data={C6ii} lines={term < 2 ? [0, 10, 20, 30, 40] : term === 2 ? [0, 10, 20] : term < 5 ? [0, 5, 10] : [0, 2, 4]} narrow />
+          </div>
+        }></StandardChart>
+      <StandardChart
+        variant="blank"
+        vertical
+        title={`What was your position (co-op #${term + 1})?`}
+        chart={
+          <div className="flex flex-col items-center gap-8">
+            <TermButtons />
+            <HorizontalBar data={C6iii} lines={term === 2 || term === 5 ? [0, 5, 10] : [0, 5, 10, 15]} narrow />
+          </div>
+        }></StandardChart>
+      <StandardChart
+        variant="dark"
+        vertical
+        title="What was your salary per hour in CAD (excluding other forms of compensation)?"
+        chart={
+          <div className="flex flex-col items-center">
+            <div className="grid grid-cols-[max-content_1fr] items-center gap-2">
+              <span className="mt-1.5">Co-op #1:</span>
+              <BoxPlot points={[0, 18, 20, 25, 35, 20.58]} min={0} max={164} width={10} />
+              <span className="mt-1.5">Co-op #2:</span>
+              <BoxPlot points={[15, 22, 24, 29, 56.56, 26.61]} min={0} max={164} width={10} />
+              <span className="mt-1.5">Co-op #3:</span>
+              <BoxPlot points={[23, 29.75, 36.5, 50.75, 81.25, 40.34]} min={0} max={164} width={10} />
+              <span className="mt-1.5">Co-op #4:</span>
+              <BoxPlot points={[24, 39.9, 60, 67, 85, 53.08]} min={0} max={164} width={10} />
+              <span className="mt-1.5">Co-op #5:</span>
+              <BoxPlot points={[22, 39.6, 50, 74.2, 164, 60.84]} min={0} max={164} width={10} />
+              <span className="mt-1.5">Co-op #6:</span>
+              <BoxPlot points={[42, 51.12, 66.5, 80.25, 162, 77.19]} min={0} max={164} width={10} />
             </div>
-          }
-        />
-      </WindowPanel>
-      <WindowPanel>
-        <ChartContainer
-          vertical
-          title={`Where were you located during work (co-op #${term + 1})?`}
-          chart={
-            <div className="flex flex-col items-center gap-8">
-              <TermButtons />
-              <HorizontalBar data={C6ii} lines={term < 2 ? [0, 10, 20, 30, 40] : term === 2 ? [0, 10, 20] : term < 5 ? [0, 5, 10] : [0, 2, 4]} narrow />
-            </div>
-          }
-        />
-      </WindowPanel>
-      <WindowPanel blank>
-        <ChartContainer
-          vertical
-          title={`What was your position (co-op #${term + 1})?`}
-          chart={
-            <div className="flex flex-col items-center gap-8">
-              <TermButtons />
-              <HorizontalBar data={C6iii} lines={term === 2 || term === 5 ? [0, 5, 10] : [0, 5, 10, 15]} narrow />
-            </div>
-          }
-        />
-      </WindowPanel>
-      <WindowPanel dark>
-        <ChartContainer
-          vertical
-          title="What was your salary per hour in CAD (excluding other forms of compensation)?"
-          chart={
-            <div className="flex flex-col items-center">
-              <div className="grid grid-cols-[max-content_1fr] items-center gap-2">
-                <span className="mt-1.5">Co-op #1:</span>
-                <BoxPlot points={[0, 18, 20, 25, 35, 20.58]} min={0} max={164} width={10} />
-                <span className="mt-1.5">Co-op #2:</span>
-                <BoxPlot points={[15, 22, 24, 29, 56.56, 26.61]} min={0} max={164} width={10} />
-                <span className="mt-1.5">Co-op #3:</span>
-                <BoxPlot points={[23, 29.75, 36.5, 50.75, 81.25, 40.34]} min={0} max={164} width={10} />
-                <span className="mt-1.5">Co-op #4:</span>
-                <BoxPlot points={[24, 39.9, 60, 67, 85, 53.08]} min={0} max={164} width={10} />
-                <span className="mt-1.5">Co-op #5:</span>
-                <BoxPlot points={[22, 39.6, 50, 74.2, 164, 60.84]} min={0} max={164} width={10} />
-                <span className="mt-1.5">Co-op #6:</span>
-                <BoxPlot points={[42, 51.12, 66.5, 80.25, 162, 77.19]} min={0} max={164} width={10} />
-              </div>
-            </div>
-          }
-        />
-      </WindowPanel>
+          </div>
+        }></StandardChart>
       <StandardChart
         variant="blank"
         title="What was your co-op evaluation rating?"
