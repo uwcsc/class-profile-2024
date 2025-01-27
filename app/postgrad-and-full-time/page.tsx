@@ -1,158 +1,91 @@
 "use client";
 
-import { BarGraphHorizontal, BarGraphVertical } from "@/components/BarGraph";
-import { BottomNav } from "@/components/BottomNav";
-import { ComponentWrapper } from "@/components/ComponentWrapper";
-import { Header } from "@/components/Header";
-import PageHeader from "@/components/PageHeader";
-import { PieChart } from "@/components/PieChart";
-import { WordCloud } from "@/components/WordCloud";
-import { F1, F2, F3, F4, F5, F6, F7 } from "@/data/full-time";
-import { pageRoutes } from "@/data/routes";
-import { DefaultProp, barGraphMargin, barGraphProps, pieChartProps, wordCloudWidth } from "@/utils/defaultProps";
-import { useWindowDimensions } from "@/utils/getWindowDimensions";
-import { useIsMobile } from "@/utils/isMobile";
+import { WithBoxPlot } from "@/components/charts/BoxPlot";
+import HorizontalBar, { GroupedHorizontalBar } from "@/components/charts/HorizontalBar";
+import StandardChart from "@/components/charts/StandardChart";
+import PageTemplate from "@/components/PageTemplate";
+import { G1, G2, G3, G4, G5, G6, G7, G8, G9 } from "@/data/postgrad-and-full-time";
 
 export default function FullTime() {
-  const pageWidth = useWindowDimensions().width;
-  const isMobile = useIsMobile();
-
   return (
-    <div className="flex flex-col items-center">
-      <Header />
-      <PageHeader name="postgrad-and-full-time" alt="Postgrad + Full-time" />
-
-      <ComponentWrapper
-        heading="What company will you be working for post-grad?"
-        bodyText={<p>Most students have secured full-time positions and will be working full time post-grad. This is more than 50% of respondents. </p>}
-        align="left"
-        wordCloud>
-        <WordCloud
-          data={F1}
-          width={wordCloudWidth(isMobile, pageWidth)}
-          height={DefaultProp.graphHeight}
-          wordPadding={7}
-          desktopMaxFontSize={75}
-          mobileMaxFontSize={48}
-          background
-        />
-      </ComponentWrapper>
-
-      <ComponentWrapper
-        heading="Where will you be working from post-grad?"
-        bodyText={
-          <>
-            <p>Toronto, Ontario, and New York are the two main places most people seem to be moving to start their new life as full-time adults!</p>
-            <p>
-              A majority of students said they will be working in the USA, which is no surprise due to most opportunities in the tech field being in tech hubs
-              like San Francisco, New York, and Seattle.
-            </p>
-            <p>Regardless, it just goes to show that if you work hard, and with just a bit of luck, you can work in your dream location!</p>
-          </>
-        }
-        align="right"
-        noBackground
-        wordCloud>
-        <WordCloud
-          data={F2}
-          width={wordCloudWidth(isMobile, pageWidth)}
-          height={DefaultProp.graphHeight}
-          wordPadding={7}
-          desktopMaxFontSize={75}
-          mobileMaxFontSize={48}
-        />
-      </ComponentWrapper>
-
-      <ComponentWrapper
-        heading="How many offers did you decide between? Please enter a number."
-        bodyText={<p>More than half of the respondents chose between 1 or 2 offers!</p>}
-        align="left">
-        <div className="center-col">
-          <BarGraphVertical data={F3} {...barGraphProps(isMobile, pageWidth, true)} />
-          <span>mean: 2.338 | min: 1 | Q1: 1 | median: 2 | Q3: 3 | max: 10</span>
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper
-        heading="Are you returning to a prior co-op?"
-        bodyText={
-          <>
-            <p>
-              59 out of 81 respondents are returning to a prior co-op on a permanent return offer! This statistic shows that a co-op program lets you test jobs
-              and find what team/company culture fits your liking much earlier in your career.
-            </p>
-            <p>Additionally, in these co-op positions, students can obtain new connections and leverage them for future full-time employment.</p>
-          </>
-        }
-        align="right"
-        noBackground>
-        <div className="md:px-[calc(20rem/16)] lg:px-[calc(40rem/16)] xl:px-[calc(70rem/16)]">
-          <PieChart data={F4} {...pieChartProps(isMobile, pageWidth)} />
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper
-        heading="If working in Canada, what will be your first-year total compensation (salary + signing + first-year stock + bonus) in CAD?"
-        bodyText={
-          <p>
-            The world of tech offers intriguing annual compensation and salary options. These compensation packages encompass a mix of components, including
-            salary, signing bonuses, first-year stock options, and more. Many of these salaries start high and will just continue rising as the years go by!
-          </p>
-        }
-        align="left">
-        <div className="center-col">
-          <BarGraphHorizontal data={F5} {...barGraphProps(isMobile, pageWidth, true)} margin={{ ...barGraphMargin, left: 112 }} />
-          <span>mean: ~$128k | min: $29k | Q1: $97k | median: $105k | Q3: $160k | max: $280k</span>
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper
-        heading="If working outside of Canada, what will be your first-year total compensation (salary + signing + first-year stock + bonus) in CAD?"
-        bodyText={
-          <>
-            <p>
-              For those working outside of Canada, with a majority of them working in the USA, their first-year total compensation is significantly higher than
-              working in Canada.
-            </p>
-            <p>
-              This disparity highlights the competitive nature of the international tech job market and the opportunities available for individuals willing to
-              explore opportunities abroad.
-            </p>
-          </>
-        }
-        align="right"
-        noBackground>
-        <div className="center-col">
-          <BarGraphHorizontal data={F6} {...barGraphProps(isMobile, pageWidth)} margin={{ ...barGraphMargin, left: 112 }} />
-          <span>mean: ~$372k | min: $170k | Q1: $270k | median: $300k | Q3: $485k | max: $850k</span>
-        </div>
-      </ComponentWrapper>
-
-      <ComponentWrapper
-        heading="What field/career path will you be in post-grad?"
-        bodyText={
-          <>
-            <p>
-              More than 60% of respondents are set to embark on their careers in software development! However, it is fascinating to see many others venturing
-              into diverse fields such as cloud computing, game development, and various others.
-            </p>
-            <p>Undergraduate is a time for individuals to discover their passions and chart the course for their future careers.</p>
-          </>
-        }
-        align="left"
-        wordCloud>
-        <WordCloud
-          data={F7}
-          width={wordCloudWidth(isMobile, pageWidth)}
-          height={DefaultProp.graphHeight}
-          wordPadding={10}
-          desktopMaxFontSize={75}
-          mobileMaxFontSize={48}
-          background
-        />
-      </ComponentWrapper>
-
-      <BottomNav leftPage={pageRoutes.postGrad} rightPage={pageRoutes.mentalHealth} />
-    </div>
+    <PageTemplate name="postgrad-and-full-time" alt="Postgrad + Full-Time">
+      <StandardChart variant="dark" title="Do you plan on pursuing post-graduate education?" chart={<HorizontalBar data={G1} lines={[0, 10, 20]} />}>
+        <p>
+          Out of 48 respondents, more than half are not planning to pursue post-graduate education. A few are considering continuing their studies through a
+          Master's or a combined Master's/PhD program. Meanwhile, a significant portion remains undecided about whether they will pursue further education after
+          graduation. Post-graduate education is an option, but does not have to be everyone's pathway!
+        </p>
+      </StandardChart>
+      <StandardChart variant="blank" title="Have you secured a full-time position post-grad?" chart={<HorizontalBar data={G2} lines={[0, 10, 20, 30]} />}>
+        <p>
+          75% of graduates have secured a full-time position after graduation. Whether through return offers or new opportunities, it's clear that the co-op
+          experience proves valuable in helping students land jobs. For the remaining 25%, the search continues, but with the skills and experience gained
+          during their studies, they're well-equipped to find opportunities in the near future.
+        </p>
+      </StandardChart>
+      <StandardChart
+        variant="light"
+        title="How many onsites/interviews did you get?"
+        chart={
+          <WithBoxPlot points={[0, 1, 3, 4, 12, 2.97]}>
+            <HorizontalBar data={G3} lines={[0, 2, 4, 6]} narrow />
+          </WithBoxPlot>
+        }>
+        <p>
+          Out of 35 respondents, 29 students reported having at least one interview, with most securing multiple opportunities. One student even had as many as
+          12 interviews. Meanwhile, 6 students did not receive any interviews, possibly due to accepting a return offer from a previous co-op placement or other
+          factors. The interview process remains a key part of the post-grad job search for many.
+        </p>
+      </StandardChart>
+      <StandardChart
+        variant="blank"
+        title="How many offers did you decide between?"
+        chart={
+          <WithBoxPlot points={[0, 1, 2, 3, 5, 1.97]}>
+            <HorizontalBar data={G4} lines={[0, 5, 10, 15]} narrow />
+          </WithBoxPlot>
+        }>
+        <p>There was some variance in the number of offers people got, but most people had more than one to choose from!</p>
+      </StandardChart>
+      <StandardChart variant="dark" title="What company will you be working for post-grad?" chart={<HorizontalBar data={G5} lines={[0, 2, 4]} supernarrow />}>
+        <p>
+          More than 60% of the students have secured a full time position and will be working post-grad. Meta is the most popular choice among the students.
+        </p>
+      </StandardChart>
+      <StandardChart variant="blank" title="Where will you be working post-grad?" chart={<HorizontalBar data={G6} lines={[0, 5, 10]} />}>
+        <p>
+          California and the East Coast USA are the top post-grad destinations, reflecting the strong draw of tech hubs like Silicon Valley and New York. Remote
+          work is gaining traction, while Toronto also remains a popular choice. Smaller groups are heading to places like the Pacific Northwest USA and
+          Kitchener/Waterloo.
+        </p>
+      </StandardChart>
+      <StandardChart variant="light" title="Are you returning to a prior co-op?" chart={<HorizontalBar data={G7} lines={[0, 10, 20]} />}>
+        <p>
+          More than 65% of the respondents are returning to their co-op employers. This data highlights how co-op programs allow students to explore different
+          roles and company cultures early in their careers. Additionally, co-op experiences help build valuable connections that can be leveraged for securing
+          future full-time opportunities.
+        </p>
+      </StandardChart>
+      <StandardChart
+        variant="blank"
+        title="What will be your first year total compensation in CAD?"
+        chart={<GroupedHorizontalBar data={G8} lines={[0, 5, 10, 15]} legend={["In Canada", "Outside of Canada"]} />}>
+        <p>
+          The world of tech offers intriguing annual compensation and salary options. These compensation packages encompass a mix of components, including
+          salary, signing bonuses, first-year stock options, and more.
+        </p>
+        <p>
+          For those working outside of Canada, with a majority of them working in the USA, their first-year total compensation is significantly higher than
+          working in Canada. This disparity highlights the competitive nature of the international tech job market and the opportunities available for
+          individuals willing to explore opportunities abroad.
+        </p>
+      </StandardChart>
+      <StandardChart variant="dark" title="What field/career path will you be in post-grad?" chart={<HorizontalBar data={G9} lines={[0, 10, 20, 30]} narrow />}>
+        <p>
+          Over 85% of respondents chose software development as their post-grad career path! It's exciting to see others branching into areas like AI, cloud
+          computing, web development, and even finance! Undergraduate years offer a unique opportunity to explore diverse fields and discover new interests.
+        </p>
+      </StandardChart>
+    </PageTemplate>
   );
 }

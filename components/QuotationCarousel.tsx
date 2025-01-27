@@ -56,7 +56,7 @@ export function QuotationCarousel(props: QuotationCarouselProps) {
             <li
               key={idx}
               className={`absolute inset-0 p-0 list-none flex h-full overflow-y-auto transition-all ${idx !== activeIdx ? "invisible opacity-0" : "visible opacity-100"} ${(idx + 1) % data.length === activeIdx ? "-translate-x-8" : (idx + data.length - 1) % data.length === activeIdx ? "translate-x-8" : ""}`}>
-              <p className="mx-4 my-auto h-max w-full text-center text-lg lg:text-xl xl:text-2xl">{quote}</p>
+              <p className="mx-4 my-auto h-max w-full text-center lg:text-lg xl:text-xl">{quote}</p>
             </li>
           ))}
         </ul>

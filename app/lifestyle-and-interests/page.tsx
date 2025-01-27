@@ -174,7 +174,7 @@ export default function LifestyleAndInterests() {
           the effort to stay in touch, often reaching out and catching up with their old friends to maintain those important relationships.
         </p>
       </StandardChart>
-      <StandardChart variant="blank" title="Where did you meet most of your friends?" chart={<HorizontalBar data={L19} lines={[0, 5, 10, 15]} />}>
+      <StandardChart variant="light" title="Where did you meet most of your friends?" chart={<HorizontalBar data={L19} lines={[0, 5, 10, 15]} />}>
         <p>
           While orientation offers a great starting point for meeting people, most students have built lasting friendships from high school, or have built them
           through mutual connections and classes. University isn't just about hitting the books &mdash; it's also about connecting with others. The lessons
