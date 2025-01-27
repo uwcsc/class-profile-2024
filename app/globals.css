@@ -101,7 +101,7 @@ h3 {
 }
 
 p {
-  @apply text-white mt-6 md:text-lg lg:text-xl md:leading-8 lg:leading-10;
+  @apply text-primary mt-6 md:text-lg lg:text-xl md:leading-8 lg:leading-10;
 }
 
 a {

@@ -95,7 +95,7 @@ export function GroupedHorizontalBar({
           {lines.map((pos) => (
             <div
               key={pos}
-              className="absolute h-full border border-white border-dashed"
+              className="absolute h-full border border-primary border-dashed"
               style={{ right: `calc(${(1 - pos / max) * (xl ? 384 : lg ? 30 : md ? 20 : 50)}${xl ? "px" : "vw"} - 1px)` }}>
               <div className="absolute top-full mt-2" style={{ translate: "-50%" }}>
                 {pos}

@@ -67,9 +67,11 @@ export default function Home() {
                 </p>
                 <p>
                   According to{" "}
-                  <a href="https://uwaterloo.ca/institutional-analysis-planning/university-data-and-statistics/student-data/degrees-granted-0" target="_blank">
+                  <Link
+                    href="https://uwaterloo.ca/institutional-analysis-planning/university-data-and-statistics/student-data/degrees-granted-0"
+                    target="_blank">
                     Institutional Analysis & Planning
-                  </a>
+                  </Link>
                   , there were 613 graduates from CS, CFM, and CS/BBA in 2024, leading to an overall survey turnout of 7.8%. By program, this was 6.6% from CS
                   and 19.4% from CS/BBA. We unfortunately did not get any responses from CFM students this year.
                 </p>
@@ -98,7 +100,7 @@ export default function Home() {
                       <li key={url} className="text-lg lg:text-xl xl:text-2xl">
                         <div className="flex items-center gap-2">
                           <span className="text-yellow">{(Math.floor(links.length / 2) * index + i + 1).toString().padStart(2, "0")}</span>
-                          <Link href={url} className="text-white hover:text-white underline">
+                          <Link href={url} className="text-primary underline">
                             {text}
                           </Link>
                         </div>

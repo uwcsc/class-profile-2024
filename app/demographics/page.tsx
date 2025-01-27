@@ -1,11 +1,13 @@
 "use client";
 
+import { BottomNav } from "@/components/BottomNav";
 import { WithBoxPlot } from "@/components/charts/BoxPlot";
 import HorizontalBar from "@/components/charts/HorizontalBar";
 import Pie from "@/components/charts/Pie";
 import StandardChart from "@/components/charts/StandardChart";
 import PageTemplate from "@/components/PageTemplate";
 import { D1, D10, D11, D12, D13, D14, D15, D16, D16i, D17, D18, D19, D2, D3, D4, D5, D6, D7, D8, D8i, D9 } from "@/data/demographics";
+import Link from "next/link";
 
 export default function Demographics() {
   return (
@@ -25,9 +27,9 @@ export default function Demographics() {
         <p>
           While the Class of 2024 proudly represents a spectrum of gender identities, most of the representation is from men. Underrepresented gender identities
           are a popular topic in the tech community, so check out the Equity Office's{" "}
-          <a href="https://uwaterloo.ca/math/about/equity-office/faculty-initiatives" target="_blank">
+          <Link href="https://uwaterloo.ca/math/about/equity-office/faculty-initiatives" target="_blank">
             Faculty Initiatives
-          </a>{" "}
+          </Link>{" "}
           page to see what organizations are working to address these issues and provide an inclusive environment!
         </p>
       </StandardChart>
@@ -165,6 +167,7 @@ export default function Demographics() {
           judging to 21 prospecting.
         </p>
       </StandardChart>
+      <BottomNav leftPage={{ name: "Home", url: "/" }} rightPage={{ name: "Academics", url: "/academics" }} />
     </PageTemplate>
   );
 }

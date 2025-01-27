@@ -1,5 +1,6 @@
 "use client";
 
+import { BottomNav } from "@/components/BottomNav";
 import BoxPlot, { WithBoxPlot } from "@/components/charts/BoxPlot";
 import HorizontalBar, { GroupedHorizontalBar } from "@/components/charts/HorizontalBar";
 import Pie from "@/components/charts/Pie";
@@ -42,6 +43,7 @@ import {
   A8,
   A9,
 } from "@/data/academics";
+import Link from "next/link";
 import { Fragment, useState } from "react";
 
 function flowCourseTransform(text: string) {
@@ -49,9 +51,9 @@ function flowCourseTransform(text: string) {
 
   if (!text.includes(" "))
     return (
-      <a href={`https://${laurier ? "laurierflow.ca" : "uwflow.com"}/explore?q=${text}`} target="_blank">
+      <Link href={`https://${laurier ? "laurierflow.ca" : "uwflow.com"}/explore?q=${text}`} target="_blank">
         {text}
-      </a>
+      </Link>
     );
 
   const [subj, rest] = text.split(" ");
@@ -62,12 +64,12 @@ function flowCourseTransform(text: string) {
       {codes.map((code, i) => (
         <Fragment key={code}>
           {i === 0 ? "" : "/"}
-          <a
+          <Link
             href={`https://${laurier ? "laurierflow.ca" : "uwflow.com"}/course/${subj.toLowerCase()}${laurier ? " " : ""}${code}`}
             target="_blank"
             className={i === 0 ? "" : "-ml-1"}>
             {i === 0 ? subj.toUpperCase() : ""} {code}
-          </a>
+          </Link>
         </Fragment>
       ))}
     </span>
@@ -215,9 +217,9 @@ export default function Academics() {
             lines={[0, 1, 2, 3]}
             narrow
             textTransform={(text) => (
-              <a href={`https://uwflow.com/professor/${text.toLowerCase().split(" ").join("_")}`} target="_blank">
+              <Link href={`https://uwflow.com/professor/${text.toLowerCase().split(" ").join("_")}`} target="_blank">
                 {text}
-              </a>
+              </Link>
             )}
           />
         }></StandardChart>
@@ -340,6 +342,7 @@ export default function Academics() {
           your future career.
         </p>
       </StandardChart>
+      <BottomNav leftPage={{ name: "Demographics", url: "/demographics" }} rightPage={{ name: "CS Experience", url: "/cs-experience" }} />
     </PageTemplate>
   );
 }

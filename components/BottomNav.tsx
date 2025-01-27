@@ -7,7 +7,7 @@ interface PagesInfo {
 
 export function BottomNav(props: PagesInfo) {
   return (
-    <div className="flex items-center justify-between my-[calc(40rem/16)]">
+    <div className="w-[calc(min(80vw,1200px))] flex items-center justify-between my-[calc(40rem/16)]">
       <Link
         href={props.leftPage.url}
         scroll
@@ -32,21 +32,8 @@ interface ArrowProps {
 
 function Arrow({ right }: ArrowProps) {
   return (
-    <svg className={`${right ? "rotate-180" : ""} w-[calc(200rem/16)] lg:w-[calc(250rem/16)] h-[calc(20rem/16)]`}>
-      <defs>
-        <marker id="arrow" markerWidth="10" markerHeight="10" refX="5" refY="3" orient="auto" markerUnits="strokeWidth">
-          <path id="arrow" width="10" height="10" refX="5" refY="3" orient="auto" d="M0,0 L0,6 L9,3 z" className="fill-primary" />
-        </marker>
-      </defs>
-      <line
-        x1="250"
-        y1="10"
-        x2="100"
-        y2="10" // half of svg height
-        strokeWidth="3"
-        markerEnd="url(#arrow)"
-        className="stroke-primary"
-      />
+    <svg viewBox="-1 0 31 10" className={`${right ? "rotate-180" : ""} w-8 lg:w-16`}>
+      <path d="M 5 0 L 0 5 L 5 10 M 0 5 L 30 5" className="text-primary stroke-current fill-none" />
     </svg>
   );
 }

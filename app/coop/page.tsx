@@ -1,5 +1,6 @@
 "use client";
 
+import { BottomNav } from "@/components/BottomNav";
 import BoxPlot from "@/components/charts/BoxPlot";
 import HorizontalBar, { GroupedHorizontalBar } from "@/components/charts/HorizontalBar";
 import Pie from "@/components/charts/Pie";
@@ -185,6 +186,7 @@ export default function Coop() {
           sequences have 5 terms with one of them being 8 months long. 2 people did more than 6 terms, but we did not ask questions beyond the 6th term.
         </p>
       </StandardChart>
+      <BottomNav leftPage={{ name: "CS Experience", url: "/cs-experience" }} rightPage={{ name: "Lifestyle and Interests", url: "/lifestyle-and-interests" }} />
     </PageTemplate>
   );
 }

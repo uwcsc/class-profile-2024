@@ -47,7 +47,7 @@ export function QuotationCarousel(props: QuotationCarouselProps) {
         aria-hidden="true"
       />
       <div
-        className="flex flex-col justify-between items-stretch gap-4 min-h-[inherit] h-full w-full p-[calc(30rem/16)] border border-solid border-white/20 rounded-[calc(12rem/16)] bg-response"
+        className="flex flex-col justify-between items-stretch gap-4 min-h-[inherit] h-full w-full p-[calc(30rem/16)] border border-solid border-primary/20 rounded-[calc(12rem/16)] bg-response"
         style={{ filter: "box-shadow(0 calc(1rem / 16) calc(10rem / 16)" }}>
         <QuotationMark className="w-[calc(20rem/12)] h-[calc(20rem/12)] z-30" />
         <ul className="flex flex-col justify-center items-center relative w-full m-0 p-0 grow z-50">

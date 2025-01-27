@@ -1,5 +1,6 @@
 "use client";
 
+import { BottomNav } from "@/components/BottomNav";
 import { WithBoxPlot } from "@/components/charts/BoxPlot";
 import HorizontalBar from "@/components/charts/HorizontalBar";
 import StandardChart from "@/components/charts/StandardChart";
@@ -181,6 +182,7 @@ export default function LifestyleAndInterests() {
           learned may be forgotten over time, but the friendships forged here will stay with you long after graduation.
         </p>
       </StandardChart>
+      <BottomNav leftPage={{ name: "Co-op", url: "/coop" }} rightPage={{ name: "Intimacy and Drugs", url: "/intimacy-and-drugs" }} />
     </PageTemplate>
   );
 }

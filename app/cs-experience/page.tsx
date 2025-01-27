@@ -1,5 +1,6 @@
 "use client";
 
+import { BottomNav } from "@/components/BottomNav";
 import HorizontalBar from "@/components/charts/HorizontalBar";
 import Pie from "@/components/charts/Pie";
 import StandardChart from "@/components/charts/StandardChart";
@@ -48,6 +49,7 @@ export default function Academics() {
           impressive 15!
         </p>
       </StandardChart>
+      <BottomNav leftPage={{ name: "Academics", url: "/academics" }} rightPage={{ name: "Co-op", url: "/coop" }} />
     </PageTemplate>
   );
 }

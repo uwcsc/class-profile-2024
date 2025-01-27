@@ -1,5 +1,6 @@
 "use client";
 
+import { BottomNav } from "@/components/BottomNav";
 import HorizontalBar, { GroupedHorizontalBar } from "@/components/charts/HorizontalBar";
 import StandardChart from "@/components/charts/StandardChart";
 import PageTemplate from "@/components/PageTemplate";
@@ -68,6 +69,7 @@ export default function IntimacyAndDrugs() {
           than forcing a connection, the key is to focus on being comfortable with yourself and letting things unfold when the right person comes along.
         </p>
       </StandardChart>
+      <BottomNav leftPage={{ name: "Lifestyle and Interests", url: "/lifestyle-and-interests" }} rightPage={{ name: "Postgrad + Full-Time", url: "/postgrad-and-full-time" }} />
     </PageTemplate>
   );
 }

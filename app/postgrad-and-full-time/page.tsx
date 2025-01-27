@@ -1,5 +1,6 @@
 "use client";
 
+import { BottomNav } from "@/components/BottomNav";
 import { WithBoxPlot } from "@/components/charts/BoxPlot";
 import HorizontalBar, { GroupedHorizontalBar } from "@/components/charts/HorizontalBar";
 import StandardChart from "@/components/charts/StandardChart";
@@ -86,6 +87,7 @@ export default function FullTime() {
           computing, web development, and even finance! Undergraduate years offer a unique opportunity to explore diverse fields and discover new interests.
         </p>
       </StandardChart>
+      <BottomNav leftPage={{ name: "Intimacy and Drugs", url: "/intimacy-and-drugs" }} rightPage={{ name: "Mental Health", url: "/mental-health" }} />
     </PageTemplate>
   );
 }

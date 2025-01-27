@@ -5,6 +5,7 @@ import PageHeader from "@/components/PageHeader";
 import { classProfileWebDevelopers, communityRepresentatives, designers, pastContributors } from "@/data/contributors";
 import { basePath } from "@/utils/getBasePath";
 import { useWindowDimensions } from "@/utils/getWindowDimensions";
+import Link from "next/link";
 
 export default function Contributors() {
   const pageWidth = useWindowDimensions().width;
@@ -32,27 +33,27 @@ export default function Contributors() {
         </div>
         <div className="w-[calc(min(90%,1200px))] flex justify-end">
           <div className="w-[calc(min(80%,600px))] rounded-lg p-8" style={{ backgroundImage: "linear-gradient(150deg, #443996a0, #ffcad0a0)" }}>
-            <span className="text-white text-sm md:text-md xl:text-lg">
+            <span className="text-sm md:text-md xl:text-lg">
               The 2024 CS Class Profile was created through the hard work of past and present members of the UW Computer Science Club's Community
               Representatives, Designers, Class Profile Web Developers, and Systems Committee. Please contact{" "}
-              <a href="mailto:exec@csclub.uwaterloo.ca" className="text-white underline">
+              <Link href="mailto:exec@csclub.uwaterloo.ca" className="underline">
                 exec@csclub.uwaterloo.ca
-              </a>{" "}
+              </Link>{" "}
               for specific concerns for the CS Class Profile.
             </span>
           </div>
         </div>
         <div className="w-[calc(min(90%,1200px))] flex justify-start">
           <div className="w-[calc(min(80%,600px))] rounded-lg p-8" style={{ backgroundImage: "linear-gradient(150deg, #443996a0, #ffcad0a0)" }}>
-            <span className="text-white text-sm md:text-md xl:text-lg">
+            <span className="text-sm md:text-md xl:text-lg">
               Special thanks to former CSC President and Vice-President{" "}
-              <a href="https://linkedin.com/in/kallentu" target="_blank" className="text-white underline">
+              <Link href="https://linkedin.com/in/kallentu" target="_blank" className="underline">
                 Kallen Tu
-              </a>{" "}
+              </Link>{" "}
               and{" "}
-              <a href="https://linkedin.com/in/gordonle" target="_blank" className="text-white underline">
+              <Link href="https://linkedin.com/in/gordonle" target="_blank" className="underline">
                 Gordon Le
-              </a>{" "}
+              </Link>{" "}
               for kickstarting the existence of the CS Class Profile! In addition to the names listed below, there may be additional anonymous contributors and
               those who have provided feedback.
             </span>
@@ -67,9 +68,9 @@ export default function Contributors() {
               <ul className="list-disc list-inside">
                 {classProfileWebDevelopers.map(({ name, link, lead }) => (
                   <li key={link}>
-                    <a href={link} target="_blank" className="text-white underline">
+                    <Link href={link} target="_blank" className="text-primary underline">
                       {lead ? <b>{name}</b> : name}
-                    </a>
+                    </Link>
                     {lead ? <span className="opacity-50"> &mdash; Team Lead</span> : null}
                   </li>
                 ))}
@@ -80,9 +81,9 @@ export default function Contributors() {
               <ul className="list-disc list-inside">
                 {designers.map(({ name, link, lead }) => (
                   <li key={link}>
-                    <a href={link} target="_blank" className="text-white underline">
+                    <Link href={link} target="_blank" className="text-primary underline">
                       {lead ? <b>{name}</b> : name}
-                    </a>
+                    </Link>
                     {lead ? <span className="opacity-50"> &mdash; Team Lead</span> : null}
                   </li>
                 ))}
@@ -93,9 +94,9 @@ export default function Contributors() {
               <ul className="list-disc list-inside">
                 {communityRepresentatives.map(({ name, link, lead }) => (
                   <li key={link}>
-                    <a href={link} target="_blank" className="text-white underline">
+                    <Link href={link} target="_blank" className="text-primary underline">
                       {lead ? <b>{name}</b> : name}
-                    </a>
+                    </Link>
                     {lead ? <span className="opacity-50"> &mdash; Team Lead</span> : null}
                   </li>
                 ))}
@@ -109,16 +110,16 @@ export default function Contributors() {
               <h3 className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(172deg, #ffffff, #a072eb)" }}>
                 Past Contributors
               </h3>
-              <span className="text-white">
+              <span className="">
                 Our thanks go out to previous contributors as well who built the 2022 and 2023 versions of the Class Profile on which the vast majority of this
                 version was built. A lot of work is shared year to year, so we want to express our gratitude to the previous teams as well.
               </span>
               <ul className="list-disc list-inside">
                 {pastContributors.map(({ name, link, role }) => (
                   <li key={link}>
-                    <a href={link} target="_blank" className="text-white underline">
+                    <Link href={link} target="_blank" className="text-primary underline">
                       {name}
-                    </a>{" "}
+                    </Link>{" "}
                     ({role})
                   </li>
                 ))}

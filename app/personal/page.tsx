@@ -1,5 +1,6 @@
 "use client";
 
+import { BottomNav } from "@/components/BottomNav";
 import HorizontalBar from "@/components/charts/HorizontalBar";
 import StandardChart from "@/components/charts/StandardChart";
 import PageTemplate from "@/components/PageTemplate";
@@ -61,6 +62,7 @@ export default function Personal() {
         vertical
         title="What is your favorite memory from your time at UW?"
         chart={<QuotationCarousel data={P11} height={525} />}></StandardChart>
+      <BottomNav leftPage={{ name: "Mental Health", url: "/mental-health" }} rightPage={{ name: "Contributors", url: "/contributors" }} />
     </PageTemplate>
   );
 }

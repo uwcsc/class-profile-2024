@@ -1,5 +1,6 @@
 "use client";
 
+import { BottomNav } from "@/components/BottomNav";
 import HorizontalBar from "@/components/charts/HorizontalBar";
 import Pie from "@/components/charts/Pie";
 import StandardChart from "@/components/charts/StandardChart";
@@ -7,6 +8,7 @@ import PageTemplate from "@/components/PageTemplate";
 import { QuotationCarousel } from "@/components/QuotationCarousel";
 import WindowPanel from "@/components/WindowPanel";
 import { H1, H2, H3, H4, H5, H6, H7, H7i, H8, H9 } from "@/data/mental-health";
+import Link from "next/link";
 
 export default function MentalHealth() {
   return (
@@ -23,28 +25,29 @@ export default function MentalHealth() {
         <ul className="list-disc list-inside mt-4">
           <li>
             Campus Wellness &mdash;{" "}
-            <a href="https://uwaterloo.ca/campus-wellness" target="_blank">
+            <Link href="https://uwaterloo.ca/campus-wellness" target="_blank">
               uwaterloo.ca/campus-wellness
-            </a>
+            </Link>
           </li>
           <li>
-            Counseling Services &mdash; <a href="mailto:counselling.services@uwaterloo.ca">counselling.services@uwaterloo.ca</a>,{" "}
-            <a href="tel:5198884567,32655">(519) 888 4567 ext. 32655</a>, Needles Hall North 2nd Floor (NH 240
+            Counseling Services &mdash; <Link href="mailto:counselling.services@uwaterloo.ca">counselling.services@uwaterloo.ca</Link>,{" "}
+            <Link href="tel:5198884567,32655">(519) 888 4567 ext. 32655</Link>, Needles Hall North 2nd Floor (NH 240
           </li>
           <li>
-            MATES &mdash; 1-to-1 peer support program offered by WUSA and Counseling Services &mdash; <a href="mailto:mates@uwaterloo.ca">mates@uwaterloo.ca</a>
+            MATES &mdash; 1-to-1 peer support program offered by WUSA and Counseling Services &mdash;{" "}
+            <Link href="mailto:mates@uwaterloo.ca">mates@uwaterloo.ca</Link>
           </li>
           <li>
-            Health Services &mdash; Across the creek from SLC, <a href="tel:5198884096">(519) 888 4096</a>
+            Health Services &mdash; Across the creek from SLC, <Link href="tel:5198884096">(519) 888 4096</Link>
           </li>
           <li>
-            Good2Talk (24/7) &mdash; Free confidential helpline for post-secondary students &mdash; <a href="tel:+18669255454">+1 (866) 925 5454</a>
+            Good2Talk (24/7) &mdash; Free confidential helpline for post-secondary students &mdash; <Link href="tel:+18669255454">+1 (866) 925 5454</Link>
           </li>
           <li>
-            Here 24/7 &mdash; Mental Health &amp; Crisis Service Team &mdash; <a href="+18444373247">+1 (844) 437 3247</a>
+            Here 24/7 &mdash; Mental Health &amp; Crisis Service Team &mdash; <Link href="+18444373247">+1 (844) 437 3247</Link>
           </li>
           <li>
-            OK2BME &mdash; Support services for LGBTQ+ teens in Waterloo &mdash; <a href="5198840000,213">(519) 884 0000 ext. 213</a>
+            OK2BME &mdash; Support services for LGBTQ+ teens in Waterloo &mdash; <Link href="5198840000,213">(519) 884 0000 ext. 213</Link>
           </li>
         </ul>
       </WindowPanel>
@@ -118,6 +121,7 @@ export default function MentalHealth() {
           strong sense of resilience and the importance of maintaining a good support system and healthy habits.
         </p>
       </StandardChart>
+      <BottomNav leftPage={{ name: "Postgrad + Full-Time", url: "/postgrad-and-full-time" }} rightPage={{ name: "Personal", url: "/personal" }} />
     </PageTemplate>
   );
 }
