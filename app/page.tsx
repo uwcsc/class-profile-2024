@@ -26,9 +26,13 @@ export default function Home() {
           backgroundPosition: "center top",
         }}>
         <div className="flex flex-col items-center mt-16">
-          <div className="w-[calc(min(90%,1600px))] grid md:grid-cols-4 gap-y-8 md:gap-y-16">
-            <h1 className="glow">About the Programs</h1>
-            <div className="col-span-3">
+          <div className="w-[calc(min(90%,1600px))] grid md:grid-cols-[max-content_1fr] gap-y-8 md:gap-y-16">
+            <h1 className="glow">
+              About the
+              <br />
+              Programs
+            </h1>
+            <div>
               <WindowPanel dark>
                 <h3>Computer Science [CS]</h3>
                 <p>
@@ -53,7 +57,7 @@ export default function Home() {
               </WindowPanel>
             </div>
             <h1 className="glow">Preface</h1>
-            <div className="col-span-3">
+            <div>
               <WindowPanel>
                 <p className="mt-0">
                   The 2024 CS Class Profile consists of data relevant to CS, CFM, and CS/BBA students. These are combined as students in these programs tend to
