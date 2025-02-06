@@ -62,7 +62,7 @@ export function GroupedHorizontalBar({
   const md = pageWidth >= 768;
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="w-max flex flex-col items-center gap-4 pl-4 pr-12">
       {legend ? (
         <div className="flex items-center gap-4 flex-wrap">
           {legend.map((text, i) => (
@@ -74,7 +74,7 @@ export function GroupedHorizontalBar({
         </div>
       ) : null}
       <div
-        className={`relative grid grid-cols-[max-content_50vw] md:grid-cols-[max-content_20vw] lg:grid-cols-[max-content_30vw] xl:grid-cols-[max-content_384px] items-center gap-x-4 ${supernarrow ? (data[0].value.length < 3 ? "" : "gap-y-2") : narrow ? "gap-y-2" : "gap-y-4"}`}>
+        className={`relative grid grid-cols-[max-content_50vw] md:grid-cols-[max-content_20vw] lg:grid-cols-[max-content_30vw] xl:grid-cols-[max-content_384px] items-center gap-x-4 ${supernarrow ? (data[0].value.length < 3 ? "" : "gap-y-2") : narrow ? "gap-y-2" : "gap-y-4"} mb-12`}>
         {data.map(({ category, value }, index) => (
           <Fragment key={category}>
             <div className={`justify-self-end leading-none ${supernarrow && data[0].value.length < 2 ? "text-xs" : ""}`}>{textTransform(category)}</div>

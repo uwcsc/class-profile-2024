@@ -14,15 +14,15 @@ export default function ({
           <h3 className="glow">{title}</h3>
           {children}
         </div>
-        {chart}
+        <div className="w-max max-w-[75vw] overflow-scroll">{chart}</div>
       </div>
     );
   else
     return (
       <div
         className={`flex flex-col-reverse ${reverse ? "md:flex-row-reverse" : "md:flex-row"} items-center gap-4 md:gap-8 lg:gap-12 xl:gap-16 py-4 md:py-8 xl:py-12`}>
-        <div className="max-w-[80vw]">{chart}</div>
-        <div className="flex flex-col">
+        <div className="max-w-[75vw] overflow-scroll lg:overflow-visible">{chart}</div>
+        <div className="md:max-w-[32vw] lg:max-w-[100vw] flex flex-col">
           <h3 className="glow">{title}</h3>
           {children}
         </div>

@@ -43,57 +43,55 @@ export default function Pie({ data, radius = 40, rounding = 1, anglePad = 0.01, 
   const roundAngle = 2 * Math.asin(rounding / (2 * radius + 2 * rounding));
 
   return (
-    <div>
-      <svg className="w-64 h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 -mt-4 lg:-mt-5 xl:-mt-6" viewBox="0 0 100 100">
-        {arcs.map(({ category, value, start, end }, index) => {
-          const mid = (start + end) / 2;
-          const [sx, sy] = p2c(drift, mid);
+    <svg className="w-64 h-64 lg:w-80 lg:h-80 xl:w-96 xl:h-96 -mt-4 lg:-mt-5 xl:-mt-6" viewBox="0 0 100 100">
+      {arcs.map(({ category, value, start, end }, index) => {
+        const mid = (start + end) / 2;
+        const [sx, sy] = p2c(drift, mid);
 
-          const lsep = p2c(separation / 2, start + Math.PI / 2);
-          const rsep = p2c(separation / 2, end - Math.PI / 2);
+        const lsep = p2c(separation / 2, start + Math.PI / 2);
+        const rsep = p2c(separation / 2, end - Math.PI / 2);
 
-          const [ax, ay] = add(p2c(radius - rounding, start), lsep);
-          const [bx, by] = add(p2c(radius - rounding / 2, start), lsep);
-          const [dx, dy] = add(p2c(radius, start + roundAngle), lsep);
-          const [cx, cy] = add([dx, dy], p2c(rounding / 2, start + roundAngle - Math.PI / 2));
-          const [ex, ey] = add(p2c(radius, end - roundAngle), rsep);
-          const [fx, fy] = add([ex, ey], p2c(rounding / 2, end - roundAngle + Math.PI / 2));
-          const [gx, gy] = add(p2c(radius - rounding / 2, end), rsep);
-          const [hx, hy] = add(p2c(radius - rounding, end), rsep);
-          const [nix, niy] = add(p2c(rounding, end), rsep);
-          const [nlx, nly] = add(p2c(rounding, start), lsep);
-          const [xx, xy] = intersection(hx, hy, nix, niy, ax, ay, nlx, nly);
-          const [ix, iy] = add([xx, xy], p2c(rounding, end));
-          const [jx, jy] = add([xx, xy], p2c(rounding / 2, end));
-          const [kx, ky] = add([xx, xy], p2c(rounding / 2, start));
-          const [lx, ly] = add([xx, xy], p2c(rounding, start));
-          const [mx, my] = p2c(radius, start - anglePad);
-          const [nx, ny] = p2c(radius, end + anglePad);
+        const [ax, ay] = add(p2c(radius - rounding, start), lsep);
+        const [bx, by] = add(p2c(radius - rounding / 2, start), lsep);
+        const [dx, dy] = add(p2c(radius, start + roundAngle), lsep);
+        const [cx, cy] = add([dx, dy], p2c(rounding / 2, start + roundAngle - Math.PI / 2));
+        const [ex, ey] = add(p2c(radius, end - roundAngle), rsep);
+        const [fx, fy] = add([ex, ey], p2c(rounding / 2, end - roundAngle + Math.PI / 2));
+        const [gx, gy] = add(p2c(radius - rounding / 2, end), rsep);
+        const [hx, hy] = add(p2c(radius - rounding, end), rsep);
+        const [nix, niy] = add(p2c(rounding, end), rsep);
+        const [nlx, nly] = add(p2c(rounding, start), lsep);
+        const [xx, xy] = intersection(hx, hy, nix, niy, ax, ay, nlx, nly);
+        const [ix, iy] = add([xx, xy], p2c(rounding, end));
+        const [jx, jy] = add([xx, xy], p2c(rounding / 2, end));
+        const [kx, ky] = add([xx, xy], p2c(rounding / 2, start));
+        const [lx, ly] = add([xx, xy], p2c(rounding, start));
+        const [mx, my] = p2c(radius, start - anglePad);
+        const [nx, ny] = p2c(radius, end + anglePad);
 
-          return (
-            <Fragment key={category}>
-              <path
-                d={`M ${tf(ax, ay)} C ${tf(bx, by)} ${tf(cx, cy)} ${tf(dx, dy)} A ${radius} ${radius} 0 ${value * 2 >= total ? 1 : 0} 1 ${tf(ex, ey)} C ${tf(fx, fy)} ${tf(gx, gy)} ${tf(hx, hy)} L ${tf(ix, iy)} C ${tf(jx, jy)} ${tf(kx, ky)} ${tf(lx, ly)} Z`}
-                style={{
-                  translate: hover[index] ? `${sx}px ${-sy}px` : "none",
-                  filter: hover[index] ? "drop-shadow(0 0 2px var(--light-blue))" : "none",
-                  transition: "translate 500ms, color 500ms, filter 500ms",
-                }}
-                onMouseEnter={() => setHover((hover) => ({ ...hover, [index]: true }))}
-                onMouseLeave={() => setHover((hover) => ({ ...hover, [index]: false }))}
-                className={`${hover[index] ? "text-chart-color-pie-hover" : "text-chart-color-pie-base"} fill-current`}
-              />
-              <path
-                d={`M ${tf(mx, my)} A ${radius} ${radius} 0 ${value * 2 >= total ? 1 : 0} 1 ${tf(nx, ny)} L 50 50 Z`}
-                onMouseEnter={() => setHover((hover) => ({ ...hover, [index]: true }))}
-                onMouseLeave={() => setHover((hover) => ({ ...hover, [index]: false }))}
-                className="opacity-0 z-10"
-              />
-            </Fragment>
-          );
-        })}
-      </svg>
-    </div>
+        return (
+          <Fragment key={category}>
+            <path
+              d={`M ${tf(ax, ay)} C ${tf(bx, by)} ${tf(cx, cy)} ${tf(dx, dy)} A ${radius} ${radius} 0 ${value * 2 >= total ? 1 : 0} 1 ${tf(ex, ey)} C ${tf(fx, fy)} ${tf(gx, gy)} ${tf(hx, hy)} L ${tf(ix, iy)} C ${tf(jx, jy)} ${tf(kx, ky)} ${tf(lx, ly)} Z`}
+              style={{
+                translate: hover[index] ? `${sx}px ${-sy}px` : "none",
+                filter: hover[index] ? "drop-shadow(0 0 2px var(--light-blue))" : "none",
+                transition: "translate 500ms, color 500ms, filter 500ms",
+              }}
+              onMouseEnter={() => setHover((hover) => ({ ...hover, [index]: true }))}
+              onMouseLeave={() => setHover((hover) => ({ ...hover, [index]: false }))}
+              className={`${hover[index] ? "text-chart-color-pie-hover" : "text-chart-color-pie-base"} fill-current`}
+            />
+            <path
+              d={`M ${tf(mx, my)} A ${radius} ${radius} 0 ${value * 2 >= total ? 1 : 0} 1 ${tf(nx, ny)} L 50 50 Z`}
+              onMouseEnter={() => setHover((hover) => ({ ...hover, [index]: true }))}
+              onMouseLeave={() => setHover((hover) => ({ ...hover, [index]: false }))}
+              className="opacity-0 z-10"
+            />
+          </Fragment>
+        );
+      })}
+    </svg>
   );
 }
 
