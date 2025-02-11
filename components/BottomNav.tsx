@@ -7,7 +7,7 @@ interface PagesInfo {
 
 export function BottomNav(props: PagesInfo) {
   return (
-    <div className="w-[calc(min(80vw,1200px))] flex items-center justify-between my-[calc(40rem/16)]">
+    <div className="w-[calc(min(80vw,1200px))] flex items-center justify-between my-[calc(40rem/16)] gap-8">
       <Link
         href={props.leftPage.url}
         scroll
