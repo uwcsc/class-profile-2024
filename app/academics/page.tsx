@@ -199,7 +199,9 @@ export default function Academics() {
         </p>
       </StandardChart>
       <StandardChart variant="dark" title="In which term did you transfer into your program?" chart={<Pie data={A11ii} />}>
-        <p></p>
+        <p>
+	  Of those who transferred, most did so in 2A or 3A with 1 person transferring as early as 1B and 1 as late as 3B.
+	</p>
       </StandardChart>
       <StandardChart variant="blank" title="What were your reason(s) behind transferring?" chart={<Pie data={A11iii} />}>
         <p>
