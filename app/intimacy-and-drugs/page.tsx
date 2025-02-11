@@ -57,24 +57,34 @@ export default function IntimacyAndDrugs() {
       <StandardChart variant="light" title="Have you ever been involved in a cheating situation?" chart={<HorizontalBar data={I6} lines={[0, 10, 20, 30]} />}>
         <p>Almost all of our respondents have never been in any cheating situations before.</p>
       </StandardChart>
-      <StandardChart variant="blank" title="What is your Rice Purity score?" chart={
-        <WithBoxPlot points={[27, 45, 53, 74, 97, 58.82]}>
-	  <HorizontalBar data={I7} lines={[0, 1, 2, 3]} narrow />
-        </WithBoxPlot>
-      }>
+      <StandardChart
+        variant="blank"
+        title="What is your Rice Purity score?"
+        chart={
+          <WithBoxPlot points={[27, 45, 53, 74, 97, 58.82]}>
+            <HorizontalBar data={I7} lines={[0, 1, 2, 3]} narrow />
+          </WithBoxPlot>
+        }>
         <p>
           The Rice Purity test is a 100-question survey designed to measure a person's level of "innocence" based on their experiences, covering topics from
           relationships to substances and more. A higher score represents more purity. This year, three respondents shared the same score of 45. Among all the
           responses, the lowest score was 27, and the highest was 97, reflecting the wide range of experiences within the student body.
         </p>
       </StandardChart>
-      <StandardChart variant="dark" title="Do you have any advice for people looking for a relationship?" chart={<QuotationCarousel data={I8} height={750} />}>
+      <StandardChart
+        variant="dark"
+        title="Do you have any advice for people looking for a relationship?"
+        noscroll
+        chart={<QuotationCarousel data={I8} height={750} />}>
         <p>
           Most of the advice shared highlighted the importance of self-confidence and the belief that relationships will naturally develop over time. Rather
           than forcing a connection, the key is to focus on being comfortable with yourself and letting things unfold when the right person comes along.
         </p>
       </StandardChart>
-      <BottomNav leftPage={{ name: "Lifestyle and Interests", url: "/lifestyle-and-interests" }} rightPage={{ name: "Postgrad + Full-Time", url: "/postgrad-and-full-time" }} />
+      <BottomNav
+        leftPage={{ name: "Lifestyle and Interests", url: "/lifestyle-and-interests" }}
+        rightPage={{ name: "Postgrad + Full-Time", url: "/postgrad-and-full-time" }}
+      />
     </PageTemplate>
   );
 }

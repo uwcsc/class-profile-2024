@@ -33,42 +33,43 @@ export function QuotationCarousel(props: QuotationCarouselProps) {
   }
 
   return (
-    <section
-      className={`${className || ""} relative flex justify-between items-center gap-2 m-auto py-8 pr-2 z-30 max-w-[calc(min(40vw,512px))]`}
-      style={{
-        width: `${actualWidth / 16}rem`,
-        minHeight: `${height / 26}rem`,
-      }}>
-      <CarouselButton onClick={showPreviousCard} isPrevious />
-      <img
-        src="/images/shooting-star.svg"
-        alt="Shooting star"
-        className="absolute pointer-events-none end-[-2rem] top-[-1.3rem] w-[calc(30rem/2)] h-[calc(8rem)] z-[inherit]"
-        aria-hidden="true"
-      />
-      <div
-        className="flex flex-col justify-between items-stretch gap-4 min-h-[inherit] h-full w-full p-[calc(30rem/16)] border border-solid border-primary/20 rounded-[calc(12rem/16)] bg-response"
-        style={{ filter: "box-shadow(0 calc(1rem / 16) calc(10rem / 16)" }}>
-        <QuotationMark className="w-[calc(20rem/12)] h-[calc(20rem/12)] z-30" />
-        <ul className="flex flex-col justify-center items-center relative w-full m-0 p-0 grow z-50">
-          {data.map((quote, idx) => (
-            <li
-              key={idx}
-              className={`absolute inset-0 p-0 list-none flex h-full overflow-y-auto transition-all ${idx !== activeIdx ? "invisible opacity-0" : "visible opacity-100"} ${(idx + 1) % data.length === activeIdx ? "-translate-x-8" : (idx + data.length - 1) % data.length === activeIdx ? "translate-x-8" : ""}`}>
-              <p className="mx-4 my-auto h-max w-full text-center lg:text-lg xl:text-xl">{quote}</p>
-            </li>
-          ))}
-        </ul>
-        <div className="flex justify-end w-full z-30">
-          <QuotationMark className="w-[calc(20rem/12)] h-[calc(20rem/12)] rotate-180" />
+    <div className="w-full flex flex-col items-center">
+      <section
+        className={`${className || ""} relative flex justify-between items-center gap-2 py-8 z-30 w-[calc(min(90%,512px))]`}
+        style={{
+          minHeight: `${height / 26}rem`,
+        }}>
+        <CarouselButton onClick={showPreviousCard} isPrevious />
+        <img
+          src="/images/shooting-star.svg"
+          alt="Shooting star"
+          className="absolute pointer-events-none end-[-2rem] top-[-1.3rem] w-[calc(30rem/2)] h-[calc(8rem)] z-[inherit]"
+          aria-hidden="true"
+        />
+        <div
+          className="flex flex-col justify-between items-stretch gap-4 min-h-[inherit] h-full w-full p-[calc(30rem/16)] border border-solid border-primary/20 rounded-[calc(12rem/16)] bg-response"
+          style={{ filter: "box-shadow(0 calc(1rem / 16) calc(10rem / 16)" }}>
+          <QuotationMark className="w-[calc(20rem/12)] h-[calc(20rem/12)] z-30" />
+          <ul className="flex flex-col justify-center items-center relative w-full m-0 p-0 grow z-50">
+            {data.map((quote, idx) => (
+              <li
+                key={idx}
+                className={`absolute inset-0 p-0 list-none flex h-full overflow-y-auto transition-all ${idx !== activeIdx ? "invisible opacity-0" : "visible opacity-100"} ${(idx + 1) % data.length === activeIdx ? "-translate-x-8" : (idx + data.length - 1) % data.length === activeIdx ? "translate-x-8" : ""}`}>
+                <p className="mx-4 my-auto h-max w-full text-center lg:text-lg xl:text-xl">{quote}</p>
+              </li>
+            ))}
+          </ul>
+          <div className="flex justify-end w-full z-30">
+            <QuotationMark className="w-[calc(20rem/12)] h-[calc(20rem/12)] rotate-180" />
+          </div>
+          <Star className="absolute -bottom-5 w-[calc(20rem/5)] h-[calc(20rem/5)] z-30" colour="rgba(255, 255, 243, 1)" />
+          <div className="absolute bottom-4 left-0 right-0 flex flex-col items-center">
+            {activeIdx + 1} / {data.length}
+          </div>
         </div>
-        <Star className="absolute -bottom-5 w-[calc(20rem/5)] h-[calc(20rem/5)] z-30" colour="rgba(255, 255, 243, 1)" />
-        <div className="absolute bottom-4 left-0 right-0 flex flex-col items-center">
-          {activeIdx + 1} / {data.length}
-        </div>
-      </div>
-      <CarouselButton onClick={showNextCard} />
-    </section>
+        <CarouselButton onClick={showNextCard} />
+      </section>
+    </div>
   );
 }
 

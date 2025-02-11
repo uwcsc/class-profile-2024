@@ -199,9 +199,7 @@ export default function Academics() {
         </p>
       </StandardChart>
       <StandardChart variant="dark" title="In which term did you transfer into your program?" chart={<Pie data={A11ii} />}>
-        <p>
-	  Of those who transferred, most did so in 2A or 3A with 1 person transferring as early as 1B and 1 as late as 3B.
-	</p>
+        <p>Of those who transferred, most did so in 2A or 3A with 1 person transferring as early as 1B and 1 as late as 3B.</p>
       </StandardChart>
       <StandardChart variant="blank" title="What were your reason(s) behind transferring?" chart={<Pie data={A11iii} />}>
         <p>
@@ -319,15 +317,20 @@ export default function Academics() {
       <StandardChart variant="light" title="What term did you take your exchange in?" chart={<Pie data={A23i} />}>
         <p>Taking exchange terms seems to become popular later in people's careers, perhaps due to wanting a break from being in the same environment.</p>
       </StandardChart>
-      <StandardChart variant="blank" title="Where did you take your exchange term?" chart={<QuotationCarousel data={A23ii} height={375} />}>
+      <StandardChart variant="blank" title="Where did you take your exchange term?" noscroll chart={<QuotationCarousel data={A23ii} height={375} />}>
         <p>The UK and Singapore were popular destinations for people taking exchange terms, with many people heading to Asia for their exchange experience.</p>
       </StandardChart>
-      <StandardChart variant="dark" title="What was the hardest thing about going on exchange?" chart={<QuotationCarousel data={A23iii} height={525} />}>
+      <StandardChart
+        variant="dark"
+        title="What was the hardest thing about going on exchange?"
+        noscroll
+        chart={<QuotationCarousel data={A23iii} height={525} />}>
         <p>Exchange terms can be challenging to adapt to, but nonetheless, it is a very fulfilling and worthwhile experience for many.</p>
       </StandardChart>
       <StandardChart
         variant="blank"
         title="What is your favorite memory from your time during the exchange?"
+        noscroll
         chart={<QuotationCarousel data={A23iv} height={600} />}>
         <p>Despite potential challenges, there are many amazing and unforgettable memories to make in exchange terms.</p>
       </StandardChart>

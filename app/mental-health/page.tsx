@@ -51,7 +51,7 @@ export default function MentalHealth() {
           </li>
         </ul>
       </WindowPanel>
-      <StandardChart variant="dark" title="What was the lowest point in your university career?" chart={<QuotationCarousel data={H1} height={625} />}>
+      <StandardChart variant="dark" title="What was the lowest point in your university career?" noscroll chart={<QuotationCarousel data={H1} height={625} />}>
         <p>
           For most students in the graduating class of 2024, the lowest point in their university journey was their 1A term, marked by the challenges of
           adapting to university life. Other significant low points included personal struggles like breakups, COVID-19 illnesses, finding their first co-op,
@@ -113,8 +113,9 @@ export default function MentalHealth() {
         variant="dark"
         vertical
         title="Do you have any general comments about mental health in university?"
+        noscroll
         chart={<QuotationCarousel data={H8} height={625} />}></StandardChart>
-      <StandardChart variant="blank" title="What do you do to cope with mental health struggles?" chart={<QuotationCarousel data={H9} height={625} />}>
+      <StandardChart variant="blank" title="What do you do to cope with mental health struggles?" noscroll chart={<QuotationCarousel data={H9} height={625} />}>
         <p>
           The graduating class of 2024 utilizes a wide range of coping strategies to manage mental health challenges. Many students turn to friends, family, and
           partners for support, while others focus on self-care activities like working out, eating healthy, and getting rest. Overall, the class demonstrates a

@@ -8,11 +8,12 @@ export default function StandardChart({
   title,
   chart,
   children,
-}: PropsWithChildren<{ variant: "dark" | "light" | "blank"; vertical?: boolean; title: string; chart: ReactNode }>) {
+  noscroll = false,
+}: PropsWithChildren<{ variant: "dark" | "light" | "blank"; vertical?: boolean; title: string; chart: ReactNode; noscroll?: boolean }>) {
   return (
     <div className="w-full">
       <WindowPanel blank={variant === "blank"} dark={variant === "dark"}>
-        <ChartContainer reverse={variant === "blank"} vertical={vertical} title={title} chart={chart}>
+        <ChartContainer reverse={variant === "blank"} vertical={vertical} title={title} chart={chart} noscroll={noscroll}>
           {children}
         </ChartContainer>
       </WindowPanel>
