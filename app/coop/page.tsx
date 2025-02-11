@@ -182,8 +182,8 @@ export default function Coop() {
         title="Did you complete another co-op term after this one?"
         chart={<GroupedHorizontalBar data={C6viii} lines={[0, 10, 20, 30, 40]} narrow legend={["Yes", "No"]} />}>
         <p>
-          With only a few people stopping co-op in the first 4 terms, about half of the respondents stopped after their 5th term, which makes sense as many
-          sequences have 5 terms with one of them being 8 months long. 2 people did more than 6 terms, but we did not ask questions beyond the 6th term.
+	  Waterloo-based CS/BBA students get 4 to 5 co-ops and Laurier-based CS/BBA students get 3 to 4, as they only start co-op from the second year onwards.
+          2 people did more than 6 terms, but we did not ask about co-op terms after the sixth.
         </p>
       </StandardChart>
       <BottomNav leftPage={{ name: "CS Experience", url: "/cs-experience" }} rightPage={{ name: "Lifestyle and Interests", url: "/lifestyle-and-interests" }} />
