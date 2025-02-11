@@ -1,7 +1,12 @@
 import { PropsWithChildren } from "react";
 
 export default function WindowPanel({ dark = false, blank = false, children }: PropsWithChildren<{ dark?: boolean; blank?: boolean }>) {
-  if (blank) return <div className="p-4 md:p-8 w-[calc(min(80%,1200px))]">{children}</div>;
+  if (blank)
+    return (
+      <div className="flex flex-col items-center">
+        <div className="p-4 md:p-8 w-[calc(min(80%,1200px))]">{children}</div>
+      </div>
+    );
 
   return (
     <div className="flex flex-col items-center">

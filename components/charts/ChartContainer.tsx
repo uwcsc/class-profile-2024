@@ -14,7 +14,7 @@ export default function ({
           <h3 className="glow">{title}</h3>
           {children}
         </div>
-        <div className="w-max max-w-[75vw] overflow-scroll">{chart}</div>
+        <div className="max-w-[75vw] overflow-scroll">{chart}</div>
       </div>
     );
   else

@@ -104,8 +104,9 @@ export default function LifestyleAndInterests() {
       </StandardChart>
       <StandardChart
         variant="light"
+	vertical
         title="Which extracurricular activities did you participate in?"
-        chart={<HorizontalBar data={L11} lines={[0, 5, 10]} supernarrow />}>
+        chart={<HorizontalBar data={L11} lines={[0, 5, 10]} narrow />}>
         <p>
           Beating all the "nerd" allegations, a majority of Waterloo students stay active by participating in sports or intramurals, with basketball and
           badminton emerging as favorites. Beyond the courts, many students also take on leadership roles, serving as Math Ambassadors or Orientation Leaders,

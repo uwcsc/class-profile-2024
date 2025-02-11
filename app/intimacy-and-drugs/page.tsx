@@ -1,6 +1,7 @@
 "use client";
 
 import { BottomNav } from "@/components/BottomNav";
+import { WithBoxPlot } from "@/components/charts/BoxPlot";
 import HorizontalBar, { GroupedHorizontalBar } from "@/components/charts/HorizontalBar";
 import StandardChart from "@/components/charts/StandardChart";
 import PageTemplate from "@/components/PageTemplate";
@@ -56,7 +57,11 @@ export default function IntimacyAndDrugs() {
       <StandardChart variant="light" title="Have you ever been involved in a cheating situation?" chart={<HorizontalBar data={I6} lines={[0, 10, 20, 30]} />}>
         <p>Almost all of our respondents have never been in any cheating situations before.</p>
       </StandardChart>
-      <StandardChart variant="blank" title="What is your Rice Purity score?" chart={<HorizontalBar data={I7} lines={[0, 1, 2, 3]} narrow />}>
+      <StandardChart variant="blank" title="What is your Rice Purity score?" chart={
+        <WithBoxPlot points={[27, 45, 53, 74, 97, 58.82]}>
+	  <HorizontalBar data={I7} lines={[0, 1, 2, 3]} narrow />
+        </WithBoxPlot>
+      }>
         <p>
           The Rice Purity test is a 100-question survey designed to measure a person's level of "innocence" based on their experiences, covering topics from
           relationships to substances and more. A higher score represents more purity. This year, three respondents shared the same score of 45. Among all the

@@ -10,10 +10,12 @@ export default function StandardChart({
   children,
 }: PropsWithChildren<{ variant: "dark" | "light" | "blank"; vertical?: boolean; title: string; chart: ReactNode }>) {
   return (
-    <WindowPanel blank={variant === "blank"} dark={variant === "dark"}>
-      <ChartContainer reverse={variant === "blank"} vertical={vertical} title={title} chart={chart}>
-        {children}
-      </ChartContainer>
-    </WindowPanel>
+    <div className="w-full">
+      <WindowPanel blank={variant === "blank"} dark={variant === "dark"}>
+        <ChartContainer reverse={variant === "blank"} vertical={vertical} title={title} chart={chart}>
+          {children}
+        </ChartContainer>
+      </WindowPanel>
+    </div>
   );
 }

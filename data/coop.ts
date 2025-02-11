@@ -248,7 +248,7 @@ export const C6aii = [
   { category: "China", value: 1 },
   { category: "GTA/Toronto", value: 4 },
   { category: "Remote, GTA/Toronto", value: 1 },
-  { category: "Remote, Kitchener/Waterloo", value: 2 },
+  { category: "Remote, KW", value: 2 },
   { category: "Remote", value: 37 },
 ];
 

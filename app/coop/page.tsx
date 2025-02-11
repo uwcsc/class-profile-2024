@@ -42,7 +42,7 @@ export default function Coop() {
   const [term, setTerm] = useState(0);
 
   const TermButtons = () => (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 flex-wrap">
       {new Array(6).fill(0).map((_, i) => (
         <button
           key={i}

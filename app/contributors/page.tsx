@@ -60,7 +60,7 @@ export default function Contributors() {
           </div>
         </div>
         <div className="w-full flex justify-center">
-          <div className="w-[calc(min(80%,800px))] rounded-lg p-8" style={{ backgroundImage: "linear-gradient(150deg, #443996a0, #ffcad0a0)" }}>
+          <div className="w-[calc(min(80%,800px))] rounded-lg p-8" style={{ backgroundImage: "linear-gradient(150deg, #2b236da0, #7b8bd8a0)" }}>
             <div className="flex flex-col gap-4">
               <h3 className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(172deg, #ffffff, #ffc7f3)" }}>
                 Class Profile Web Developers
@@ -105,7 +105,7 @@ export default function Contributors() {
           </div>
         </div>
         <div className="w-full flex justify-center">
-          <div className="w-[calc(min(80%,800px))] rounded-lg p-8" style={{ backgroundImage: "linear-gradient(150deg, #443996a0, #ffcad0a0)" }}>
+          <div className="w-[calc(min(80%,800px))] rounded-lg p-8" style={{ backgroundImage: "linear-gradient(150deg, #2b236da0, #7b8bd8a0)" }}>
             <div className="flex flex-col gap-4">
               <h3 className="text-transparent bg-clip-text" style={{ backgroundImage: "linear-gradient(172deg, #ffffff, #a072eb)" }}>
                 Past Contributors

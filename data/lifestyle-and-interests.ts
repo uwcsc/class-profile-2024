@@ -1,8 +1,8 @@
 export const L1 = [
-  { category: "R → R", value: 13 },
-  { category: "N → R", value: 2 },
-  { category: "R → N", value: 1 },
-  { category: "N → N", value: 31 },
+  { category: "Stayed religious", value: 13 },
+  { category: "Became religious", value: 2 },
+  { category: "No longer religious", value: 1 },
+  { category: "Never religious", value: 31 },
 ];
 
 export const L2 = [

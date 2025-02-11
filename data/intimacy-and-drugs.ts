@@ -11,9 +11,9 @@ export const I1 = [
 ];
 
 export const I2 = [
-  { category: "Yes, before university", value: 7 },
-  { category: "Yes, during university", value: 20 },
-  { category: "No", value: 14 },
+  { category: "Before university", value: 7 },
+  { category: "During university", value: 20 },
+  { category: "Never", value: 14 },
 ];
 
 export const I2i = [
