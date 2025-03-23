@@ -17,3 +17,4 @@ Implement changes on your own branch. The preferred branch naming scheme is `nam
 The `main` branch is protected and requires a PR with one approval to merge to it. When reviewing PRs, checkout the branch and run it locally to test the changes.
 
 Make sure you assign a ticket to yourself before you start working on it to avoid conflicts/duplicate work. Please update the status as well so everyone can keep track of what's going on and people can ask to take over tickets if they want a task and notice you haven't started.
+
