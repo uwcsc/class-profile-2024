@@ -8,7 +8,7 @@ trap "rm -rf $DIR" EXIT
 
 pushd $DIR
 
-git clone https://git.csclub.uwaterloo.ca/www/class-profile-2024 --depth=1
+git clone https://git.csclub.uwaterloo.ca/www/cs-2024-class-profile --depth=1
 cd class-profile-2024
 
 export NEXT_PUBLIC_BASE_PATH="/classprofile/2024"
