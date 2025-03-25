@@ -35,6 +35,10 @@
   --navbar-background-rgb: 25, 27, 33;
 }
 
+html {
+  background-color: var(--page-background-start);
+}
+
 .glow {
   filter: drop-shadow(0 0 8px #fff8);
 }
