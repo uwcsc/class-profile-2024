@@ -1,5 +1,5 @@
+import { basePath } from "@/utils/getBasePath";
 import { Metadata } from "next";
-import { basePath } from "./getBasePath.js";
 
 const description =
   "The 2024 CS Class Profile is a showcase of data relevant to CS, CFM, and CS/BBA students completing their undergrad in 2024. Explore the graduating class of 2024 with data gathered and presented by the University of Waterloo Computer Science Club!";
