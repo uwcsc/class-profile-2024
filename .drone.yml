@@ -4,26 +4,8 @@ type: docker
 name: node20
 
 steps:
-  # - name: install-deps
-  #   image: node:20
-  #   commands:
-  #     - npm install
-  # - name: lint
-  #   image: node:20
-  #   depends_on:
-  #     - install-deps
-  #   commands:
-  #     - npm run lint
-  # - name: build
-  #   image: node:20
-  #   depends_on:
-  #     - install-deps
-  #   commands:
-  #     - npm run build
   - name: deploy-production
     image: node:20
-    # depends_on:
-    #   - build
     environment:
       SSH_KEY:
         from_secret: DEPLOYMENT_SSH_KEY
@@ -37,4 +19,4 @@ steps:
 trigger:
   event:
     exclude:
-      - pull_request # avoid double build on PRs
+      - pull_request

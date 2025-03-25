@@ -12,8 +12,11 @@ git clone https://git.csclub.uwaterloo.ca/www/cs-2024-class-profile --depth=1
 cd cs-2024-class-profile
 
 export NEXT_PUBLIC_BASE_PATH="/classprofile/2024"
-npm ci
-npm run build
+corepack enable
+pnpm install --frozen-lockfile
+pnpm build
+
+ls
 
 chgrp -R www out
 chmod -R g+w out
