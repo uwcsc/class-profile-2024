@@ -62,7 +62,7 @@ export function GroupedHorizontalBar({
   const md = pageWidth >= 768;
 
   return (
-    <div className="flex flex-col items-center gap-4 pl-4 pr-12">
+    <div className="flex flex-col items-center gap-4 pl-4 pr-12 w-max">
       {legend ? (
         <div className="flex items-center gap-4 flex-wrap">
           {legend.map((text, i) => (
