@@ -1,3 +1,4 @@
+import { basePath } from "@/utils/getBasePath";
 import { useState } from "react";
 import Star from "./Star";
 
@@ -41,7 +42,7 @@ export function QuotationCarousel(props: QuotationCarouselProps) {
         }}>
         <CarouselButton onClick={showPreviousCard} isPrevious />
         <img
-          src="/images/shooting-star.svg"
+          src={basePath + "/images/shooting-star.svg"}
           alt="Shooting star"
           className="absolute pointer-events-none end-[-2rem] top-[-1.3rem] w-[calc(30rem/2)] h-[calc(8rem)] z-[inherit]"
           aria-hidden="true"

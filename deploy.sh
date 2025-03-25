@@ -16,8 +16,6 @@ corepack enable
 pnpm install --frozen-lockfile
 pnpm build
 
-ls
-
 chgrp -R www out
 chmod -R g+w out
 
