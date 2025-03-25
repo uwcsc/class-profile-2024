@@ -25,12 +25,9 @@ export function Header({ transparent = false }: { transparent?: boolean }) {
         style={{ backgroundColor: `rgb(var(--navbar-background-rgb), ${pageWidth >= 768 || transparent ? (state.y ?? 0) / 200 : 1})` }}>
         <div className="relative">
           <h1 className="my-4" style={{ fontSize: `calc(min(${8 - Math.min(1, (state.y ?? 0) / 200)}vw,${2 - Math.min(0.25, (state.y ?? 0) / 800)}rem))` }}>
-            <button
-              className="text-yellow"
-              style={{ textShadow: "-1px 0 black, 1px 0 black, 0 -1px black, 0 1px black" }}
-              onClick={() => setIsShowingMenu(true)}>
+            <button className="text-yellow" style={{ textShadow: "-1px 0 #777, 1px 0 #777, 0 -1px #777, 0 1px #777" }} onClick={() => setIsShowingMenu(true)}>
               <span className="flex items-center gap-2">
-                <span>&#8942;</span> <span>CS '24</span>
+                <span className="-mt-1">&#9776;</span> <span>CS '24</span>
               </span>
             </button>
           </h1>
